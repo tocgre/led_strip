@@ -25913,48 +25913,11 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/smt1.h" 1
-# 92 "./mcc_generated_files/smt1.h"
-void SMT1_Initialize(void);
-# 116 "./mcc_generated_files/smt1.h"
-void SMT1_DataAcquisitionEnable(void);
-# 145 "./mcc_generated_files/smt1.h"
-void SMT1_DataAcquisitionDisable(void);
-# 176 "./mcc_generated_files/smt1.h"
-void SMT1_HaltCounter(void);
-# 200 "./mcc_generated_files/smt1.h"
-void SMT1_SetPeriod(uint32_t periodVal);
-# 225 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetPeriod(void);
-# 254 "./mcc_generated_files/smt1.h"
-void SMT1_SingleDataAcquisition(void);
-# 283 "./mcc_generated_files/smt1.h"
-void SMT1_RepeatDataAcquisition(void);
-# 312 "./mcc_generated_files/smt1.h"
-void SMT1_ManualPeriodBufferUpdate(void);
-# 341 "./mcc_generated_files/smt1.h"
-void SMT1_ManualPulseWidthBufferUpdate(void);
-# 370 "./mcc_generated_files/smt1.h"
-void SMT1_ManualTimerReset(void);
-# 405 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsWindowOpen(void);
-# 436 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsSignalAcquisitionInProgress(void);
-# 466 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsTimerIncrementing(void);
-# 491 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetCapturedPulseWidth(void);
-# 516 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetCapturedPeriod(void);
-# 541 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetTimerValue(void);
-# 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
+# 68 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
+# 81 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
+# 94 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 15 "./system_def.h" 2
 # 1 "main.c" 2
@@ -25966,6 +25929,13 @@ extern void vHILLED_Set (void);
 extern void vHILLED_Clear (void);
 # 2 "main.c" 2
 
+# 1 "./inc/HIL/hil_pwm.h" 1
+# 22 "./inc/HIL/hil_pwm.h"
+extern void vHILPWM5_Init (void);
+extern void vHILPWM_SetDutyCycle (uint16_t __u16_DutyCycle);
+# 3 "main.c" 2
+
+
 
 
 
@@ -25973,14 +25943,26 @@ extern void vHILLED_Clear (void);
 void main(void)
 {
 
+
     SYSTEM_Initialize();
-    vHILLED_Init();
-# 23 "main.c"
-    while (1)
+
+    vHILPWM5_Init();
+# 29 "main.c"
+    uint8_t _u8_VitesseMontee = 30U;
+    uint8_t _u8_VitesseDescente = 30U;
+
+
+    while (1U)
     {
-        vHILLED_Set();
-        _delay((unsigned long)((500)*(4000000/4000.0)));
-        vHILLED_Clear();
-        _delay((unsigned long)((500)*(4000000/4000.0)));
+        for(uint16_t __u16_Counter = 0U; __u16_Counter < ((204U) - _u8_VitesseMontee); __u16_Counter += _u8_VitesseMontee)
+        {
+            vHILPWM_SetDutyCycle(__u16_Counter);
+            _delay((unsigned long)((100U)*(4000000/4000.0)));
+        }
+        for(uint16_t __u16_Counter2 = (204U); __u16_Counter2 > (0U + _u8_VitesseDescente); __u16_Counter2 -= _u8_VitesseDescente)
+        {
+            vHILPWM_SetDutyCycle(__u16_Counter2);
+            _delay((unsigned long)((100U)*(4000000/4000.0)));
+        }
     }
 }

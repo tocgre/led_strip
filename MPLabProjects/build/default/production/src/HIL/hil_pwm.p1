@@ -1,7 +1,37 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"44612 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
+"38192 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 38192: extern volatile unsigned char PWM5CON __attribute__((address(0x3F6E)));
+[v _PWM5CON `Vuc ~T0 @X0 0 e@16238 ]
+"42206
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 42206: extern volatile unsigned char T2PR __attribute__((address(0x3FAB)));
+[v _T2PR `Vuc ~T0 @X0 0 e@16299 ]
+"23 src/HIL/../../inc/HIL/hil_pwm.h
+[; ;src/HIL/../../inc/HIL/hil_pwm.h: 23: extern void vHILPWM_SetDutyCycle (uint16_t __u16_DutyCycle);
+[v _vHILPWM_SetDutyCycle `(v ~T0 @X0 0 ef1`us ]
+"4369 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 4369: extern volatile unsigned char PIR4 __attribute__((address(0x39A4)));
+[v _PIR4 `Vuc ~T0 @X0 0 e@14756 ]
+"42523
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 42523: extern volatile unsigned char T2CLK __attribute__((address(0x3FAE)));
+[v _T2CLK `Vuc ~T0 @X0 0 e@16302 ]
+"42244
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 42244: extern volatile unsigned char T2CON __attribute__((address(0x3FAC)));
+[v _T2CON `Vuc ~T0 @X0 0 e@16300 ]
+"55733
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 55733: extern volatile __bit TMR2IF __attribute__((address(0x1CD22)));
+[v _TMR2IF `Vb ~T0 @X0 0 e@118050 ]
+"44612
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 44612: extern volatile unsigned char TRISA __attribute__((address(0x3FC2)));
 [v _TRISA `Vuc ~T0 @X0 0 e@16322 ]
+"6460
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 6460: extern volatile unsigned char RA0PPS __attribute__((address(0x3A00)));
+[v _RA0PPS `Vuc ~T0 @X0 0 e@14848 ]
+"37956
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 37956: extern volatile unsigned char PWM5DCL __attribute__((address(0x3F6C)));
+[v _PWM5DCL `Vuc ~T0 @X0 0 e@16236 ]
+"38022
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 38022: extern volatile unsigned char PWM5DCH __attribute__((address(0x3F6D)));
+[v _PWM5DCH `Vuc ~T0 @X0 0 e@16237 ]
 "250 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2141,18 +2171,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46527
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 46527: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
-"3 hil_led.c
-[; ;hil_led.c: 3: void vHILLED_Init(void)
-[v _vHILLED_Init `(v ~T0 @X0 1 ef ]
-"4
-[; ;hil_led.c: 4: {
+"12 src/HIL/hil_pwm.c
+[; ;src/HIL/hil_pwm.c: 12: void vHILPWM5_Init(void)
+[v _vHILPWM5_Init `(v ~T0 @X0 1 ef ]
+"13
+[; ;src/HIL/hil_pwm.c: 13: {
 {
-[e :U _vHILLED_Init ]
+[e :U _vHILPWM5_Init ]
 [f ]
-"5
-[; ;hil_led.c: 5:     TRISA = 0xFE;
-[e = _TRISA -> -> 254 `i `uc ]
-"6
-[; ;hil_led.c: 6: }
+"15
+[; ;src/HIL/hil_pwm.c: 15:     PWM5CON = 0x00;
+[e = _PWM5CON -> -> 0 `i `uc ]
+"18
+[; ;src/HIL/hil_pwm.c: 18:     T2PR = 50U;
+[e = _T2PR -> -> 50 `ui `uc ]
+"21
+[; ;src/HIL/hil_pwm.c: 21:     vHILPWM_SetDutyCycle((102U));
+[e ( _vHILPWM_SetDutyCycle (1 -> -> 102 `ui `us ]
+"24
+[; ;src/HIL/hil_pwm.c: 24:     PIR4 &= ~(0x04);
+[e =& _PIR4 -> ~ -> 4 `i `Vuc ]
+"27
+[; ;src/HIL/hil_pwm.c: 27:     T2CLK = 0x01;
+[e = _T2CLK -> -> 1 `i `uc ]
+"30
+[; ;src/HIL/hil_pwm.c: 30:     T2CON = 0x00;
+[e = _T2CON -> -> 0 `i `uc ]
+"33
+[; ;src/HIL/hil_pwm.c: 33:     T2CON |= 0x80;
+[e =| _T2CON -> -> 128 `i `Vuc ]
+"36
+[; ;src/HIL/hil_pwm.c: 36:     PWM5CON = 0x80;
+[e = _PWM5CON -> -> 128 `i `uc ]
+"38
+[; ;src/HIL/hil_pwm.c: 38:     while(TMR2IF != 1U);
+[e $U 2149  ]
+[e :U 2150 ]
+[e :U 2149 ]
+[e $ != -> -> _TMR2IF `i `ui -> 1 `ui 2150  ]
+[e :U 2151 ]
+"41
+[; ;src/HIL/hil_pwm.c: 41:     TRISA &= ~((0x01));
+[e =& _TRISA -> ~ -> 1 `i `Vuc ]
+"43
+[; ;src/HIL/hil_pwm.c: 43:     RA0PPS = 0x0D;
+[e = _RA0PPS -> -> 13 `i `uc ]
+"47
+[; ;src/HIL/hil_pwm.c: 47: }
 [e :UE 2148 ]
+}
+"51
+[; ;src/HIL/hil_pwm.c: 51: void vHILPWM_SetDutyCycle(uint16_t __u16_DutyCycle)
+[v _vHILPWM_SetDutyCycle `(v ~T0 @X0 1 ef1`us ]
+"52
+[; ;src/HIL/hil_pwm.c: 52: {
+{
+[e :U _vHILPWM_SetDutyCycle ]
+"51
+[; ;src/HIL/hil_pwm.c: 51: void vHILPWM_SetDutyCycle(uint16_t __u16_DutyCycle)
+[v ___u16_DutyCycle `us ~T0 @X0 1 r1 ]
+"52
+[; ;src/HIL/hil_pwm.c: 52: {
+[f ]
+"54
+[; ;src/HIL/hil_pwm.c: 54:     PWM5DCL = (uint8_t)(__u16_DutyCycle << 6U);
+[e = _PWM5DCL -> << -> ___u16_DutyCycle `ui -> 6 `ui `uc ]
+"56
+[; ;src/HIL/hil_pwm.c: 56:     PWM5DCH = (uint8_t)(__u16_DutyCycle >> 2U);
+[e = _PWM5DCH -> >> -> ___u16_DutyCycle `ui -> 2 `ui `uc ]
+"58
+[; ;src/HIL/hil_pwm.c: 58: }
+[e :UE 2152 ]
 }

@@ -25922,48 +25922,11 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/smt1.h" 1
-# 92 "./mcc_generated_files/smt1.h"
-void SMT1_Initialize(void);
-# 116 "./mcc_generated_files/smt1.h"
-void SMT1_DataAcquisitionEnable(void);
-# 145 "./mcc_generated_files/smt1.h"
-void SMT1_DataAcquisitionDisable(void);
-# 176 "./mcc_generated_files/smt1.h"
-void SMT1_HaltCounter(void);
-# 200 "./mcc_generated_files/smt1.h"
-void SMT1_SetPeriod(uint32_t periodVal);
-# 225 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetPeriod(void);
-# 254 "./mcc_generated_files/smt1.h"
-void SMT1_SingleDataAcquisition(void);
-# 283 "./mcc_generated_files/smt1.h"
-void SMT1_RepeatDataAcquisition(void);
-# 312 "./mcc_generated_files/smt1.h"
-void SMT1_ManualPeriodBufferUpdate(void);
-# 341 "./mcc_generated_files/smt1.h"
-void SMT1_ManualPulseWidthBufferUpdate(void);
-# 370 "./mcc_generated_files/smt1.h"
-void SMT1_ManualTimerReset(void);
-# 405 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsWindowOpen(void);
-# 436 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsSignalAcquisitionInProgress(void);
-# 466 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsTimerIncrementing(void);
-# 491 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetCapturedPulseWidth(void);
-# 516 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetCapturedPeriod(void);
-# 541 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetTimerValue(void);
-# 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
+# 68 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
+# 81 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
+# 94 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 15 "src/HIL/../../inc/HIL/../../system_def.h" 2
 # 15 "src/HIL/../../inc/HIL/hil_led.h" 2

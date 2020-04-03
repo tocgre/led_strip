@@ -1,4 +1,4 @@
-# 1 "hil_led.c"
+# 1 "src/HIL/hil_pwm.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,18 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "hil_led.c" 2
+# 1 "src/HIL/hil_pwm.c" 2
+
+
+
+
+
+
+
+# 1 "src/HIL/../../inc/HIL/hil_pwm.h" 1
+# 15 "src/HIL/../../inc/HIL/hil_pwm.h"
+# 1 "src/HIL/../../inc/HIL/../../system_def.h" 1
+# 15 "src/HIL/../../inc/HIL/../../system_def.h"
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -25911,53 +25922,78 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/smt1.h" 1
-# 92 "./mcc_generated_files/smt1.h"
-void SMT1_Initialize(void);
-# 116 "./mcc_generated_files/smt1.h"
-void SMT1_DataAcquisitionEnable(void);
-# 145 "./mcc_generated_files/smt1.h"
-void SMT1_DataAcquisitionDisable(void);
-# 176 "./mcc_generated_files/smt1.h"
-void SMT1_HaltCounter(void);
-# 200 "./mcc_generated_files/smt1.h"
-void SMT1_SetPeriod(uint32_t periodVal);
-# 225 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetPeriod(void);
-# 254 "./mcc_generated_files/smt1.h"
-void SMT1_SingleDataAcquisition(void);
-# 283 "./mcc_generated_files/smt1.h"
-void SMT1_RepeatDataAcquisition(void);
-# 312 "./mcc_generated_files/smt1.h"
-void SMT1_ManualPeriodBufferUpdate(void);
-# 341 "./mcc_generated_files/smt1.h"
-void SMT1_ManualPulseWidthBufferUpdate(void);
-# 370 "./mcc_generated_files/smt1.h"
-void SMT1_ManualTimerReset(void);
-# 405 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsWindowOpen(void);
-# 436 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsSignalAcquisitionInProgress(void);
-# 466 "./mcc_generated_files/smt1.h"
-_Bool SMT1_IsTimerIncrementing(void);
-# 491 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetCapturedPulseWidth(void);
-# 516 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetCapturedPeriod(void);
-# 541 "./mcc_generated_files/smt1.h"
-uint32_t SMT1_GetTimerValue(void);
-# 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
+# 68 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
+# 81 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 95 "./mcc_generated_files/mcc.h"
+# 94 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 1 "hil_led.c" 2
+# 15 "src/HIL/../../inc/HIL/../../system_def.h" 2
+# 15 "src/HIL/../../inc/HIL/hil_pwm.h" 2
 
 
-void vHILLED_Init(void)
+
+
+
+
+
+extern void vHILPWM5_Init (void);
+extern void vHILPWM_SetDutyCycle (uint16_t __u16_DutyCycle);
+# 8 "src/HIL/hil_pwm.c" 2
+
+# 1 "src/HIL/../../inc/HIL/hil_led.h" 1
+# 17 "src/HIL/../../inc/HIL/hil_led.h"
+extern void vHILLED_Init (void);
+extern void vHILLED_Set (void);
+extern void vHILLED_Clear (void);
+# 9 "src/HIL/hil_pwm.c" 2
+
+
+
+void vHILPWM5_Init(void)
 {
-    TRISA = 0xFE;
+
+    PWM5CON = 0x00;
+
+
+    T2PR = 50U;
+
+
+    vHILPWM_SetDutyCycle((102U));
+
+
+    PIR4 &= ~(0x04);
+
+
+    T2CLK = 0x01;
+
+
+    T2CON = 0x00;
+
+
+    T2CON |= 0x80;
+
+
+    PWM5CON = 0x80;
+
+    while(TMR2IF != 1U);
+
+
+    TRISA &= ~((0x01));
+
+    RA0PPS = 0x0D;
+
+
+
+}
+
+
+
+void vHILPWM_SetDutyCycle(uint16_t __u16_DutyCycle)
+{
+
+    PWM5DCL = (uint8_t)(__u16_DutyCycle << 6U);
+
+    PWM5DCH = (uint8_t)(__u16_DutyCycle >> 2U);
+
 }

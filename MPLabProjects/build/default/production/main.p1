@@ -1,21 +1,18 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"69 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
+"68 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 68: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"17 ./inc/HIL/hil_led.h
-[; ;./inc/HIL/hil_led.h: 17: extern void vHILLED_Init (void);
-[v _vHILLED_Init `(v ~T0 @X0 0 ef ]
-"18
-[; ;./inc/HIL/hil_led.h: 18: extern void vHILLED_Set (void);
-[v _vHILLED_Set `(v ~T0 @X0 0 ef ]
+"22 ./inc/HIL/hil_pwm.h
+[; ;./inc/HIL/hil_pwm.h: 22: extern void vHILPWM5_Init (void);
+[v _vHILPWM5_Init `(v ~T0 @X0 0 ef ]
+"23
+[; ;./inc/HIL/hil_pwm.h: 23: extern void vHILPWM_SetDutyCycle (uint16_t __u16_DutyCycle);
+[v _vHILPWM_SetDutyCycle `(v ~T0 @X0 0 ef1`us ]
 [v F15351 `(v ~T0 @X0 1 tf1`ul ]
 "187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
 [v __delay `JF15351 ~T0 @X0 0 e ]
 [p i __delay ]
-"19 ./inc/HIL/hil_led.h
-[; ;./inc/HIL/hil_led.h: 19: extern void vHILLED_Clear (void);
-[v _vHILLED_Clear `(v ~T0 @X0 0 ef ]
 "250 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2156,45 +2153,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 46527: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"7 main.c
-[; ;main.c: 7: void main(void)
+"9 main.c
+[; ;main.c: 9: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"8
-[; ;main.c: 8: {
+"10
+[; ;main.c: 10: {
 {
 [e :U _main ]
 [f ]
-"10
-[; ;main.c: 10:     SYSTEM_Initialize();
+"13
+[; ;main.c: 13:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"11
-[; ;main.c: 11:     vHILLED_Init();
-[e ( _vHILLED_Init ..  ]
-"23
-[; ;main.c: 23:     while (1)
-[e :U 2150 ]
-"24
-[; ;main.c: 24:     {
-{
-"25
-[; ;main.c: 25:         vHILLED_Set();
-[e ( _vHILLED_Set ..  ]
-"26
-[; ;main.c: 26:         _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"27
-[; ;main.c: 27:         vHILLED_Clear();
-[e ( _vHILLED_Clear ..  ]
-"28
-[; ;main.c: 28:         _delay((unsigned long)((500)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"15
+[; ;main.c: 15:     vHILPWM5_Init();
+[e ( _vHILPWM5_Init ..  ]
 "29
-[; ;main.c: 29:     }
+[; ;main.c: 29:     uint8_t _u8_VitesseMontee = 30U;
+[v __u8_VitesseMontee `uc ~T0 @X0 1 a ]
+[e = __u8_VitesseMontee -> -> 30 `ui `uc ]
+"30
+[; ;main.c: 30:     uint8_t _u8_VitesseDescente = 30U;
+[v __u8_VitesseDescente `uc ~T0 @X0 1 a ]
+[e = __u8_VitesseDescente -> -> 30 `ui `uc ]
+"33
+[; ;main.c: 33:     while (1U)
+[e :U 2150 ]
+"34
+[; ;main.c: 34:     {
+{
+"35
+[; ;main.c: 35:         for(uint16_t __u16_Counter = 0U; __u16_Counter < ((204U) - _u8_VitesseMontee); __u16_Counter += _u8_VitesseMontee)
+{
+[v ___u16_Counter `us ~T0 @X0 1 a ]
+[e = ___u16_Counter -> -> 0 `ui `us ]
+[e $U 2155  ]
+[e :U 2152 ]
+"36
+[; ;main.c: 36:         {
+{
+"37
+[; ;main.c: 37:             vHILPWM_SetDutyCycle(__u16_Counter);
+[e ( _vHILPWM_SetDutyCycle (1 ___u16_Counter ]
+"38
+[; ;main.c: 38:             _delay((unsigned long)((100U)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `ui `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"39
+[; ;main.c: 39:         }
+}
+[e =+ ___u16_Counter -> __u8_VitesseMontee `us ]
+[e :U 2155 ]
+[e $ < -> ___u16_Counter `ui - -> 204 `ui -> __u8_VitesseMontee `ui 2152  ]
+[e :U 2153 ]
+}
+"40
+[; ;main.c: 40:         for(uint16_t __u16_Counter2 = (204U); __u16_Counter2 > (0U + _u8_VitesseDescente); __u16_Counter2 -= _u8_VitesseDescente)
+{
+[v ___u16_Counter2 `us ~T0 @X0 1 a ]
+[e = ___u16_Counter2 -> -> 204 `ui `us ]
+[e $U 2159  ]
+[e :U 2156 ]
+"41
+[; ;main.c: 41:         {
+{
+"42
+[; ;main.c: 42:             vHILPWM_SetDutyCycle(__u16_Counter2);
+[e ( _vHILPWM_SetDutyCycle (1 ___u16_Counter2 ]
+"43
+[; ;main.c: 43:             _delay((unsigned long)((100U)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `ui `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"44
+[; ;main.c: 44:         }
+}
+[e =- ___u16_Counter2 -> __u8_VitesseDescente `us ]
+[e :U 2159 ]
+[e $ > -> ___u16_Counter2 `ui + -> 0 `ui -> __u8_VitesseDescente `ui 2156  ]
+[e :U 2157 ]
+}
+"45
+[; ;main.c: 45:     }
 }
 [e :U 2149 ]
 [e $U 2150  ]
 [e :U 2151 ]
-"30
-[; ;main.c: 30: }
+"46
+[; ;main.c: 46: }
 [e :UE 2148 ]
 }

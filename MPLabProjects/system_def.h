@@ -13,6 +13,7 @@ extern "C" {
 #endif
 
 #include "mcc_generated_files/mcc.h"
+#include <stdint.h>
 
     
 /***************DEFINE*****************/

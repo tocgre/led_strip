@@ -1,5 +1,7 @@
 #include "system_def.h"
 #include "inc/HIL/hil_led.h"
+#include "inc/HIL/hil_pwm.h"
+
 
 /*
                          Main application
@@ -7,8 +9,10 @@
 void main(void)
 {
     // Initialize the device
+    /*Fosc = 16 MHz*/
     SYSTEM_Initialize();
-    vHILLED_Init();
+//    vHILLED_Init();
+    vHILPWM5_Init();
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
@@ -20,12 +24,24 @@ void main(void)
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
     
-    while (1)
+    
+    
+    uint8_t _u8_VitesseMontee = 30U;
+    uint8_t _u8_VitesseDescente = 30U;
+    
+    
+    while (1U)
     {
-        vHILLED_Set();
-        __delay_ms(500);
-        vHILLED_Clear();
-        __delay_ms(500);
+        for(uint16_t __u16_Counter = 0U; __u16_Counter < (PWM_DUTY_CYCLE_100_POURCENT - _u8_VitesseMontee); __u16_Counter += _u8_VitesseMontee)
+        {
+            vHILPWM_SetDutyCycle(__u16_Counter);
+            __delay_ms(100U);
+        }
+        for(uint16_t __u16_Counter2 = PWM_DUTY_CYCLE_100_POURCENT; __u16_Counter2 > (0U + _u8_VitesseDescente); __u16_Counter2 -= _u8_VitesseDescente)
+        {
+            vHILPWM_SetDutyCycle(__u16_Counter2);
+            __delay_ms(100U);
+        }
     }
 }
 /**
