@@ -39,10 +39,22 @@
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 "12 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
 [v _vHILPWM5_Init vHILPWM5_Init `(v  1 e 1 0 ]
-"51
-[v _vHILPWM_SetDutyCycle vHILPWM_SetDutyCycle `(v  1 e 1 0 ]
+"48
+[v _vHILPWM6_Init vHILPWM6_Init `(v  1 e 1 0 ]
+"84
+[v _vHILPWM7_Init vHILPWM7_Init `(v  1 e 1 0 ]
+"120
+[v _vHILPWM5_SetDutyCycle vHILPWM5_SetDutyCycle `(v  1 e 1 0 ]
+"130
+[v _vHILPWM6_SetDutyCycle vHILPWM6_SetDutyCycle `(v  1 e 1 0 ]
+"140
+[v _vHILPWM7_SetDutyCycle vHILPWM7_SetDutyCycle `(v  1 e 1 0 ]
 "4369 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
 [v _PIR4 PIR4 `VEuc  1 e 1 @14756 ]
+"4550
+[v _PIR7 PIR7 `VEuc  1 e 1 @14759 ]
+"4622
+[v _PIR9 PIR9 `VEuc  1 e 1 @14761 ]
 "4686
 [v _PMD0 PMD0 `VEuc  1 e 1 @14784 ]
 "4763
@@ -71,6 +83,10 @@
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @14815 ]
 "6460
 [v _RA0PPS RA0PPS `VEuc  1 e 1 @14848 ]
+"6510
+[v _RA1PPS RA1PPS `VEuc  1 e 1 @14849 ]
+"6560
+[v _RA2PPS RA2PPS `VEuc  1 e 1 @14850 ]
 "7660
 [v _ANSELA ANSELA `VEuc  1 e 1 @14912 ]
 "7722
@@ -117,12 +133,36 @@
 [v _SMT1WINPPS SMT1WINPPS `VEuc  1 e 1 @15057 ]
 "10493
 [v _SMT1SIGPPS SMT1SIGPPS `VEuc  1 e 1 @15058 ]
+"37358
+[v _PWM7DCL PWM7DCL `VEuc  1 e 1 @16228 ]
+"37424
+[v _PWM7DCH PWM7DCH `VEuc  1 e 1 @16229 ]
+"37594
+[v _PWM7CON PWM7CON `VEuc  1 e 1 @16230 ]
+"37657
+[v _PWM6DCL PWM6DCL `VEuc  1 e 1 @16232 ]
+"37723
+[v _PWM6DCH PWM6DCH `VEuc  1 e 1 @16233 ]
+"37893
+[v _PWM6CON PWM6CON `VEuc  1 e 1 @16234 ]
 "37956
 [v _PWM5DCL PWM5DCL `VEuc  1 e 1 @16236 ]
 "38022
 [v _PWM5DCH PWM5DCH `VEuc  1 e 1 @16237 ]
 "38192
 [v _PWM5CON PWM5CON `VEuc  1 e 1 @16238 ]
+"39254
+[v _T6PR T6PR `VEuc  1 e 1 @16275 ]
+"39292
+[v _T6CON T6CON `VEuc  1 e 1 @16276 ]
+"39571
+[v _T6CLK T6CLK `VEuc  1 e 1 @16278 ]
+"40730
+[v _T4PR T4PR `VEuc  1 e 1 @16287 ]
+"40768
+[v _T4CON T4CON `VEuc  1 e 1 @16288 ]
+"41047
+[v _T4CLK T4CLK `VEuc  1 e 1 @16290 ]
 "42206
 [v _T2PR T2PR `VEuc  1 e 1 @16299 ]
 "42244
@@ -145,29 +185,55 @@
 [v _PORTA PORTA `VEuc  1 e 1 @16330 ]
 "55733
 [v _TMR2IF TMR2IF `VEb  1 e 0 @118050 ]
+"55823
+[v _TMR4IF TMR4IF `VEb  1 e 0 @118072 ]
+"55913
+[v _TMR6IF TMR6IF `VEb  1 e 0 @118088 ]
 "9 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"40
-[v main@__u16_Counter2 __u16_Counter2 `us  1 a 2 8 ]
-"35
-[v main@__u16_Counter __u16_Counter `us  1 a 2 6 ]
-"30
-[v main@_u8_VitesseDescente _u8_VitesseDescente `uc  1 a 1 11 ]
-"29
-[v main@_u8_VitesseMontee _u8_VitesseMontee `uc  1 a 1 10 ]
-"46
+"44
+[v main@__u16_Counter2 __u16_Counter2 `us  1 a 2 10 ]
+"37
+[v main@__u16_Counter __u16_Counter `us  1 a 2 8 ]
+"32
+[v main@_u8_VitesseDescente _u8_VitesseDescente `uc  1 a 1 7 ]
+"31
+[v main@_u8_VitesseMontee _u8_VitesseMontee `uc  1 a 1 6 ]
+"52
 } 0
-"12 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+"84 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+[v _vHILPWM7_Init vHILPWM7_Init `(v  1 e 1 0 ]
+{
+"116
+} 0
+"140
+[v _vHILPWM7_SetDutyCycle vHILPWM7_SetDutyCycle `(v  1 e 1 0 ]
+{
+[v vHILPWM7_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 0 ]
+"146
+} 0
+"48
+[v _vHILPWM6_Init vHILPWM6_Init `(v  1 e 1 0 ]
+{
+"80
+} 0
+"130
+[v _vHILPWM6_SetDutyCycle vHILPWM6_SetDutyCycle `(v  1 e 1 0 ]
+{
+[v vHILPWM6_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 0 ]
+"136
+} 0
+"12
 [v _vHILPWM5_Init vHILPWM5_Init `(v  1 e 1 0 ]
 {
-"47
+"44
 } 0
-"51
-[v _vHILPWM_SetDutyCycle vHILPWM_SetDutyCycle `(v  1 e 1 0 ]
+"120
+[v _vHILPWM5_SetDutyCycle vHILPWM5_SetDutyCycle `(v  1 e 1 0 ]
 {
-[v vHILPWM_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 0 ]
-"58
+[v vHILPWM5_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 0 ]
+"126
 } 0
 "50 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]

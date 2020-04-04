@@ -18,7 +18,9 @@ extern "C" {
     
 /***************DEFINE*****************/
 #define LED_PORT                     (PORTA)
-#define LED_PORT_PIN                 (0x01)  /*Pin RA0 if PORTA*/
+#define LED1_PORT_PIN                (0x01)  /*Pin RA0 if PORTA*/
+#define LED2_PORT_PIN                (0x02)  /*Pin RA1 if PORTA*/
+#define LED3_PORT_PIN                (0x04)  /*Pin RA2 if PORTA*/
 
 #ifdef	__cplusplus
 }

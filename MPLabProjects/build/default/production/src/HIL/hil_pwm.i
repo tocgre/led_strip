@@ -25938,7 +25938,11 @@ void PMD_Initialize(void);
 
 
 extern void vHILPWM5_Init (void);
-extern void vHILPWM_SetDutyCycle (uint16_t __u16_DutyCycle);
+extern void vHILPWM6_Init (void);
+extern void vHILPWM7_Init (void);
+extern void vHILPWM5_SetDutyCycle (uint16_t __u16_DutyCycle);
+extern void vHILPWM6_SetDutyCycle (uint16_t __u16_DutyCycle);
+extern void vHILPWM7_SetDutyCycle (uint16_t __u16_DutyCycle);
 # 8 "src/HIL/hil_pwm.c" 2
 
 # 1 "src/HIL/../../inc/HIL/hil_led.h" 1
@@ -25959,7 +25963,7 @@ void vHILPWM5_Init(void)
     T2PR = 50U;
 
 
-    vHILPWM_SetDutyCycle((102U));
+    vHILPWM5_SetDutyCycle((102U));
 
 
     PIR4 &= ~(0x04);
@@ -25982,18 +25986,106 @@ void vHILPWM5_Init(void)
     TRISA &= ~((0x01));
 
     RA0PPS = 0x0D;
-
-
-
 }
 
 
 
-void vHILPWM_SetDutyCycle(uint16_t __u16_DutyCycle)
+void vHILPWM6_Init(void)
+{
+
+    PWM6CON = 0x00;
+
+
+    T4PR = 50U;
+
+
+    vHILPWM6_SetDutyCycle((102U));
+
+
+    PIR7 &= ~(0x01);
+
+
+    T4CLK = 0x01;
+
+
+    T4CON = 0x00;
+
+
+    T4CON |= 0x80;
+
+
+    PWM6CON = 0x80;
+
+    while(TMR4IF != 1U);
+
+
+    TRISA &= ~((0x02));
+
+    RA1PPS = 0x0E;
+}
+
+
+
+void vHILPWM7_Init(void)
+{
+
+    PWM7CON = 0x00;
+
+
+    T6PR = 50U;
+
+
+    vHILPWM7_SetDutyCycle((102U));
+
+
+    PIR9 &= ~(0x01);
+
+
+    T6CLK = 0x01;
+
+
+    T6CON = 0x00;
+
+
+    T6CON |= 0x80;
+
+
+    PWM7CON = 0x80;
+
+    while(TMR6IF != 1U);
+
+
+    TRISA &= ~((0x04));
+
+    RA2PPS = 0x0F;
+}
+
+
+
+void vHILPWM5_SetDutyCycle(uint16_t __u16_DutyCycle)
 {
 
     PWM5DCL = (uint8_t)(__u16_DutyCycle << 6U);
 
     PWM5DCH = (uint8_t)(__u16_DutyCycle >> 2U);
+}
 
+
+
+void vHILPWM6_SetDutyCycle(uint16_t __u16_DutyCycle)
+{
+
+    PWM6DCL = (uint8_t)(__u16_DutyCycle << 6U);
+
+    PWM6DCH = (uint8_t)(__u16_DutyCycle >> 2U);
+}
+
+
+
+void vHILPWM7_SetDutyCycle(uint16_t __u16_DutyCycle)
+{
+
+    PWM7DCL = (uint8_t)(__u16_DutyCycle << 6U);
+
+    PWM7DCH = (uint8_t)(__u16_DutyCycle >> 2U);
 }

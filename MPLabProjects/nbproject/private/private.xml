@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/src/HIL/hil_led.c</file>
             <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/main.c</file>
+            <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/inc/HIL/hil_pwm.h</file>
             <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/mcc_generated_files/device_config.c</file>
+            <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/system_def.h</file>
+            <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/src/HIL/hil_pwm.c</file>
         </group>
     </open-files>
 </project-private>

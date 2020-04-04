@@ -25932,7 +25932,11 @@ extern void vHILLED_Clear (void);
 # 1 "./inc/HIL/hil_pwm.h" 1
 # 22 "./inc/HIL/hil_pwm.h"
 extern void vHILPWM5_Init (void);
-extern void vHILPWM_SetDutyCycle (uint16_t __u16_DutyCycle);
+extern void vHILPWM6_Init (void);
+extern void vHILPWM7_Init (void);
+extern void vHILPWM5_SetDutyCycle (uint16_t __u16_DutyCycle);
+extern void vHILPWM6_SetDutyCycle (uint16_t __u16_DutyCycle);
+extern void vHILPWM7_SetDutyCycle (uint16_t __u16_DutyCycle);
 # 3 "main.c" 2
 
 
@@ -25947,22 +25951,28 @@ void main(void)
     SYSTEM_Initialize();
 
     vHILPWM5_Init();
-# 29 "main.c"
-    uint8_t _u8_VitesseMontee = 30U;
-    uint8_t _u8_VitesseDescente = 30U;
+    vHILPWM6_Init();
+    vHILPWM7_Init();
+# 31 "main.c"
+    uint8_t _u8_VitesseMontee = 2U;
+    uint8_t _u8_VitesseDescente = 2U;
 
 
     while (1U)
     {
         for(uint16_t __u16_Counter = 0U; __u16_Counter < ((204U) - _u8_VitesseMontee); __u16_Counter += _u8_VitesseMontee)
         {
-            vHILPWM_SetDutyCycle(__u16_Counter);
-            _delay((unsigned long)((100U)*(4000000/4000.0)));
+            vHILPWM5_SetDutyCycle(__u16_Counter);
+            vHILPWM6_SetDutyCycle(__u16_Counter);
+            vHILPWM7_SetDutyCycle(__u16_Counter);
+            _delay((unsigned long)((10U)*(4000000/4000.0)));
         }
         for(uint16_t __u16_Counter2 = (204U); __u16_Counter2 > (0U + _u8_VitesseDescente); __u16_Counter2 -= _u8_VitesseDescente)
         {
-            vHILPWM_SetDutyCycle(__u16_Counter2);
-            _delay((unsigned long)((100U)*(4000000/4000.0)));
+            vHILPWM5_SetDutyCycle(__u16_Counter2);
+            vHILPWM6_SetDutyCycle(__u16_Counter2);
+            vHILPWM7_SetDutyCycle(__u16_Counter2);
+            _delay((unsigned long)((10U)*(4000000/4000.0)));
         }
     }
 }

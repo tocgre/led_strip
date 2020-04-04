@@ -20,7 +20,11 @@ extern "C" {
 #define PWM_DUTY_CYCLE_100_POURCENT                        (204U) /* Duty Cycle Ratio = 1 sur l'équation 24-3 p341*/
     
 extern void                 vHILPWM5_Init                  (void);
-extern void                 vHILPWM_SetDutyCycle           (uint16_t __u16_DutyCycle);
+extern void                 vHILPWM6_Init                  (void);
+extern void                 vHILPWM7_Init                  (void);
+extern void                 vHILPWM5_SetDutyCycle          (uint16_t __u16_DutyCycle);
+extern void                 vHILPWM6_SetDutyCycle          (uint16_t __u16_DutyCycle);
+extern void                 vHILPWM7_SetDutyCycle          (uint16_t __u16_DutyCycle);
 
 
 #ifdef	__cplusplus

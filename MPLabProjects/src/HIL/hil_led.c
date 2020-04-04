@@ -10,17 +10,17 @@
 void vHILLED_Init(void)
 {
     /*Set LED pin in Output mode*/
-    TRISA &= ~(LED_PORT_PIN);
+    TRISA &= ~(LED1_PORT_PIN);
 }
 
 
 void vHILLED_Set(void)
 {
-    LED_PORT |= LED_PORT_PIN;
+    LED_PORT |= LED1_PORT_PIN;
 }
 
 
 void vHILLED_Clear(void)
 {
-    LED_PORT &= ~(LED_PORT_PIN);
+    LED_PORT &= ~(LED1_PORT_PIN);
 }

@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Fri Apr 03 16:39:36 2020
+                                                                                               Sat Apr 04 20:01:24 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F25K42
@@ -17,844 +17,1214 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
     11                           	psect	text4,global,reloc=2,class=CODE,delta=1
     12                           	psect	text5,global,reloc=2,class=CODE,delta=1
     13                           	psect	text6,global,reloc=2,class=CODE,delta=1
-    14                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
-    15                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
-    16  0000                     
-    17                           ; Version 2.10
-    18                           ; Generated 31/07/2019 GMT
-    19                           ; 
-    20                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    21                           ; All rights reserved.
-    22                           ; 
-    23                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+    14                           	psect	text7,global,reloc=2,class=CODE,delta=1
+    15                           	psect	text8,global,reloc=2,class=CODE,delta=1
+    16                           	psect	text9,global,reloc=2,class=CODE,delta=1
+    17                           	psect	text10,global,reloc=2,class=CODE,delta=1
+    18                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1,noexec
+    19                           	psect	rparam,global,class=COMRAM,space=1,delta=1,noexec
+    20  0000                     
+    21                           ; Version 2.10
+    22                           ; Generated 31/07/2019 GMT
+    23                           ; 
+    24                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    25                           ; All rights reserved.
+    26                           ; 
+    27                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    24                           ; 
-    25                           ; Redistribution and use in source and binary forms, with or without modification, are
-    26                           ; permitted provided that the following conditions are met:
-    27                           ; 
-    28                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+    28                           ; 
+    29                           ; Redistribution and use in source and binary forms, with or without modification, are
+    30                           ; permitted provided that the following conditions are met:
+    31                           ; 
+    32                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
       +                          t of
-    29                           ;        conditions and the following disclaimer.
-    30                           ; 
-    31                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
-      +                          list
-    32                           ;        of conditions and the following disclaimer in the documentation and/or other
-    33                           ;        materials provided with the distribution.
+    33                           ;        conditions and the following disclaimer.
     34                           ; 
-    35                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+    35                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    36                           ;        of conditions and the following disclaimer in the documentation and/or other
+    37                           ;        materials provided with the distribution.
+    38                           ; 
+    39                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
       +                          is
-    36                           ;        software without specific prior written permission.
-    37                           ; 
-    38                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    39                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    40                           ;        software without specific prior written permission.
+    41                           ; 
+    42                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    43                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    40                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    44                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    41                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    42                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    43                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    45                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    46                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    47                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    44                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    48                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    45                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    46                           ; 
-    47                           ; 
-    48                           ; Code-generator required, PIC18F25K42 Definitions
-    49                           ; 
-    50                           ; SFR Addresses
-    51  0000                     _PIR4	set	14756
-    52  0000                     _PMD7	set	14791
-    53  0000                     _PMD6	set	14790
-    54  0000                     _PMD5	set	14789
-    55  0000                     _PMD4	set	14788
-    56  0000                     _PMD3	set	14787
-    57  0000                     _PMD2	set	14786
-    58  0000                     _PMD1	set	14785
-    59  0000                     _PMD0	set	14784
-    60  0000                     _OSCTUNE	set	14814
-    61  0000                     _OSCFRQ	set	14815
-    62  0000                     _OSCEN	set	14813
-    63  0000                     _OSCCON3	set	14811
-    64  0000                     _OSCCON1	set	14809
-    65  0000                     _TMR2IF	set	118050
-    66  0000                     _RA0PPS	set	14848
-    67  0000                     _SMT1SIGPPS	set	15058
-    68  0000                     _SMT1WINPPS	set	15057
-    69  0000                     _INLVLE	set	14980
-    70  0000                     _INLVLC	set	14948
-    71  0000                     _INLVLB	set	14932
-    72  0000                     _INLVLA	set	14916
-    73  0000                     _SLRCONC	set	14947
-    74  0000                     _SLRCONB	set	14931
-    75  0000                     _SLRCONA	set	14915
-    76  0000                     _ODCONC	set	14946
-    77  0000                     _ODCONB	set	14930
-    78  0000                     _ODCONA	set	14914
-    79  0000                     _RC4I2C	set	14955
-    80  0000                     _RC3I2C	set	14954
-    81  0000                     _RB2I2C	set	14939
-    82  0000                     _RB1I2C	set	14938
-    83  0000                     _WPUC	set	14945
-    84  0000                     _WPUA	set	14913
-    85  0000                     _WPUB	set	14929
-    86  0000                     _WPUE	set	14977
-    87  0000                     _ANSELA	set	14912
-    88  0000                     _ANSELB	set	14928
-    89  0000                     _ANSELC	set	14944
-    90  0000                     _PWM5DCH	set	16237
-    91  0000                     _PWM5DCL	set	16236
-    92  0000                     _T2CON	set	16300
-    93  0000                     _T2CLK	set	16302
-    94  0000                     _T2PR	set	16299
-    95  0000                     _PWM5CON	set	16238
-    96  0000                     _PORTA	set	16330
-    97  0000                     _TRISC	set	16324
-    98  0000                     _TRISB	set	16323
-    99  0000                     _TRISA	set	16322
-   100  0000                     _LATC	set	16316
-   101  0000                     _LATB	set	16315
-   102  0000                     _LATA	set	16314
-   103                           
-   104                           ; #config settings
-   105  0000                     
-   106                           	psect	cinit
-   107  007E28                     __pcinit:
-   108                           	opt callstack 0
-   109  007E28                     start_initialization:
-   110                           	opt callstack 0
-   111  007E28                     __initialization:
-   112                           	opt callstack 0
-   113  007E28                     end_of_initialization:
-   114                           	opt callstack 0
-   115  007E28                     __end_of__initialization:
-   116                           	opt callstack 0
-   117  007E28  0100               	movlb	0
-   118  007E2A  EF9F  F03F         	goto	_main	;jump to C main() function
-   119                           
-   120                           	psect	cstackCOMRAM
-   121  000001                     __pcstackCOMRAM:
-   122                           	opt callstack 0
-   123  000001                     vHILPWM_SetDutyCycle@__u16_DutyCycle:
-   124                           	opt callstack 0
+    49                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    50                           ; 
+    51                           ; 
+    52                           ; Code-generator required, PIC18F25K42 Definitions
+    53                           ; 
+    54                           ; SFR Addresses
+    55  0000                     _PIR9	set	14761
+    56  0000                     _PIR7	set	14759
+    57  0000                     _PIR4	set	14756
+    58  0000                     _PMD7	set	14791
+    59  0000                     _PMD6	set	14790
+    60  0000                     _PMD5	set	14789
+    61  0000                     _PMD4	set	14788
+    62  0000                     _PMD3	set	14787
+    63  0000                     _PMD2	set	14786
+    64  0000                     _PMD1	set	14785
+    65  0000                     _PMD0	set	14784
+    66  0000                     _OSCTUNE	set	14814
+    67  0000                     _OSCFRQ	set	14815
+    68  0000                     _OSCEN	set	14813
+    69  0000                     _OSCCON3	set	14811
+    70  0000                     _OSCCON1	set	14809
+    71  0000                     _TMR6IF	set	118088
+    72  0000                     _TMR4IF	set	118072
+    73  0000                     _TMR2IF	set	118050
+    74  0000                     _RA2PPS	set	14850
+    75  0000                     _RA1PPS	set	14849
+    76  0000                     _RA0PPS	set	14848
+    77  0000                     _SMT1SIGPPS	set	15058
+    78  0000                     _SMT1WINPPS	set	15057
+    79  0000                     _INLVLE	set	14980
+    80  0000                     _INLVLC	set	14948
+    81  0000                     _INLVLB	set	14932
+    82  0000                     _INLVLA	set	14916
+    83  0000                     _SLRCONC	set	14947
+    84  0000                     _SLRCONB	set	14931
+    85  0000                     _SLRCONA	set	14915
+    86  0000                     _ODCONC	set	14946
+    87  0000                     _ODCONB	set	14930
+    88  0000                     _ODCONA	set	14914
+    89  0000                     _RC4I2C	set	14955
+    90  0000                     _RC3I2C	set	14954
+    91  0000                     _RB2I2C	set	14939
+    92  0000                     _RB1I2C	set	14938
+    93  0000                     _WPUC	set	14945
+    94  0000                     _WPUA	set	14913
+    95  0000                     _WPUB	set	14929
+    96  0000                     _WPUE	set	14977
+    97  0000                     _ANSELA	set	14912
+    98  0000                     _ANSELB	set	14928
+    99  0000                     _ANSELC	set	14944
+   100  0000                     _PWM7DCH	set	16229
+   101  0000                     _PWM7DCL	set	16228
+   102  0000                     _PWM6DCH	set	16233
+   103  0000                     _PWM6DCL	set	16232
+   104  0000                     _PWM5DCH	set	16237
+   105  0000                     _PWM5DCL	set	16236
+   106  0000                     _T6CON	set	16276
+   107  0000                     _T6CLK	set	16278
+   108  0000                     _T6PR	set	16275
+   109  0000                     _PWM7CON	set	16230
+   110  0000                     _T4CON	set	16288
+   111  0000                     _T4CLK	set	16290
+   112  0000                     _T4PR	set	16287
+   113  0000                     _PWM6CON	set	16234
+   114  0000                     _T2CON	set	16300
+   115  0000                     _T2CLK	set	16302
+   116  0000                     _T2PR	set	16299
+   117  0000                     _PWM5CON	set	16238
+   118  0000                     _PORTA	set	16330
+   119  0000                     _TRISC	set	16324
+   120  0000                     _TRISB	set	16323
+   121  0000                     _TRISA	set	16322
+   122  0000                     _LATC	set	16316
+   123  0000                     _LATB	set	16315
+   124  0000                     _LATA	set	16314
    125                           
-   126                           ; 2 bytes @ 0x0
-   127  000001                     	ds	2
-   128  000003                     ??_vHILPWM_SetDutyCycle:
-   129                           
-   130                           ; 1 bytes @ 0x2
-   131  000003                     	ds	2
-   132  000005                     ??_main:
-   133                           
-   134                           ; 1 bytes @ 0x4
-   135  000005                     	ds	2
-   136  000007                     main@__u16_Counter:
-   137                           	opt callstack 0
-   138                           
-   139                           ; 2 bytes @ 0x6
-   140  000007                     	ds	2
-   141  000009                     main@__u16_Counter2:
-   142                           	opt callstack 0
-   143                           
-   144                           ; 2 bytes @ 0x8
-   145  000009                     	ds	2
-   146  00000B                     main@_u8_VitesseMontee:
-   147                           	opt callstack 0
-   148                           
-   149                           ; 1 bytes @ 0xA
-   150  00000B                     	ds	1
-   151  00000C                     main@_u8_VitesseDescente:
-   152                           	opt callstack 0
-   153                           
-   154                           ; 1 bytes @ 0xB
-   155  00000C                     	ds	1
-   156                           
-   157 ;;
-   158 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
-   159 ;;
-   160 ;; *************** function _main *****************
-   161 ;; Defined at:
-   162 ;;		line 9 in file "main.c"
-   163 ;; Parameters:    Size  Location     Type
-   164 ;;		None
-   165 ;; Auto vars:     Size  Location     Type
-   166 ;;  __u16_Counte    2    8[COMRAM] unsigned short 
-   167 ;;  __u16_Counte    2    6[COMRAM] unsigned short 
-   168 ;;  _u8_VitesseD    1   11[COMRAM] unsigned char 
-   169 ;;  _u8_VitesseM    1   10[COMRAM] unsigned char 
-   170 ;; Return value:  Size  Location     Type
-   171 ;;                  1    wreg      void 
-   172 ;; Registers used:
-   173 ;;		wreg, status,2, status,0, cstack
-   174 ;; Tracked objects:
-   175 ;;		On entry : 0/0
-   176 ;;		On exit  : 0/0
-   177 ;;		Unchanged: 0/0
-   178 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   179 ;;      Params:         0       0       0       0       0       0       0       0       0
-   180 ;;      Locals:         6       0       0       0       0       0       0       0       0
-   181 ;;      Temps:          2       0       0       0       0       0       0       0       0
-   182 ;;      Totals:         8       0       0       0       0       0       0       0       0
-   183 ;;Total ram usage:        8 bytes
-   184 ;; Hardware stack levels required when called:    2
-   185 ;; This function calls:
-   186 ;;		_SYSTEM_Initialize
-   187 ;;		_vHILPWM5_Init
-   188 ;;		_vHILPWM_SetDutyCycle
-   189 ;; This function is called by:
-   190 ;;		Startup code after reset
-   191 ;; This function uses a non-reentrant model
-   192 ;;
-   193                           
-   194                           	psect	text0
-   195  007F3E                     __ptext0:
-   196                           	opt callstack 0
-   197  007F3E                     _main:
-   198                           	opt callstack 29
-   199  007F3E                     
-   200                           ;main.c: 13:     SYSTEM_Initialize();
-   201  007F3E  EC17  F03F         	call	_SYSTEM_Initialize	;wreg free
-   202  007F42                     
-   203                           ;main.c: 15:     vHILPWM5_Init();
-   204  007F42  EC4F  F03F         	call	_vHILPWM5_Init	;wreg free
-   205  007F46                     
-   206                           ;main.c: 29:     uint8_t _u8_VitesseMontee = 30U;
-   207  007F46  0E1E               	movlw	30
-   208  007F48  6E0B               	movwf	main@_u8_VitesseMontee^0,c
-   209  007F4A                     
-   210                           ;main.c: 30:     uint8_t _u8_VitesseDescente = 30U;
-   211  007F4A  0E1E               	movlw	30
-   212  007F4C  6E0C               	movwf	main@_u8_VitesseDescente^0,c
-   213  007F4E                     l959:
-   214                           
-   215                           ;main.c: 34:     {;main.c: 35:         for(uint16_t __u16_Counter = 0U; __u16_Counter < 
+   126                           ; #config settings
+   127  0000                     
+   128                           	psect	cinit
+   129  007D18                     __pcinit:
+   130                           	opt callstack 0
+   131  007D18                     start_initialization:
+   132                           	opt callstack 0
+   133  007D18                     __initialization:
+   134                           	opt callstack 0
+   135  007D18                     end_of_initialization:
+   136                           	opt callstack 0
+   137  007D18                     __end_of__initialization:
+   138                           	opt callstack 0
+   139  007D18  0100               	movlb	0
+   140  007D1A  EF7B  F03F         	goto	_main	;jump to C main() function
+   141                           
+   142                           	psect	cstackCOMRAM
+   143  000001                     __pcstackCOMRAM:
+   144                           	opt callstack 0
+   145  000001                     vHILPWM5_SetDutyCycle@__u16_DutyCycle:
+   146                           	opt callstack 0
+   147  000001                     vHILPWM6_SetDutyCycle@__u16_DutyCycle:
+   148                           	opt callstack 0
+   149  000001                     vHILPWM7_SetDutyCycle@__u16_DutyCycle:
+   150                           	opt callstack 0
+   151                           
+   152                           ; 2 bytes @ 0x0
+   153  000001                     	ds	2
+   154  000003                     ??_vHILPWM5_SetDutyCycle:
+   155  000003                     ??_vHILPWM6_SetDutyCycle:
+   156  000003                     ??_vHILPWM7_SetDutyCycle:
+   157                           
+   158                           ; 1 bytes @ 0x2
+   159  000003                     	ds	2
+   160  000005                     ??_main:
+   161                           
+   162                           ; 1 bytes @ 0x4
+   163  000005                     	ds	2
+   164  000007                     main@_u8_VitesseMontee:
+   165                           	opt callstack 0
+   166                           
+   167                           ; 1 bytes @ 0x6
+   168  000007                     	ds	1
+   169  000008                     main@_u8_VitesseDescente:
+   170                           	opt callstack 0
+   171                           
+   172                           ; 1 bytes @ 0x7
+   173  000008                     	ds	1
+   174  000009                     main@__u16_Counter:
+   175                           	opt callstack 0
+   176                           
+   177                           ; 2 bytes @ 0x8
+   178  000009                     	ds	2
+   179  00000B                     main@__u16_Counter2:
+   180                           	opt callstack 0
+   181                           
+   182                           ; 2 bytes @ 0xA
+   183  00000B                     	ds	2
+   184                           
+   185 ;;
+   186 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   187 ;;
+   188 ;; *************** function _main *****************
+   189 ;; Defined at:
+   190 ;;		line 9 in file "main.c"
+   191 ;; Parameters:    Size  Location     Type
+   192 ;;		None
+   193 ;; Auto vars:     Size  Location     Type
+   194 ;;  __u16_Counte    2   10[COMRAM] unsigned short 
+   195 ;;  __u16_Counte    2    8[COMRAM] unsigned short 
+   196 ;;  _u8_VitesseD    1    7[COMRAM] unsigned char 
+   197 ;;  _u8_VitesseM    1    6[COMRAM] unsigned char 
+   198 ;; Return value:  Size  Location     Type
+   199 ;;                  1    wreg      void 
+   200 ;; Registers used:
+   201 ;;		wreg, status,2, status,0, cstack
+   202 ;; Tracked objects:
+   203 ;;		On entry : 0/0
+   204 ;;		On exit  : 0/0
+   205 ;;		Unchanged: 0/0
+   206 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   207 ;;      Params:         0       0       0       0       0       0       0       0       0
+   208 ;;      Locals:         6       0       0       0       0       0       0       0       0
+   209 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   210 ;;      Totals:         8       0       0       0       0       0       0       0       0
+   211 ;;Total ram usage:        8 bytes
+   212 ;; Hardware stack levels required when called:    2
+   213 ;; This function calls:
+   214 ;;		_SYSTEM_Initialize
+   215 ;;		_vHILPWM5_Init
+   216 ;;		_vHILPWM5_SetDutyCycle
+   217 ;;		_vHILPWM6_Init
+   218 ;;		_vHILPWM6_SetDutyCycle
+   219 ;;		_vHILPWM7_Init
+   220 ;;		_vHILPWM7_SetDutyCycle
+   221 ;; This function is called by:
+   222 ;;		Startup code after reset
+   223 ;; This function uses a non-reentrant model
+   224 ;;
+   225                           
+   226                           	psect	text0
+   227  007EF6                     __ptext0:
+   228                           	opt callstack 0
+   229  007EF6                     _main:
+   230                           	opt callstack 29
+   231  007EF6                     
+   232                           ;main.c: 13:     SYSTEM_Initialize();
+   233  007EF6  EC8F  F03E         	call	_SYSTEM_Initialize	;wreg free
+   234  007EFA                     
+   235                           ;main.c: 15:     vHILPWM5_Init();
+   236  007EFA  ECED  F03E         	call	_vHILPWM5_Init	;wreg free
+   237  007EFE                     
+   238                           ;main.c: 16:     vHILPWM6_Init();
+   239  007EFE  EC0C  F03F         	call	_vHILPWM6_Init	;wreg free
+   240  007F02                     
+   241                           ;main.c: 17:     vHILPWM7_Init();
+   242  007F02  EC2B  F03F         	call	_vHILPWM7_Init	;wreg free
+   243  007F06                     
+   244                           ;main.c: 31:     uint8_t _u8_VitesseMontee = 2U;
+   245  007F06  0E02               	movlw	2
+   246  007F08  6E07               	movwf	main@_u8_VitesseMontee^0,c
+   247  007F0A                     
+   248                           ;main.c: 32:     uint8_t _u8_VitesseDescente = 2U;
+   249  007F0A  0E02               	movlw	2
+   250  007F0C  6E08               	movwf	main@_u8_VitesseDescente^0,c
+   251  007F0E                     l1113:
+   252                           
+   253                           ;main.c: 36:     {;main.c: 37:         for(uint16_t __u16_Counter = 0U; __u16_Counter < 
       +                          ((204U) - _u8_VitesseMontee); __u16_Counter += _u8_VitesseMontee)
-   216  007F4E  0E00               	movlw	0
-   217  007F50  6E08               	movwf	(main@__u16_Counter+1)^0,c
-   218  007F52  0E00               	movlw	0
-   219  007F54  6E07               	movwf	main@__u16_Counter^0,c
-   220  007F56  EFC0  F03F         	goto	l967
-   221  007F5A                     l961:
-   222                           
-   223                           ;main.c: 36:         {;main.c: 37:             vHILPWM_SetDutyCycle(__u16_Counter);
-   224  007F5A  0060  F01C  F001   	movff	main@__u16_Counter,vHILPWM_SetDutyCycle@__u16_DutyCycle
-   225  007F60  0060  F020  F002   	movff	main@__u16_Counter+1,vHILPWM_SetDutyCycle@__u16_DutyCycle+1
-   226  007F66  EC3C  F03F         	call	_vHILPWM_SetDutyCycle	;wreg free
-   227  007F6A                     
-   228                           ;main.c: 38:             _delay((unsigned long)((100U)*(4000000/4000.0)));
-   229  007F6A  0E82               	movlw	130
-   230  007F6C  6E05               	movwf	??_main^0,c
-   231  007F6E  0EDE               	movlw	222
-   232  007F70                     u77:
-   233  007F70  2EE8               	decfsz	wreg,f,c
-   234  007F72  D7FE               	bra	u77
-   235  007F74  2E05               	decfsz	??_main^0,f,c
-   236  007F76  D7FC               	bra	u77
-   237  007F78                     
-   238                           ;main.c: 39:         }
-   239  007F78  500B               	movf	main@_u8_VitesseMontee^0,w,c
-   240  007F7A  2607               	addwf	main@__u16_Counter^0,f,c
-   241  007F7C  0E00               	movlw	0
-   242  007F7E  2208               	addwfc	(main@__u16_Counter+1)^0,f,c
-   243  007F80                     l967:
-   244  007F80  0ECC               	movlw	204
-   245  007F82  6E05               	movwf	??_main^0,c
-   246  007F84  0E00               	movlw	0
-   247  007F86  6E06               	movwf	(??_main+1)^0,c
-   248  007F88  500B               	movf	main@_u8_VitesseMontee^0,w,c
-   249  007F8A  5E05               	subwf	??_main^0,f,c
-   250  007F8C  0E00               	movlw	0
-   251  007F8E  5A06               	subwfb	(??_main+1)^0,f,c
-   252  007F90  5005               	movf	??_main^0,w,c
-   253  007F92  5C07               	subwf	main@__u16_Counter^0,w,c
-   254  007F94  5006               	movf	(??_main+1)^0,w,c
-   255  007F96  5808               	subwfb	(main@__u16_Counter+1)^0,w,c
-   256  007F98  A0D8               	btfss	status,0,c
-   257  007F9A  EFD1  F03F         	goto	u51
-   258  007F9E  EFD3  F03F         	goto	u50
-   259  007FA2                     u51:
-   260  007FA2  EFAD  F03F         	goto	l961
-   261  007FA6                     u50:
-   262  007FA6                     
-   263                           ;main.c: 40:         for(uint16_t __u16_Counter2 = (204U); __u16_Counter2 > (0U + _u8_Vi
-      +                          tesseDescente); __u16_Counter2 -= _u8_VitesseDescente)
-   264  007FA6  0E00               	movlw	0
-   265  007FA8  6E0A               	movwf	(main@__u16_Counter2+1)^0,c
-   266  007FAA  0ECC               	movlw	204
-   267  007FAC  6E09               	movwf	main@__u16_Counter2^0,c
-   268  007FAE  EFEC  F03F         	goto	l977
-   269  007FB2                     l971:
+   254  007F0E  0E00               	movlw	0
+   255  007F10  6E0A               	movwf	(main@__u16_Counter+1)^0,c
+   256  007F12  0E00               	movlw	0
+   257  007F14  6E09               	movwf	main@__u16_Counter^0,c
+   258  007F16  EFB0  F03F         	goto	l1121
+   259  007F1A                     l1115:
+   260                           
+   261                           ;main.c: 38:         {;main.c: 39:             vHILPWM5_SetDutyCycle(__u16_Counter);
+   262  007F1A  0060  F024  F001   	movff	main@__u16_Counter,vHILPWM5_SetDutyCycle@__u16_DutyCycle
+   263  007F20  0060  F028  F002   	movff	main@__u16_Counter+1,vHILPWM5_SetDutyCycle@__u16_DutyCycle+1
+   264  007F26  ECB4  F03E         	call	_vHILPWM5_SetDutyCycle	;wreg free
+   265                           
+   266                           ;main.c: 40:             vHILPWM6_SetDutyCycle(__u16_Counter);
+   267  007F2A  0060  F024  F001   	movff	main@__u16_Counter,vHILPWM6_SetDutyCycle@__u16_DutyCycle
+   268  007F30  0060  F028  F002   	movff	main@__u16_Counter+1,vHILPWM6_SetDutyCycle@__u16_DutyCycle+1
+   269  007F36  ECC7  F03E         	call	_vHILPWM6_SetDutyCycle	;wreg free
    270                           
-   271                           ;main.c: 41:         {;main.c: 42:             vHILPWM_SetDutyCycle(__u16_Counter2);
-   272  007FB2  0060  F024  F001   	movff	main@__u16_Counter2,vHILPWM_SetDutyCycle@__u16_DutyCycle
-   273  007FB8  0060  F028  F002   	movff	main@__u16_Counter2+1,vHILPWM_SetDutyCycle@__u16_DutyCycle+1
-   274  007FBE  EC3C  F03F         	call	_vHILPWM_SetDutyCycle	;wreg free
-   275  007FC2                     
-   276                           ;main.c: 43:             _delay((unsigned long)((100U)*(4000000/4000.0)));
-   277  007FC2  0E82               	movlw	130
-   278  007FC4  6E05               	movwf	??_main^0,c
-   279  007FC6  0EDE               	movlw	222
-   280  007FC8                     u87:
-   281  007FC8  2EE8               	decfsz	wreg,f,c
-   282  007FCA  D7FE               	bra	u87
-   283  007FCC  2E05               	decfsz	??_main^0,f,c
-   284  007FCE  D7FC               	bra	u87
-   285  007FD0                     
-   286                           ;main.c: 44:         }
-   287  007FD0  500C               	movf	main@_u8_VitesseDescente^0,w,c
-   288  007FD2  5E09               	subwf	main@__u16_Counter2^0,f,c
-   289  007FD4  0E00               	movlw	0
-   290  007FD6  5A0A               	subwfb	(main@__u16_Counter2+1)^0,f,c
-   291  007FD8                     l977:
-   292  007FD8  500C               	movf	main@_u8_VitesseDescente^0,w,c
-   293  007FDA  6E05               	movwf	??_main^0,c
-   294  007FDC  6A06               	clrf	(??_main+1)^0,c
-   295  007FDE  5009               	movf	main@__u16_Counter2^0,w,c
-   296  007FE0  5C05               	subwf	??_main^0,w,c
-   297  007FE2  500A               	movf	(main@__u16_Counter2+1)^0,w,c
-   298  007FE4  5806               	subwfb	(??_main+1)^0,w,c
-   299  007FE6  A0D8               	btfss	status,0,c
-   300  007FE8  EFF8  F03F         	goto	u61
-   301  007FEC  EFFA  F03F         	goto	u60
-   302  007FF0                     u61:
-   303  007FF0  EFD9  F03F         	goto	l971
-   304  007FF4                     u60:
-   305  007FF4  EFA7  F03F         	goto	l959
-   306  007FF8  EFFE  F03F         	goto	start
-   307  007FFC                     __end_of_main:
-   308                           	opt callstack 0
-   309                           
-   310 ;; *************** function _vHILPWM5_Init *****************
-   311 ;; Defined at:
-   312 ;;		line 12 in file "src/HIL/hil_pwm.c"
-   313 ;; Parameters:    Size  Location     Type
-   314 ;;		None
-   315 ;; Auto vars:     Size  Location     Type
-   316 ;;		None
-   317 ;; Return value:  Size  Location     Type
-   318 ;;                  1    wreg      void 
-   319 ;; Registers used:
-   320 ;;		wreg, status,2, status,0, cstack
-   321 ;; Tracked objects:
-   322 ;;		On entry : 0/0
-   323 ;;		On exit  : 0/0
-   324 ;;		Unchanged: 0/0
-   325 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   326 ;;      Params:         0       0       0       0       0       0       0       0       0
-   327 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   328 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   329 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   330 ;;Total ram usage:        0 bytes
-   331 ;; Hardware stack levels used:    1
-   332 ;; Hardware stack levels required when called:    1
-   333 ;; This function calls:
-   334 ;;		_vHILPWM_SetDutyCycle
-   335 ;; This function is called by:
-   336 ;;		_main
-   337 ;; This function uses a non-reentrant model
-   338 ;;
-   339                           
-   340                           	psect	text1
-   341  007E9E                     __ptext1:
-   342                           	opt callstack 0
-   343  007E9E                     _vHILPWM5_Init:
-   344                           	opt callstack 29
-   345  007E9E                     
-   346                           ;src/HIL/hil_pwm.c: 15:     PWM5CON = 0x00;
-   347  007E9E  0E00               	movlw	0
-   348  007EA0  6E6E               	movwf	110,c	;volatile
-   349                           
-   350                           ;src/HIL/hil_pwm.c: 18:     T2PR = 50U;
-   351  007EA2  0E32               	movlw	50
-   352  007EA4  6EAB               	movwf	171,c	;volatile
-   353  007EA6                     
-   354                           ;src/HIL/hil_pwm.c: 21:     vHILPWM_SetDutyCycle((102U));
-   355  007EA6  0E00               	movlw	0
-   356  007EA8  6E02               	movwf	(vHILPWM_SetDutyCycle@__u16_DutyCycle+1)^0,c
-   357  007EAA  0E66               	movlw	102
-   358  007EAC  6E01               	movwf	vHILPWM_SetDutyCycle@__u16_DutyCycle^0,c
-   359  007EAE  EC3C  F03F         	call	_vHILPWM_SetDutyCycle	;wreg free
-   360  007EB2                     
-   361                           ;src/HIL/hil_pwm.c: 24:     PIR4 &= ~(0x04);
-   362  007EB2  0139               	movlb	57	; () banked
-   363  007EB4  95A4               	bcf	164,2,b	;volatile
-   364  007EB6                     
-   365                           ; BSR set to: 57
-   366                           ;src/HIL/hil_pwm.c: 27:     T2CLK = 0x01;
-   367  007EB6  0E01               	movlw	1
-   368  007EB8  6EAE               	movwf	174,c	;volatile
-   369  007EBA                     
-   370                           ; BSR set to: 57
-   371                           ;src/HIL/hil_pwm.c: 30:     T2CON = 0x00;
-   372  007EBA  0E00               	movlw	0
-   373  007EBC  6EAC               	movwf	172,c	;volatile
-   374  007EBE                     
-   375                           ; BSR set to: 57
-   376                           ;src/HIL/hil_pwm.c: 33:     T2CON |= 0x80;
-   377  007EBE  8EAC               	bsf	172,7,c	;volatile
-   378  007EC0                     
-   379                           ; BSR set to: 57
-   380                           ;src/HIL/hil_pwm.c: 36:     PWM5CON = 0x80;
-   381  007EC0  0E80               	movlw	128
-   382  007EC2  6E6E               	movwf	110,c	;volatile
-   383  007EC4                     l165:
-   384                           
-   385                           ; BSR set to: 57
-   386  007EC4  A5A4               	btfss	164,2,b	;volatile
-   387  007EC6  EF67  F03F         	goto	u41
-   388  007ECA  EF69  F03F         	goto	u40
-   389  007ECE                     u41:
-   390  007ECE  EF62  F03F         	goto	l165
-   391  007ED2                     u40:
-   392  007ED2                     
-   393                           ; BSR set to: 57
-   394                           ;src/HIL/hil_pwm.c: 41:     TRISA &= ~((0x01));
-   395  007ED2  90C2               	bcf	194,0,c	;volatile
-   396  007ED4                     
-   397                           ; BSR set to: 57
-   398                           ;src/HIL/hil_pwm.c: 43:     RA0PPS = 0x0D;
-   399  007ED4  0E0D               	movlw	13
-   400  007ED6  013A               	movlb	58	; () banked
-   401  007ED8  6F00               	movwf	0,b	;volatile
-   402  007EDA                     
-   403                           ; BSR set to: 58
-   404  007EDA  0012               	return		;funcret
-   405  007EDC                     __end_of_vHILPWM5_Init:
-   406                           	opt callstack 0
+   271                           ;main.c: 41:             vHILPWM7_SetDutyCycle(__u16_Counter);
+   272  007F3A  0060  F024  F001   	movff	main@__u16_Counter,vHILPWM7_SetDutyCycle@__u16_DutyCycle
+   273  007F40  0060  F028  F002   	movff	main@__u16_Counter+1,vHILPWM7_SetDutyCycle@__u16_DutyCycle+1
+   274  007F46  ECDA  F03E         	call	_vHILPWM7_SetDutyCycle	;wreg free
+   275  007F4A                     
+   276                           ;main.c: 42:             _delay((unsigned long)((10U)*(4000000/4000.0)));
+   277  007F4A  0E0D               	movlw	13
+   278  007F4C  6E05               	movwf	??_main^0,c
+   279  007F4E  0EFC               	movlw	252
+   280  007F50                     u117:
+   281  007F50  2EE8               	decfsz	wreg,f,c
+   282  007F52  D7FE               	bra	u117
+   283  007F54  2E05               	decfsz	??_main^0,f,c
+   284  007F56  D7FC               	bra	u117
+   285  007F58                     
+   286                           ;main.c: 43:         }
+   287  007F58  5007               	movf	main@_u8_VitesseMontee^0,w,c
+   288  007F5A  2609               	addwf	main@__u16_Counter^0,f,c
+   289  007F5C  0E00               	movlw	0
+   290  007F5E  220A               	addwfc	(main@__u16_Counter+1)^0,f,c
+   291  007F60                     l1121:
+   292  007F60  0ECC               	movlw	204
+   293  007F62  6E05               	movwf	??_main^0,c
+   294  007F64  0E00               	movlw	0
+   295  007F66  6E06               	movwf	(??_main+1)^0,c
+   296  007F68  5007               	movf	main@_u8_VitesseMontee^0,w,c
+   297  007F6A  5E05               	subwf	??_main^0,f,c
+   298  007F6C  0E00               	movlw	0
+   299  007F6E  5A06               	subwfb	(??_main+1)^0,f,c
+   300  007F70  5005               	movf	??_main^0,w,c
+   301  007F72  5C09               	subwf	main@__u16_Counter^0,w,c
+   302  007F74  5006               	movf	(??_main+1)^0,w,c
+   303  007F76  580A               	subwfb	(main@__u16_Counter+1)^0,w,c
+   304  007F78  A0D8               	btfss	status,0,c
+   305  007F7A  EFC1  F03F         	goto	u91
+   306  007F7E  EFC3  F03F         	goto	u90
+   307  007F82                     u91:
+   308  007F82  EF8D  F03F         	goto	l1115
+   309  007F86                     u90:
+   310  007F86                     
+   311                           ;main.c: 44:         for(uint16_t __u16_Counter2 = (204U); __u16_Counter2 > (0U + _u8_Vi
+      +                          tesseDescente); __u16_Counter2 -= _u8_VitesseDescente)
+   312  007F86  0E00               	movlw	0
+   313  007F88  6E0C               	movwf	(main@__u16_Counter2+1)^0,c
+   314  007F8A  0ECC               	movlw	204
+   315  007F8C  6E0B               	movwf	main@__u16_Counter2^0,c
+   316  007F8E  EFEC  F03F         	goto	l1131
+   317  007F92                     l1125:
+   318                           
+   319                           ;main.c: 45:         {;main.c: 46:             vHILPWM5_SetDutyCycle(__u16_Counter2);
+   320  007F92  0060  F02C  F001   	movff	main@__u16_Counter2,vHILPWM5_SetDutyCycle@__u16_DutyCycle
+   321  007F98  0060  F030  F002   	movff	main@__u16_Counter2+1,vHILPWM5_SetDutyCycle@__u16_DutyCycle+1
+   322  007F9E  ECB4  F03E         	call	_vHILPWM5_SetDutyCycle	;wreg free
+   323                           
+   324                           ;main.c: 47:             vHILPWM6_SetDutyCycle(__u16_Counter2);
+   325  007FA2  0060  F02C  F001   	movff	main@__u16_Counter2,vHILPWM6_SetDutyCycle@__u16_DutyCycle
+   326  007FA8  0060  F030  F002   	movff	main@__u16_Counter2+1,vHILPWM6_SetDutyCycle@__u16_DutyCycle+1
+   327  007FAE  ECC7  F03E         	call	_vHILPWM6_SetDutyCycle	;wreg free
+   328                           
+   329                           ;main.c: 48:             vHILPWM7_SetDutyCycle(__u16_Counter2);
+   330  007FB2  0060  F02C  F001   	movff	main@__u16_Counter2,vHILPWM7_SetDutyCycle@__u16_DutyCycle
+   331  007FB8  0060  F030  F002   	movff	main@__u16_Counter2+1,vHILPWM7_SetDutyCycle@__u16_DutyCycle+1
+   332  007FBE  ECDA  F03E         	call	_vHILPWM7_SetDutyCycle	;wreg free
+   333  007FC2                     
+   334                           ;main.c: 49:             _delay((unsigned long)((10U)*(4000000/4000.0)));
+   335  007FC2  0E0D               	movlw	13
+   336  007FC4  6E05               	movwf	??_main^0,c
+   337  007FC6  0EFC               	movlw	252
+   338  007FC8                     u127:
+   339  007FC8  2EE8               	decfsz	wreg,f,c
+   340  007FCA  D7FE               	bra	u127
+   341  007FCC  2E05               	decfsz	??_main^0,f,c
+   342  007FCE  D7FC               	bra	u127
+   343  007FD0                     
+   344                           ;main.c: 50:         }
+   345  007FD0  5008               	movf	main@_u8_VitesseDescente^0,w,c
+   346  007FD2  5E0B               	subwf	main@__u16_Counter2^0,f,c
+   347  007FD4  0E00               	movlw	0
+   348  007FD6  5A0C               	subwfb	(main@__u16_Counter2+1)^0,f,c
+   349  007FD8                     l1131:
+   350  007FD8  5008               	movf	main@_u8_VitesseDescente^0,w,c
+   351  007FDA  6E05               	movwf	??_main^0,c
+   352  007FDC  6A06               	clrf	(??_main+1)^0,c
+   353  007FDE  500B               	movf	main@__u16_Counter2^0,w,c
+   354  007FE0  5C05               	subwf	??_main^0,w,c
+   355  007FE2  500C               	movf	(main@__u16_Counter2+1)^0,w,c
+   356  007FE4  5806               	subwfb	(??_main+1)^0,w,c
+   357  007FE6  A0D8               	btfss	status,0,c
+   358  007FE8  EFF8  F03F         	goto	u101
+   359  007FEC  EFFA  F03F         	goto	u100
+   360  007FF0                     u101:
+   361  007FF0  EFC9  F03F         	goto	l1125
+   362  007FF4                     u100:
+   363  007FF4  EF87  F03F         	goto	l1113
+   364  007FF8  EFFE  F03F         	goto	start
+   365  007FFC                     __end_of_main:
+   366                           	opt callstack 0
+   367                           
+   368 ;; *************** function _vHILPWM7_Init *****************
+   369 ;; Defined at:
+   370 ;;		line 84 in file "src/HIL/hil_pwm.c"
+   371 ;; Parameters:    Size  Location     Type
+   372 ;;		None
+   373 ;; Auto vars:     Size  Location     Type
+   374 ;;		None
+   375 ;; Return value:  Size  Location     Type
+   376 ;;                  1    wreg      void 
+   377 ;; Registers used:
+   378 ;;		wreg, status,2, status,0, cstack
+   379 ;; Tracked objects:
+   380 ;;		On entry : 0/0
+   381 ;;		On exit  : 0/0
+   382 ;;		Unchanged: 0/0
+   383 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   384 ;;      Params:         0       0       0       0       0       0       0       0       0
+   385 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   386 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   387 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   388 ;;Total ram usage:        0 bytes
+   389 ;; Hardware stack levels used:    1
+   390 ;; Hardware stack levels required when called:    1
+   391 ;; This function calls:
+   392 ;;		_vHILPWM7_SetDutyCycle
+   393 ;; This function is called by:
+   394 ;;		_main
+   395 ;; This function uses a non-reentrant model
+   396 ;;
+   397                           
+   398                           	psect	text1
+   399  007E56                     __ptext1:
+   400                           	opt callstack 0
+   401  007E56                     _vHILPWM7_Init:
+   402                           	opt callstack 29
+   403  007E56                     
+   404                           ;src/HIL/hil_pwm.c: 87:     PWM7CON = 0x00;
+   405  007E56  0E00               	movlw	0
+   406  007E58  6E66               	movwf	102,c	;volatile
    407                           
-   408 ;; *************** function _vHILPWM_SetDutyCycle *****************
-   409 ;; Defined at:
-   410 ;;		line 51 in file "src/HIL/hil_pwm.c"
-   411 ;; Parameters:    Size  Location     Type
-   412 ;;  __u16_DutyCy    2    0[COMRAM] unsigned short 
-   413 ;; Auto vars:     Size  Location     Type
-   414 ;;		None
-   415 ;; Return value:  Size  Location     Type
-   416 ;;                  1    wreg      void 
-   417 ;; Registers used:
-   418 ;;		wreg, status,2, status,0
-   419 ;; Tracked objects:
-   420 ;;		On entry : 0/0
-   421 ;;		On exit  : 0/0
-   422 ;;		Unchanged: 0/0
-   423 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   424 ;;      Params:         2       0       0       0       0       0       0       0       0
-   425 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   426 ;;      Temps:          2       0       0       0       0       0       0       0       0
-   427 ;;      Totals:         4       0       0       0       0       0       0       0       0
-   428 ;;Total ram usage:        4 bytes
-   429 ;; Hardware stack levels used:    1
-   430 ;; This function calls:
-   431 ;;		Nothing
-   432 ;; This function is called by:
-   433 ;;		_main
-   434 ;;		_vHILPWM5_Init
-   435 ;; This function uses a non-reentrant model
-   436 ;;
-   437                           
-   438                           	psect	text2
-   439  007E78                     __ptext2:
-   440                           	opt callstack 0
-   441  007E78                     _vHILPWM_SetDutyCycle:
-   442                           	opt callstack 30
-   443  007E78                     
-   444                           ;src/HIL/hil_pwm.c: 51: void vHILPWM_SetDutyCycle(uint16_t __u16_DutyCycle);src/HIL/hil_
-      +                          pwm.c: 52: {;src/HIL/hil_pwm.c: 54:     PWM5DCL = (uint8_t)(__u16_DutyCycle << 6U);
-   445  007E78  4001               	rrncf	vHILPWM_SetDutyCycle@__u16_DutyCycle^0,w,c
-   446  007E7A  42E8               	rrncf	wreg,f,c
-   447  007E7C  0BC0               	andlw	192
-   448  007E7E  6E6C               	movwf	108,c	;volatile
-   449                           
-   450                           ;src/HIL/hil_pwm.c: 56:     PWM5DCH = (uint8_t)(__u16_DutyCycle >> 2U);
-   451  007E80  0060  F004  F003   	movff	vHILPWM_SetDutyCycle@__u16_DutyCycle,??_vHILPWM_SetDutyCycle
-   452  007E86  0060  F008  F004   	movff	vHILPWM_SetDutyCycle@__u16_DutyCycle+1,??_vHILPWM_SetDutyCycle+1
-   453  007E8C  90D8               	bcf	status,0,c
-   454  007E8E  3204               	rrcf	(??_vHILPWM_SetDutyCycle+1)^0,f,c
-   455  007E90  3203               	rrcf	??_vHILPWM_SetDutyCycle^0,f,c
-   456  007E92  90D8               	bcf	status,0,c
-   457  007E94  3204               	rrcf	(??_vHILPWM_SetDutyCycle+1)^0,f,c
-   458  007E96  3203               	rrcf	??_vHILPWM_SetDutyCycle^0,f,c
-   459  007E98  5003               	movf	??_vHILPWM_SetDutyCycle^0,w,c
-   460  007E9A  6E6D               	movwf	109,c	;volatile
-   461  007E9C  0012               	return		;funcret
-   462  007E9E                     __end_of_vHILPWM_SetDutyCycle:
-   463                           	opt callstack 0
-   464                           
-   465 ;; *************** function _SYSTEM_Initialize *****************
-   466 ;; Defined at:
-   467 ;;		line 50 in file "mcc_generated_files/mcc.c"
-   468 ;; Parameters:    Size  Location     Type
-   469 ;;		None
-   470 ;; Auto vars:     Size  Location     Type
-   471 ;;		None
-   472 ;; Return value:  Size  Location     Type
-   473 ;;                  1    wreg      void 
-   474 ;; Registers used:
-   475 ;;		wreg, status,2, cstack
-   476 ;; Tracked objects:
-   477 ;;		On entry : 0/0
-   478 ;;		On exit  : 0/0
-   479 ;;		Unchanged: 0/0
-   480 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   481 ;;      Params:         0       0       0       0       0       0       0       0       0
-   482 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   483 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   484 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   485 ;;Total ram usage:        0 bytes
-   486 ;; Hardware stack levels used:    1
-   487 ;; Hardware stack levels required when called:    1
+   408                           ;src/HIL/hil_pwm.c: 90:     T6PR = 50U;
+   409  007E5A  0E32               	movlw	50
+   410  007E5C  6E93               	movwf	147,c	;volatile
+   411  007E5E                     
+   412                           ;src/HIL/hil_pwm.c: 93:     vHILPWM7_SetDutyCycle((102U));
+   413  007E5E  0E00               	movlw	0
+   414  007E60  6E02               	movwf	(vHILPWM7_SetDutyCycle@__u16_DutyCycle+1)^0,c
+   415  007E62  0E66               	movlw	102
+   416  007E64  6E01               	movwf	vHILPWM7_SetDutyCycle@__u16_DutyCycle^0,c
+   417  007E66  ECDA  F03E         	call	_vHILPWM7_SetDutyCycle	;wreg free
+   418  007E6A                     
+   419                           ;src/HIL/hil_pwm.c: 96:     PIR9 &= ~(0x01);
+   420  007E6A  0139               	movlb	57	; () banked
+   421  007E6C  91A9               	bcf	169,0,b	;volatile
+   422  007E6E                     
+   423                           ; BSR set to: 57
+   424                           ;src/HIL/hil_pwm.c: 99:     T6CLK = 0x01;
+   425  007E6E  0E01               	movlw	1
+   426  007E70  6E96               	movwf	150,c	;volatile
+   427  007E72                     
+   428                           ; BSR set to: 57
+   429                           ;src/HIL/hil_pwm.c: 102:     T6CON = 0x00;
+   430  007E72  0E00               	movlw	0
+   431  007E74  6E94               	movwf	148,c	;volatile
+   432  007E76                     
+   433                           ; BSR set to: 57
+   434                           ;src/HIL/hil_pwm.c: 105:     T6CON |= 0x80;
+   435  007E76  8E94               	bsf	148,7,c	;volatile
+   436  007E78                     
+   437                           ; BSR set to: 57
+   438                           ;src/HIL/hil_pwm.c: 108:     PWM7CON = 0x80;
+   439  007E78  0E80               	movlw	128
+   440  007E7A  6E66               	movwf	102,c	;volatile
+   441  007E7C                     l225:
+   442                           
+   443                           ; BSR set to: 57
+   444  007E7C  A1A9               	btfss	169,0,b	;volatile
+   445  007E7E  EF43  F03F         	goto	u81
+   446  007E82  EF45  F03F         	goto	u80
+   447  007E86                     u81:
+   448  007E86  EF3E  F03F         	goto	l225
+   449  007E8A                     u80:
+   450  007E8A                     
+   451                           ; BSR set to: 57
+   452                           ;src/HIL/hil_pwm.c: 113:     TRISA &= ~((0x04));
+   453  007E8A  94C2               	bcf	194,2,c	;volatile
+   454  007E8C                     
+   455                           ; BSR set to: 57
+   456                           ;src/HIL/hil_pwm.c: 115:     RA2PPS = 0x0F;
+   457  007E8C  0E0F               	movlw	15
+   458  007E8E  013A               	movlb	58	; () banked
+   459  007E90  6F02               	movwf	2,b	;volatile
+   460  007E92                     
+   461                           ; BSR set to: 58
+   462  007E92  0012               	return		;funcret
+   463  007E94                     __end_of_vHILPWM7_Init:
+   464                           	opt callstack 0
+   465                           
+   466 ;; *************** function _vHILPWM7_SetDutyCycle *****************
+   467 ;; Defined at:
+   468 ;;		line 140 in file "src/HIL/hil_pwm.c"
+   469 ;; Parameters:    Size  Location     Type
+   470 ;;  __u16_DutyCy    2    0[COMRAM] unsigned short 
+   471 ;; Auto vars:     Size  Location     Type
+   472 ;;		None
+   473 ;; Return value:  Size  Location     Type
+   474 ;;                  1    wreg      void 
+   475 ;; Registers used:
+   476 ;;		wreg, status,2, status,0
+   477 ;; Tracked objects:
+   478 ;;		On entry : 0/0
+   479 ;;		On exit  : 0/0
+   480 ;;		Unchanged: 0/0
+   481 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   482 ;;      Params:         2       0       0       0       0       0       0       0       0
+   483 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   484 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   485 ;;      Totals:         4       0       0       0       0       0       0       0       0
+   486 ;;Total ram usage:        4 bytes
+   487 ;; Hardware stack levels used:    1
    488 ;; This function calls:
-   489 ;;		_OSCILLATOR_Initialize
-   490 ;;		_PIN_MANAGER_Initialize
-   491 ;;		_PMD_Initialize
-   492 ;; This function is called by:
-   493 ;;		_main
-   494 ;; This function uses a non-reentrant model
-   495 ;;
-   496                           
-   497                           	psect	text3
-   498  007E2E                     __ptext3:
-   499                           	opt callstack 0
-   500  007E2E                     _SYSTEM_Initialize:
-   501                           	opt callstack 29
-   502  007E2E                     
-   503                           ;mcc_generated_files/mcc.c: 52:     PMD_Initialize();
-   504  007E2E  EC2A  F03F         	call	_PMD_Initialize	;wreg free
-   505                           
-   506                           ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
-   507  007E32  EC6E  F03F         	call	_PIN_MANAGER_Initialize	;wreg free
-   508                           
-   509                           ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
-   510  007E36  EC1E  F03F         	call	_OSCILLATOR_Initialize	;wreg free
-   511  007E3A  0012               	return		;funcret
-   512  007E3C                     __end_of_SYSTEM_Initialize:
-   513                           	opt callstack 0
-   514                           
-   515 ;; *************** function _PMD_Initialize *****************
-   516 ;; Defined at:
-   517 ;;		line 71 in file "mcc_generated_files/mcc.c"
-   518 ;; Parameters:    Size  Location     Type
-   519 ;;		None
-   520 ;; Auto vars:     Size  Location     Type
-   521 ;;		None
-   522 ;; Return value:  Size  Location     Type
-   523 ;;                  1    wreg      void 
-   524 ;; Registers used:
-   525 ;;		wreg, status,2
-   526 ;; Tracked objects:
-   527 ;;		On entry : 0/0
-   528 ;;		On exit  : 0/0
-   529 ;;		Unchanged: 0/0
-   530 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   531 ;;      Params:         0       0       0       0       0       0       0       0       0
-   532 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   533 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   534 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   535 ;;Total ram usage:        0 bytes
-   536 ;; Hardware stack levels used:    1
-   537 ;; This function calls:
-   538 ;;		Nothing
-   539 ;; This function is called by:
-   540 ;;		_SYSTEM_Initialize
-   541 ;; This function uses a non-reentrant model
-   542 ;;
-   543                           
-   544                           	psect	text4
-   545  007E54                     __ptext4:
-   546                           	opt callstack 0
-   547  007E54                     _PMD_Initialize:
-   548                           	opt callstack 29
-   549  007E54                     
-   550                           ;mcc_generated_files/mcc.c: 74:     PMD0 = 0x00;
-   551  007E54  0E00               	movlw	0
-   552  007E56  0139               	movlb	57	; () banked
-   553  007E58  6FC0               	movwf	192,b	;volatile
-   554                           
-   555                           ;mcc_generated_files/mcc.c: 76:     PMD1 = 0x00;
-   556  007E5A  0E00               	movlw	0
-   557  007E5C  6FC1               	movwf	193,b	;volatile
-   558                           
-   559                           ;mcc_generated_files/mcc.c: 78:     PMD2 = 0x00;
-   560  007E5E  0E00               	movlw	0
-   561  007E60  6FC2               	movwf	194,b	;volatile
+   489 ;;		Nothing
+   490 ;; This function is called by:
+   491 ;;		_main
+   492 ;;		_vHILPWM7_Init
+   493 ;; This function uses a non-reentrant model
+   494 ;;
+   495                           
+   496                           	psect	text2
+   497  007DB4                     __ptext2:
+   498                           	opt callstack 0
+   499  007DB4                     _vHILPWM7_SetDutyCycle:
+   500                           	opt callstack 30
+   501  007DB4                     
+   502                           ;src/HIL/hil_pwm.c: 140: void vHILPWM7_SetDutyCycle(uint16_t __u16_DutyCycle);src/HIL/hi
+      +                          l_pwm.c: 141: {;src/HIL/hil_pwm.c: 143:     PWM7DCL = (uint8_t)(__u16_DutyCycle << 6U);
+   503  007DB4  4001               	rrncf	vHILPWM7_SetDutyCycle@__u16_DutyCycle^0,w,c
+   504  007DB6  42E8               	rrncf	wreg,f,c
+   505  007DB8  0BC0               	andlw	192
+   506  007DBA  6E64               	movwf	100,c	;volatile
+   507                           
+   508                           ;src/HIL/hil_pwm.c: 145:     PWM7DCH = (uint8_t)(__u16_DutyCycle >> 2U);
+   509  007DBC  0060  F004  F003   	movff	vHILPWM7_SetDutyCycle@__u16_DutyCycle,??_vHILPWM7_SetDutyCycle
+   510  007DC2  0060  F008  F004   	movff	vHILPWM7_SetDutyCycle@__u16_DutyCycle+1,??_vHILPWM7_SetDutyCycle+1
+   511  007DC8  90D8               	bcf	status,0,c
+   512  007DCA  3204               	rrcf	(??_vHILPWM7_SetDutyCycle+1)^0,f,c
+   513  007DCC  3203               	rrcf	??_vHILPWM7_SetDutyCycle^0,f,c
+   514  007DCE  90D8               	bcf	status,0,c
+   515  007DD0  3204               	rrcf	(??_vHILPWM7_SetDutyCycle+1)^0,f,c
+   516  007DD2  3203               	rrcf	??_vHILPWM7_SetDutyCycle^0,f,c
+   517  007DD4  5003               	movf	??_vHILPWM7_SetDutyCycle^0,w,c
+   518  007DD6  6E65               	movwf	101,c	;volatile
+   519  007DD8  0012               	return		;funcret
+   520  007DDA                     __end_of_vHILPWM7_SetDutyCycle:
+   521                           	opt callstack 0
+   522                           
+   523 ;; *************** function _vHILPWM6_Init *****************
+   524 ;; Defined at:
+   525 ;;		line 48 in file "src/HIL/hil_pwm.c"
+   526 ;; Parameters:    Size  Location     Type
+   527 ;;		None
+   528 ;; Auto vars:     Size  Location     Type
+   529 ;;		None
+   530 ;; Return value:  Size  Location     Type
+   531 ;;                  1    wreg      void 
+   532 ;; Registers used:
+   533 ;;		wreg, status,2, status,0, cstack
+   534 ;; Tracked objects:
+   535 ;;		On entry : 0/0
+   536 ;;		On exit  : 0/0
+   537 ;;		Unchanged: 0/0
+   538 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   539 ;;      Params:         0       0       0       0       0       0       0       0       0
+   540 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   541 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   542 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   543 ;;Total ram usage:        0 bytes
+   544 ;; Hardware stack levels used:    1
+   545 ;; Hardware stack levels required when called:    1
+   546 ;; This function calls:
+   547 ;;		_vHILPWM6_SetDutyCycle
+   548 ;; This function is called by:
+   549 ;;		_main
+   550 ;; This function uses a non-reentrant model
+   551 ;;
+   552                           
+   553                           	psect	text3
+   554  007E18                     __ptext3:
+   555                           	opt callstack 0
+   556  007E18                     _vHILPWM6_Init:
+   557                           	opt callstack 29
+   558  007E18                     
+   559                           ;src/HIL/hil_pwm.c: 51:     PWM6CON = 0x00;
+   560  007E18  0E00               	movlw	0
+   561  007E1A  6E6A               	movwf	106,c	;volatile
    562                           
-   563                           ;mcc_generated_files/mcc.c: 80:     PMD3 = 0x00;
-   564  007E62  0E00               	movlw	0
-   565  007E64  6FC3               	movwf	195,b	;volatile
-   566                           
-   567                           ;mcc_generated_files/mcc.c: 82:     PMD4 = 0x00;
-   568  007E66  0E00               	movlw	0
-   569  007E68  6FC4               	movwf	196,b	;volatile
-   570                           
-   571                           ;mcc_generated_files/mcc.c: 84:     PMD5 = 0x00;
-   572  007E6A  0E00               	movlw	0
-   573  007E6C  6FC5               	movwf	197,b	;volatile
-   574                           
-   575                           ;mcc_generated_files/mcc.c: 86:     PMD6 = 0x00;
-   576  007E6E  0E00               	movlw	0
-   577  007E70  6FC6               	movwf	198,b	;volatile
-   578                           
-   579                           ;mcc_generated_files/mcc.c: 88:     PMD7 = 0x00;
-   580  007E72  0E00               	movlw	0
-   581  007E74  6FC7               	movwf	199,b	;volatile
-   582  007E76                     
+   563                           ;src/HIL/hil_pwm.c: 54:     T4PR = 50U;
+   564  007E1C  0E32               	movlw	50
+   565  007E1E  6E9F               	movwf	159,c	;volatile
+   566  007E20                     
+   567                           ;src/HIL/hil_pwm.c: 57:     vHILPWM6_SetDutyCycle((102U));
+   568  007E20  0E00               	movlw	0
+   569  007E22  6E02               	movwf	(vHILPWM6_SetDutyCycle@__u16_DutyCycle+1)^0,c
+   570  007E24  0E66               	movlw	102
+   571  007E26  6E01               	movwf	vHILPWM6_SetDutyCycle@__u16_DutyCycle^0,c
+   572  007E28  ECC7  F03E         	call	_vHILPWM6_SetDutyCycle	;wreg free
+   573  007E2C                     
+   574                           ;src/HIL/hil_pwm.c: 60:     PIR7 &= ~(0x01);
+   575  007E2C  0139               	movlb	57	; () banked
+   576  007E2E  91A7               	bcf	167,0,b	;volatile
+   577  007E30                     
+   578                           ; BSR set to: 57
+   579                           ;src/HIL/hil_pwm.c: 63:     T4CLK = 0x01;
+   580  007E30  0E01               	movlw	1
+   581  007E32  6EA2               	movwf	162,c	;volatile
+   582  007E34                     
    583                           ; BSR set to: 57
-   584  007E76  0012               	return		;funcret
-   585  007E78                     __end_of_PMD_Initialize:
-   586                           	opt callstack 0
-   587                           
-   588 ;; *************** function _PIN_MANAGER_Initialize *****************
-   589 ;; Defined at:
-   590 ;;		line 55 in file "mcc_generated_files/pin_manager.c"
-   591 ;; Parameters:    Size  Location     Type
-   592 ;;		None
-   593 ;; Auto vars:     Size  Location     Type
-   594 ;;		None
-   595 ;; Return value:  Size  Location     Type
-   596 ;;                  1    wreg      void 
-   597 ;; Registers used:
-   598 ;;		wreg, status,2
-   599 ;; Tracked objects:
-   600 ;;		On entry : 0/0
-   601 ;;		On exit  : 0/0
-   602 ;;		Unchanged: 0/0
-   603 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   604 ;;      Params:         0       0       0       0       0       0       0       0       0
-   605 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   606 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   607 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   608 ;;Total ram usage:        0 bytes
-   609 ;; Hardware stack levels used:    1
-   610 ;; This function calls:
-   611 ;;		Nothing
-   612 ;; This function is called by:
-   613 ;;		_SYSTEM_Initialize
-   614 ;; This function uses a non-reentrant model
-   615 ;;
-   616                           
-   617                           	psect	text5
-   618  007EDC                     __ptext5:
+   584                           ;src/HIL/hil_pwm.c: 66:     T4CON = 0x00;
+   585  007E34  0E00               	movlw	0
+   586  007E36  6EA0               	movwf	160,c	;volatile
+   587  007E38                     
+   588                           ; BSR set to: 57
+   589                           ;src/HIL/hil_pwm.c: 69:     T4CON |= 0x80;
+   590  007E38  8EA0               	bsf	160,7,c	;volatile
+   591  007E3A                     
+   592                           ; BSR set to: 57
+   593                           ;src/HIL/hil_pwm.c: 72:     PWM6CON = 0x80;
+   594  007E3A  0E80               	movlw	128
+   595  007E3C  6E6A               	movwf	106,c	;volatile
+   596  007E3E                     l219:
+   597                           
+   598                           ; BSR set to: 57
+   599  007E3E  A1A7               	btfss	167,0,b	;volatile
+   600  007E40  EF24  F03F         	goto	u71
+   601  007E44  EF26  F03F         	goto	u70
+   602  007E48                     u71:
+   603  007E48  EF1F  F03F         	goto	l219
+   604  007E4C                     u70:
+   605  007E4C                     
+   606                           ; BSR set to: 57
+   607                           ;src/HIL/hil_pwm.c: 77:     TRISA &= ~((0x02));
+   608  007E4C  92C2               	bcf	194,1,c	;volatile
+   609  007E4E                     
+   610                           ; BSR set to: 57
+   611                           ;src/HIL/hil_pwm.c: 79:     RA1PPS = 0x0E;
+   612  007E4E  0E0E               	movlw	14
+   613  007E50  013A               	movlb	58	; () banked
+   614  007E52  6F01               	movwf	1,b	;volatile
+   615  007E54                     
+   616                           ; BSR set to: 58
+   617  007E54  0012               	return		;funcret
+   618  007E56                     __end_of_vHILPWM6_Init:
    619                           	opt callstack 0
-   620  007EDC                     _PIN_MANAGER_Initialize:
-   621                           	opt callstack 29
-   622  007EDC                     
-   623                           ;mcc_generated_files/pin_manager.c: 60:     LATA = 0x00;
-   624  007EDC  0E00               	movlw	0
-   625  007EDE  6EBA               	movwf	186,c	;volatile
-   626                           
-   627                           ;mcc_generated_files/pin_manager.c: 61:     LATB = 0x00;
-   628  007EE0  0E00               	movlw	0
-   629  007EE2  6EBB               	movwf	187,c	;volatile
-   630                           
-   631                           ;mcc_generated_files/pin_manager.c: 62:     LATC = 0x00;
-   632  007EE4  0E00               	movlw	0
-   633  007EE6  6EBC               	movwf	188,c	;volatile
-   634  007EE8                     
-   635                           ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xFF;
-   636  007EE8  68C2               	setf	194,c	;volatile
-   637  007EEA                     
-   638                           ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0xFF;
-   639  007EEA  68C3               	setf	195,c	;volatile
-   640  007EEC                     
-   641                           ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xFF;
-   642  007EEC  68C4               	setf	196,c	;volatile
-   643                           
-   644                           ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xFC;
-   645  007EEE  0EFC               	movlw	252
-   646  007EF0  013A               	movlb	58	; () banked
-   647  007EF2  6F60               	movwf	96,b	;volatile
-   648  007EF4                     
-   649                           ; BSR set to: 58
-   650                           ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0xFF;
-   651  007EF4  6950               	setf	80,b	;volatile
-   652  007EF6                     
-   653                           ; BSR set to: 58
-   654                           ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0xFF;
-   655  007EF6  6940               	setf	64,b	;volatile
-   656                           
-   657                           ;mcc_generated_files/pin_manager.c: 81:     WPUE = 0x00;
-   658  007EF8  0E00               	movlw	0
-   659  007EFA  6F81               	movwf	129,b	;volatile
-   660                           
-   661                           ;mcc_generated_files/pin_manager.c: 82:     WPUB = 0x00;
-   662  007EFC  0E00               	movlw	0
-   663  007EFE  6F51               	movwf	81,b	;volatile
-   664                           
-   665                           ;mcc_generated_files/pin_manager.c: 83:     WPUA = 0x00;
-   666  007F00  0E00               	movlw	0
-   667  007F02  6F41               	movwf	65,b	;volatile
-   668                           
-   669                           ;mcc_generated_files/pin_manager.c: 84:     WPUC = 0x00;
-   670  007F04  0E00               	movlw	0
-   671  007F06  6F61               	movwf	97,b	;volatile
-   672                           
-   673                           ;mcc_generated_files/pin_manager.c: 89:     RB1I2C = 0x00;
-   674  007F08  0E00               	movlw	0
-   675  007F0A  6F5A               	movwf	90,b	;volatile
-   676                           
-   677                           ;mcc_generated_files/pin_manager.c: 90:     RB2I2C = 0x00;
-   678  007F0C  0E00               	movlw	0
-   679  007F0E  6F5B               	movwf	91,b	;volatile
-   680                           
-   681                           ;mcc_generated_files/pin_manager.c: 91:     RC3I2C = 0x00;
-   682  007F10  0E00               	movlw	0
-   683  007F12  6F6A               	movwf	106,b	;volatile
-   684                           
-   685                           ;mcc_generated_files/pin_manager.c: 92:     RC4I2C = 0x00;
-   686  007F14  0E00               	movlw	0
-   687  007F16  6F6B               	movwf	107,b	;volatile
-   688                           
-   689                           ;mcc_generated_files/pin_manager.c: 97:     ODCONA = 0x00;
-   690  007F18  0E00               	movlw	0
-   691  007F1A  6F42               	movwf	66,b	;volatile
-   692                           
-   693                           ;mcc_generated_files/pin_manager.c: 98:     ODCONB = 0x00;
-   694  007F1C  0E00               	movlw	0
-   695  007F1E  6F52               	movwf	82,b	;volatile
-   696                           
-   697                           ;mcc_generated_files/pin_manager.c: 99:     ODCONC = 0x00;
-   698  007F20  0E00               	movlw	0
-   699  007F22  6F62               	movwf	98,b	;volatile
-   700  007F24                     
-   701                           ; BSR set to: 58
-   702                           ;mcc_generated_files/pin_manager.c: 104:     SLRCONA = 0xFF;
-   703  007F24  6943               	setf	67,b	;volatile
-   704  007F26                     
-   705                           ; BSR set to: 58
-   706                           ;mcc_generated_files/pin_manager.c: 105:     SLRCONB = 0xFF;
-   707  007F26  6953               	setf	83,b	;volatile
-   708  007F28                     
-   709                           ; BSR set to: 58
-   710                           ;mcc_generated_files/pin_manager.c: 106:     SLRCONC = 0xFF;
-   711  007F28  6963               	setf	99,b	;volatile
-   712  007F2A                     
-   713                           ; BSR set to: 58
-   714                           ;mcc_generated_files/pin_manager.c: 111:     INLVLA = 0xFF;
-   715  007F2A  6944               	setf	68,b	;volatile
-   716  007F2C                     
-   717                           ; BSR set to: 58
-   718                           ;mcc_generated_files/pin_manager.c: 112:     INLVLB = 0xFF;
-   719  007F2C  6954               	setf	84,b	;volatile
-   720  007F2E                     
-   721                           ; BSR set to: 58
-   722                           ;mcc_generated_files/pin_manager.c: 113:     INLVLC = 0xFF;
-   723  007F2E  6964               	setf	100,b	;volatile
-   724                           
-   725                           ;mcc_generated_files/pin_manager.c: 114:     INLVLE = 0x08;
-   726  007F30  0E08               	movlw	8
-   727  007F32  6F84               	movwf	132,b	;volatile
-   728                           
-   729                           ;mcc_generated_files/pin_manager.c: 123:     SMT1WINPPS = 0x10;
-   730  007F34  0E10               	movlw	16
-   731  007F36  6FD1               	movwf	209,b	;volatile
-   732                           
-   733                           ;mcc_generated_files/pin_manager.c: 124:     SMT1SIGPPS = 0x11;
-   734  007F38  0E11               	movlw	17
-   735  007F3A  6FD2               	movwf	210,b	;volatile
-   736  007F3C                     
-   737                           ; BSR set to: 58
-   738  007F3C  0012               	return		;funcret
-   739  007F3E                     __end_of_PIN_MANAGER_Initialize:
-   740                           	opt callstack 0
-   741                           
-   742 ;; *************** function _OSCILLATOR_Initialize *****************
-   743 ;; Defined at:
-   744 ;;		line 57 in file "mcc_generated_files/mcc.c"
-   745 ;; Parameters:    Size  Location     Type
-   746 ;;		None
-   747 ;; Auto vars:     Size  Location     Type
-   748 ;;		None
-   749 ;; Return value:  Size  Location     Type
-   750 ;;                  1    wreg      void 
-   751 ;; Registers used:
-   752 ;;		wreg, status,2
-   753 ;; Tracked objects:
-   754 ;;		On entry : 0/0
-   755 ;;		On exit  : 0/0
-   756 ;;		Unchanged: 0/0
-   757 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-   758 ;;      Params:         0       0       0       0       0       0       0       0       0
-   759 ;;      Locals:         0       0       0       0       0       0       0       0       0
-   760 ;;      Temps:          0       0       0       0       0       0       0       0       0
-   761 ;;      Totals:         0       0       0       0       0       0       0       0       0
-   762 ;;Total ram usage:        0 bytes
-   763 ;; Hardware stack levels used:    1
-   764 ;; This function calls:
-   765 ;;		Nothing
-   766 ;; This function is called by:
-   767 ;;		_SYSTEM_Initialize
-   768 ;; This function uses a non-reentrant model
-   769 ;;
-   770                           
-   771                           	psect	text6
-   772  007E3C                     __ptext6:
-   773                           	opt callstack 0
-   774  007E3C                     _OSCILLATOR_Initialize:
-   775                           	opt callstack 29
-   776  007E3C                     
-   777                           ;mcc_generated_files/mcc.c: 60:     OSCCON1 = 0x62;
-   778  007E3C  0E62               	movlw	98
-   779  007E3E  0139               	movlb	57	; () banked
-   780  007E40  6FD9               	movwf	217,b	;volatile
-   781                           
-   782                           ;mcc_generated_files/mcc.c: 62:     OSCCON3 = 0x00;
-   783  007E42  0E00               	movlw	0
-   784  007E44  6FDB               	movwf	219,b	;volatile
-   785                           
-   786                           ;mcc_generated_files/mcc.c: 64:     OSCEN = 0x00;
-   787  007E46  0E00               	movlw	0
-   788  007E48  6FDD               	movwf	221,b	;volatile
-   789                           
-   790                           ;mcc_generated_files/mcc.c: 66:     OSCFRQ = 0x05;
-   791  007E4A  0E05               	movlw	5
-   792  007E4C  6FDF               	movwf	223,b	;volatile
-   793                           
-   794                           ;mcc_generated_files/mcc.c: 68:     OSCTUNE = 0x00;
-   795  007E4E  0E00               	movlw	0
-   796  007E50  6FDE               	movwf	222,b	;volatile
-   797  007E52                     
-   798                           ; BSR set to: 57
-   799  007E52  0012               	return		;funcret
-   800  007E54                     __end_of_OSCILLATOR_Initialize:
-   801                           	opt callstack 0
-   802  0000                     
-   803                           	psect	rparam
-   804  0000                     tosu	equ	0x3FFF
-   805                           tosh	equ	0x3FFE
-   806                           tosl	equ	0x3FFD
-   807                           stkptr	equ	0x3FFC
-   808                           pclatu	equ	0x3FFB
-   809                           pclath	equ	0x3FFA
-   810                           pcl	equ	0x3FF9
-   811                           tblptru	equ	0x3FF8
-   812                           tblptrh	equ	0x3FF7
-   813                           tblptrl	equ	0x3FF6
-   814                           tablat	equ	0x3FF5
-   815                           prodh	equ	0x3FF4
-   816                           prodl	equ	0x3FF3
-   817                           indf0	equ	0x3FEF
-   818                           postinc0	equ	0x3FEE
-   819                           postdec0	equ	0x3FED
-   820                           preinc0	equ	0x3FEC
-   821                           plusw0	equ	0x3FEB
-   822                           fsr0h	equ	0x3FEA
-   823                           fsr0l	equ	0x3FE9
-   824                           wreg	equ	0x3FE8
-   825                           indf1	equ	0x3FE7
-   826                           postinc1	equ	0x3FE6
-   827                           postdec1	equ	0x3FE5
-   828                           preinc1	equ	0x3FE4
-   829                           plusw1	equ	0x3FE3
-   830                           fsr1h	equ	0x3FE2
-   831                           fsr1l	equ	0x3FE1
-   832                           bsr	equ	0x3FE0
-   833                           indf2	equ	0x3FDF
-   834                           postinc2	equ	0x3FDE
-   835                           postdec2	equ	0x3FDD
-   836                           preinc2	equ	0x3FDC
-   837                           plusw2	equ	0x3FDB
-   838                           fsr2h	equ	0x3FDA
-   839                           fsr2l	equ	0x3FD9
-   840                           status	equ	0x3FD8
+   620                           
+   621 ;; *************** function _vHILPWM6_SetDutyCycle *****************
+   622 ;; Defined at:
+   623 ;;		line 130 in file "src/HIL/hil_pwm.c"
+   624 ;; Parameters:    Size  Location     Type
+   625 ;;  __u16_DutyCy    2    0[COMRAM] unsigned short 
+   626 ;; Auto vars:     Size  Location     Type
+   627 ;;		None
+   628 ;; Return value:  Size  Location     Type
+   629 ;;                  1    wreg      void 
+   630 ;; Registers used:
+   631 ;;		wreg, status,2, status,0
+   632 ;; Tracked objects:
+   633 ;;		On entry : 0/0
+   634 ;;		On exit  : 0/0
+   635 ;;		Unchanged: 0/0
+   636 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   637 ;;      Params:         2       0       0       0       0       0       0       0       0
+   638 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   639 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   640 ;;      Totals:         4       0       0       0       0       0       0       0       0
+   641 ;;Total ram usage:        4 bytes
+   642 ;; Hardware stack levels used:    1
+   643 ;; This function calls:
+   644 ;;		Nothing
+   645 ;; This function is called by:
+   646 ;;		_main
+   647 ;;		_vHILPWM6_Init
+   648 ;; This function uses a non-reentrant model
+   649 ;;
+   650                           
+   651                           	psect	text4
+   652  007D8E                     __ptext4:
+   653                           	opt callstack 0
+   654  007D8E                     _vHILPWM6_SetDutyCycle:
+   655                           	opt callstack 30
+   656  007D8E                     
+   657                           ;src/HIL/hil_pwm.c: 130: void vHILPWM6_SetDutyCycle(uint16_t __u16_DutyCycle);src/HIL/hi
+      +                          l_pwm.c: 131: {;src/HIL/hil_pwm.c: 133:     PWM6DCL = (uint8_t)(__u16_DutyCycle << 6U);
+   658  007D8E  4001               	rrncf	vHILPWM6_SetDutyCycle@__u16_DutyCycle^0,w,c
+   659  007D90  42E8               	rrncf	wreg,f,c
+   660  007D92  0BC0               	andlw	192
+   661  007D94  6E68               	movwf	104,c	;volatile
+   662                           
+   663                           ;src/HIL/hil_pwm.c: 135:     PWM6DCH = (uint8_t)(__u16_DutyCycle >> 2U);
+   664  007D96  0060  F004  F003   	movff	vHILPWM6_SetDutyCycle@__u16_DutyCycle,??_vHILPWM6_SetDutyCycle
+   665  007D9C  0060  F008  F004   	movff	vHILPWM6_SetDutyCycle@__u16_DutyCycle+1,??_vHILPWM6_SetDutyCycle+1
+   666  007DA2  90D8               	bcf	status,0,c
+   667  007DA4  3204               	rrcf	(??_vHILPWM6_SetDutyCycle+1)^0,f,c
+   668  007DA6  3203               	rrcf	??_vHILPWM6_SetDutyCycle^0,f,c
+   669  007DA8  90D8               	bcf	status,0,c
+   670  007DAA  3204               	rrcf	(??_vHILPWM6_SetDutyCycle+1)^0,f,c
+   671  007DAC  3203               	rrcf	??_vHILPWM6_SetDutyCycle^0,f,c
+   672  007DAE  5003               	movf	??_vHILPWM6_SetDutyCycle^0,w,c
+   673  007DB0  6E69               	movwf	105,c	;volatile
+   674  007DB2  0012               	return		;funcret
+   675  007DB4                     __end_of_vHILPWM6_SetDutyCycle:
+   676                           	opt callstack 0
+   677                           
+   678 ;; *************** function _vHILPWM5_Init *****************
+   679 ;; Defined at:
+   680 ;;		line 12 in file "src/HIL/hil_pwm.c"
+   681 ;; Parameters:    Size  Location     Type
+   682 ;;		None
+   683 ;; Auto vars:     Size  Location     Type
+   684 ;;		None
+   685 ;; Return value:  Size  Location     Type
+   686 ;;                  1    wreg      void 
+   687 ;; Registers used:
+   688 ;;		wreg, status,2, status,0, cstack
+   689 ;; Tracked objects:
+   690 ;;		On entry : 0/0
+   691 ;;		On exit  : 0/0
+   692 ;;		Unchanged: 0/0
+   693 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   694 ;;      Params:         0       0       0       0       0       0       0       0       0
+   695 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   696 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   697 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   698 ;;Total ram usage:        0 bytes
+   699 ;; Hardware stack levels used:    1
+   700 ;; Hardware stack levels required when called:    1
+   701 ;; This function calls:
+   702 ;;		_vHILPWM5_SetDutyCycle
+   703 ;; This function is called by:
+   704 ;;		_main
+   705 ;; This function uses a non-reentrant model
+   706 ;;
+   707                           
+   708                           	psect	text5
+   709  007DDA                     __ptext5:
+   710                           	opt callstack 0
+   711  007DDA                     _vHILPWM5_Init:
+   712                           	opt callstack 29
+   713  007DDA                     
+   714                           ;src/HIL/hil_pwm.c: 15:     PWM5CON = 0x00;
+   715  007DDA  0E00               	movlw	0
+   716  007DDC  6E6E               	movwf	110,c	;volatile
+   717                           
+   718                           ;src/HIL/hil_pwm.c: 18:     T2PR = 50U;
+   719  007DDE  0E32               	movlw	50
+   720  007DE0  6EAB               	movwf	171,c	;volatile
+   721  007DE2                     
+   722                           ;src/HIL/hil_pwm.c: 21:     vHILPWM5_SetDutyCycle((102U));
+   723  007DE2  0E00               	movlw	0
+   724  007DE4  6E02               	movwf	(vHILPWM5_SetDutyCycle@__u16_DutyCycle+1)^0,c
+   725  007DE6  0E66               	movlw	102
+   726  007DE8  6E01               	movwf	vHILPWM5_SetDutyCycle@__u16_DutyCycle^0,c
+   727  007DEA  ECB4  F03E         	call	_vHILPWM5_SetDutyCycle	;wreg free
+   728  007DEE                     
+   729                           ;src/HIL/hil_pwm.c: 24:     PIR4 &= ~(0x04);
+   730  007DEE  0139               	movlb	57	; () banked
+   731  007DF0  95A4               	bcf	164,2,b	;volatile
+   732  007DF2                     
+   733                           ; BSR set to: 57
+   734                           ;src/HIL/hil_pwm.c: 27:     T2CLK = 0x01;
+   735  007DF2  0E01               	movlw	1
+   736  007DF4  6EAE               	movwf	174,c	;volatile
+   737  007DF6                     
+   738                           ; BSR set to: 57
+   739                           ;src/HIL/hil_pwm.c: 30:     T2CON = 0x00;
+   740  007DF6  0E00               	movlw	0
+   741  007DF8  6EAC               	movwf	172,c	;volatile
+   742  007DFA                     
+   743                           ; BSR set to: 57
+   744                           ;src/HIL/hil_pwm.c: 33:     T2CON |= 0x80;
+   745  007DFA  8EAC               	bsf	172,7,c	;volatile
+   746  007DFC                     
+   747                           ; BSR set to: 57
+   748                           ;src/HIL/hil_pwm.c: 36:     PWM5CON = 0x80;
+   749  007DFC  0E80               	movlw	128
+   750  007DFE  6E6E               	movwf	110,c	;volatile
+   751  007E00                     l213:
+   752                           
+   753                           ; BSR set to: 57
+   754  007E00  A5A4               	btfss	164,2,b	;volatile
+   755  007E02  EF05  F03F         	goto	u61
+   756  007E06  EF07  F03F         	goto	u60
+   757  007E0A                     u61:
+   758  007E0A  EF00  F03F         	goto	l213
+   759  007E0E                     u60:
+   760  007E0E                     
+   761                           ; BSR set to: 57
+   762                           ;src/HIL/hil_pwm.c: 41:     TRISA &= ~((0x01));
+   763  007E0E  90C2               	bcf	194,0,c	;volatile
+   764  007E10                     
+   765                           ; BSR set to: 57
+   766                           ;src/HIL/hil_pwm.c: 43:     RA0PPS = 0x0D;
+   767  007E10  0E0D               	movlw	13
+   768  007E12  013A               	movlb	58	; () banked
+   769  007E14  6F00               	movwf	0,b	;volatile
+   770  007E16                     
+   771                           ; BSR set to: 58
+   772  007E16  0012               	return		;funcret
+   773  007E18                     __end_of_vHILPWM5_Init:
+   774                           	opt callstack 0
+   775                           
+   776 ;; *************** function _vHILPWM5_SetDutyCycle *****************
+   777 ;; Defined at:
+   778 ;;		line 120 in file "src/HIL/hil_pwm.c"
+   779 ;; Parameters:    Size  Location     Type
+   780 ;;  __u16_DutyCy    2    0[COMRAM] unsigned short 
+   781 ;; Auto vars:     Size  Location     Type
+   782 ;;		None
+   783 ;; Return value:  Size  Location     Type
+   784 ;;                  1    wreg      void 
+   785 ;; Registers used:
+   786 ;;		wreg, status,2, status,0
+   787 ;; Tracked objects:
+   788 ;;		On entry : 0/0
+   789 ;;		On exit  : 0/0
+   790 ;;		Unchanged: 0/0
+   791 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   792 ;;      Params:         2       0       0       0       0       0       0       0       0
+   793 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   794 ;;      Temps:          2       0       0       0       0       0       0       0       0
+   795 ;;      Totals:         4       0       0       0       0       0       0       0       0
+   796 ;;Total ram usage:        4 bytes
+   797 ;; Hardware stack levels used:    1
+   798 ;; This function calls:
+   799 ;;		Nothing
+   800 ;; This function is called by:
+   801 ;;		_main
+   802 ;;		_vHILPWM5_Init
+   803 ;; This function uses a non-reentrant model
+   804 ;;
+   805                           
+   806                           	psect	text6
+   807  007D68                     __ptext6:
+   808                           	opt callstack 0
+   809  007D68                     _vHILPWM5_SetDutyCycle:
+   810                           	opt callstack 30
+   811  007D68                     
+   812                           ;src/HIL/hil_pwm.c: 120: void vHILPWM5_SetDutyCycle(uint16_t __u16_DutyCycle);src/HIL/hi
+      +                          l_pwm.c: 121: {;src/HIL/hil_pwm.c: 123:     PWM5DCL = (uint8_t)(__u16_DutyCycle << 6U);
+   813  007D68  4001               	rrncf	vHILPWM5_SetDutyCycle@__u16_DutyCycle^0,w,c
+   814  007D6A  42E8               	rrncf	wreg,f,c
+   815  007D6C  0BC0               	andlw	192
+   816  007D6E  6E6C               	movwf	108,c	;volatile
+   817                           
+   818                           ;src/HIL/hil_pwm.c: 125:     PWM5DCH = (uint8_t)(__u16_DutyCycle >> 2U);
+   819  007D70  0060  F004  F003   	movff	vHILPWM5_SetDutyCycle@__u16_DutyCycle,??_vHILPWM5_SetDutyCycle
+   820  007D76  0060  F008  F004   	movff	vHILPWM5_SetDutyCycle@__u16_DutyCycle+1,??_vHILPWM5_SetDutyCycle+1
+   821  007D7C  90D8               	bcf	status,0,c
+   822  007D7E  3204               	rrcf	(??_vHILPWM5_SetDutyCycle+1)^0,f,c
+   823  007D80  3203               	rrcf	??_vHILPWM5_SetDutyCycle^0,f,c
+   824  007D82  90D8               	bcf	status,0,c
+   825  007D84  3204               	rrcf	(??_vHILPWM5_SetDutyCycle+1)^0,f,c
+   826  007D86  3203               	rrcf	??_vHILPWM5_SetDutyCycle^0,f,c
+   827  007D88  5003               	movf	??_vHILPWM5_SetDutyCycle^0,w,c
+   828  007D8A  6E6D               	movwf	109,c	;volatile
+   829  007D8C  0012               	return		;funcret
+   830  007D8E                     __end_of_vHILPWM5_SetDutyCycle:
+   831                           	opt callstack 0
+   832                           
+   833 ;; *************** function _SYSTEM_Initialize *****************
+   834 ;; Defined at:
+   835 ;;		line 50 in file "mcc_generated_files/mcc.c"
+   836 ;; Parameters:    Size  Location     Type
+   837 ;;		None
+   838 ;; Auto vars:     Size  Location     Type
+   839 ;;		None
+   840 ;; Return value:  Size  Location     Type
+   841 ;;                  1    wreg      void 
+   842 ;; Registers used:
+   843 ;;		wreg, status,2, cstack
+   844 ;; Tracked objects:
+   845 ;;		On entry : 0/0
+   846 ;;		On exit  : 0/0
+   847 ;;		Unchanged: 0/0
+   848 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   849 ;;      Params:         0       0       0       0       0       0       0       0       0
+   850 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   851 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   852 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   853 ;;Total ram usage:        0 bytes
+   854 ;; Hardware stack levels used:    1
+   855 ;; Hardware stack levels required when called:    1
+   856 ;; This function calls:
+   857 ;;		_OSCILLATOR_Initialize
+   858 ;;		_PIN_MANAGER_Initialize
+   859 ;;		_PMD_Initialize
+   860 ;; This function is called by:
+   861 ;;		_main
+   862 ;; This function uses a non-reentrant model
+   863 ;;
+   864                           
+   865                           	psect	text7
+   866  007D1E                     __ptext7:
+   867                           	opt callstack 0
+   868  007D1E                     _SYSTEM_Initialize:
+   869                           	opt callstack 29
+   870  007D1E                     
+   871                           ;mcc_generated_files/mcc.c: 52:     PMD_Initialize();
+   872  007D1E  ECA2  F03E         	call	_PMD_Initialize	;wreg free
+   873                           
+   874                           ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
+   875  007D22  EC4A  F03F         	call	_PIN_MANAGER_Initialize	;wreg free
+   876                           
+   877                           ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
+   878  007D26  EC96  F03E         	call	_OSCILLATOR_Initialize	;wreg free
+   879  007D2A  0012               	return		;funcret
+   880  007D2C                     __end_of_SYSTEM_Initialize:
+   881                           	opt callstack 0
+   882                           
+   883 ;; *************** function _PMD_Initialize *****************
+   884 ;; Defined at:
+   885 ;;		line 71 in file "mcc_generated_files/mcc.c"
+   886 ;; Parameters:    Size  Location     Type
+   887 ;;		None
+   888 ;; Auto vars:     Size  Location     Type
+   889 ;;		None
+   890 ;; Return value:  Size  Location     Type
+   891 ;;                  1    wreg      void 
+   892 ;; Registers used:
+   893 ;;		wreg, status,2
+   894 ;; Tracked objects:
+   895 ;;		On entry : 0/0
+   896 ;;		On exit  : 0/0
+   897 ;;		Unchanged: 0/0
+   898 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   899 ;;      Params:         0       0       0       0       0       0       0       0       0
+   900 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   901 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   902 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   903 ;;Total ram usage:        0 bytes
+   904 ;; Hardware stack levels used:    1
+   905 ;; This function calls:
+   906 ;;		Nothing
+   907 ;; This function is called by:
+   908 ;;		_SYSTEM_Initialize
+   909 ;; This function uses a non-reentrant model
+   910 ;;
+   911                           
+   912                           	psect	text8
+   913  007D44                     __ptext8:
+   914                           	opt callstack 0
+   915  007D44                     _PMD_Initialize:
+   916                           	opt callstack 29
+   917  007D44                     
+   918                           ;mcc_generated_files/mcc.c: 74:     PMD0 = 0x00;
+   919  007D44  0E00               	movlw	0
+   920  007D46  0139               	movlb	57	; () banked
+   921  007D48  6FC0               	movwf	192,b	;volatile
+   922                           
+   923                           ;mcc_generated_files/mcc.c: 76:     PMD1 = 0x00;
+   924  007D4A  0E00               	movlw	0
+   925  007D4C  6FC1               	movwf	193,b	;volatile
+   926                           
+   927                           ;mcc_generated_files/mcc.c: 78:     PMD2 = 0x00;
+   928  007D4E  0E00               	movlw	0
+   929  007D50  6FC2               	movwf	194,b	;volatile
+   930                           
+   931                           ;mcc_generated_files/mcc.c: 80:     PMD3 = 0x00;
+   932  007D52  0E00               	movlw	0
+   933  007D54  6FC3               	movwf	195,b	;volatile
+   934                           
+   935                           ;mcc_generated_files/mcc.c: 82:     PMD4 = 0x00;
+   936  007D56  0E00               	movlw	0
+   937  007D58  6FC4               	movwf	196,b	;volatile
+   938                           
+   939                           ;mcc_generated_files/mcc.c: 84:     PMD5 = 0x00;
+   940  007D5A  0E00               	movlw	0
+   941  007D5C  6FC5               	movwf	197,b	;volatile
+   942                           
+   943                           ;mcc_generated_files/mcc.c: 86:     PMD6 = 0x00;
+   944  007D5E  0E00               	movlw	0
+   945  007D60  6FC6               	movwf	198,b	;volatile
+   946                           
+   947                           ;mcc_generated_files/mcc.c: 88:     PMD7 = 0x00;
+   948  007D62  0E00               	movlw	0
+   949  007D64  6FC7               	movwf	199,b	;volatile
+   950  007D66                     
+   951                           ; BSR set to: 57
+   952  007D66  0012               	return		;funcret
+   953  007D68                     __end_of_PMD_Initialize:
+   954                           	opt callstack 0
+   955                           
+   956 ;; *************** function _PIN_MANAGER_Initialize *****************
+   957 ;; Defined at:
+   958 ;;		line 55 in file "mcc_generated_files/pin_manager.c"
+   959 ;; Parameters:    Size  Location     Type
+   960 ;;		None
+   961 ;; Auto vars:     Size  Location     Type
+   962 ;;		None
+   963 ;; Return value:  Size  Location     Type
+   964 ;;                  1    wreg      void 
+   965 ;; Registers used:
+   966 ;;		wreg, status,2
+   967 ;; Tracked objects:
+   968 ;;		On entry : 0/0
+   969 ;;		On exit  : 0/0
+   970 ;;		Unchanged: 0/0
+   971 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   972 ;;      Params:         0       0       0       0       0       0       0       0       0
+   973 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   974 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   975 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   976 ;;Total ram usage:        0 bytes
+   977 ;; Hardware stack levels used:    1
+   978 ;; This function calls:
+   979 ;;		Nothing
+   980 ;; This function is called by:
+   981 ;;		_SYSTEM_Initialize
+   982 ;; This function uses a non-reentrant model
+   983 ;;
+   984                           
+   985                           	psect	text9
+   986  007E94                     __ptext9:
+   987                           	opt callstack 0
+   988  007E94                     _PIN_MANAGER_Initialize:
+   989                           	opt callstack 29
+   990  007E94                     
+   991                           ;mcc_generated_files/pin_manager.c: 60:     LATA = 0x00;
+   992  007E94  0E00               	movlw	0
+   993  007E96  6EBA               	movwf	186,c	;volatile
+   994                           
+   995                           ;mcc_generated_files/pin_manager.c: 61:     LATB = 0x00;
+   996  007E98  0E00               	movlw	0
+   997  007E9A  6EBB               	movwf	187,c	;volatile
+   998                           
+   999                           ;mcc_generated_files/pin_manager.c: 62:     LATC = 0x00;
+  1000  007E9C  0E00               	movlw	0
+  1001  007E9E  6EBC               	movwf	188,c	;volatile
+  1002  007EA0                     
+  1003                           ;mcc_generated_files/pin_manager.c: 67:     TRISA = 0xFF;
+  1004  007EA0  68C2               	setf	194,c	;volatile
+  1005  007EA2                     
+  1006                           ;mcc_generated_files/pin_manager.c: 68:     TRISB = 0xFF;
+  1007  007EA2  68C3               	setf	195,c	;volatile
+  1008  007EA4                     
+  1009                           ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xFF;
+  1010  007EA4  68C4               	setf	196,c	;volatile
+  1011                           
+  1012                           ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xFC;
+  1013  007EA6  0EFC               	movlw	252
+  1014  007EA8  013A               	movlb	58	; () banked
+  1015  007EAA  6F60               	movwf	96,b	;volatile
+  1016  007EAC                     
+  1017                           ; BSR set to: 58
+  1018                           ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0xFF;
+  1019  007EAC  6950               	setf	80,b	;volatile
+  1020  007EAE                     
+  1021                           ; BSR set to: 58
+  1022                           ;mcc_generated_files/pin_manager.c: 76:     ANSELA = 0xFF;
+  1023  007EAE  6940               	setf	64,b	;volatile
+  1024                           
+  1025                           ;mcc_generated_files/pin_manager.c: 81:     WPUE = 0x00;
+  1026  007EB0  0E00               	movlw	0
+  1027  007EB2  6F81               	movwf	129,b	;volatile
+  1028                           
+  1029                           ;mcc_generated_files/pin_manager.c: 82:     WPUB = 0x00;
+  1030  007EB4  0E00               	movlw	0
+  1031  007EB6  6F51               	movwf	81,b	;volatile
+  1032                           
+  1033                           ;mcc_generated_files/pin_manager.c: 83:     WPUA = 0x00;
+  1034  007EB8  0E00               	movlw	0
+  1035  007EBA  6F41               	movwf	65,b	;volatile
+  1036                           
+  1037                           ;mcc_generated_files/pin_manager.c: 84:     WPUC = 0x00;
+  1038  007EBC  0E00               	movlw	0
+  1039  007EBE  6F61               	movwf	97,b	;volatile
+  1040                           
+  1041                           ;mcc_generated_files/pin_manager.c: 89:     RB1I2C = 0x00;
+  1042  007EC0  0E00               	movlw	0
+  1043  007EC2  6F5A               	movwf	90,b	;volatile
+  1044                           
+  1045                           ;mcc_generated_files/pin_manager.c: 90:     RB2I2C = 0x00;
+  1046  007EC4  0E00               	movlw	0
+  1047  007EC6  6F5B               	movwf	91,b	;volatile
+  1048                           
+  1049                           ;mcc_generated_files/pin_manager.c: 91:     RC3I2C = 0x00;
+  1050  007EC8  0E00               	movlw	0
+  1051  007ECA  6F6A               	movwf	106,b	;volatile
+  1052                           
+  1053                           ;mcc_generated_files/pin_manager.c: 92:     RC4I2C = 0x00;
+  1054  007ECC  0E00               	movlw	0
+  1055  007ECE  6F6B               	movwf	107,b	;volatile
+  1056                           
+  1057                           ;mcc_generated_files/pin_manager.c: 97:     ODCONA = 0x00;
+  1058  007ED0  0E00               	movlw	0
+  1059  007ED2  6F42               	movwf	66,b	;volatile
+  1060                           
+  1061                           ;mcc_generated_files/pin_manager.c: 98:     ODCONB = 0x00;
+  1062  007ED4  0E00               	movlw	0
+  1063  007ED6  6F52               	movwf	82,b	;volatile
+  1064                           
+  1065                           ;mcc_generated_files/pin_manager.c: 99:     ODCONC = 0x00;
+  1066  007ED8  0E00               	movlw	0
+  1067  007EDA  6F62               	movwf	98,b	;volatile
+  1068  007EDC                     
+  1069                           ; BSR set to: 58
+  1070                           ;mcc_generated_files/pin_manager.c: 104:     SLRCONA = 0xFF;
+  1071  007EDC  6943               	setf	67,b	;volatile
+  1072  007EDE                     
+  1073                           ; BSR set to: 58
+  1074                           ;mcc_generated_files/pin_manager.c: 105:     SLRCONB = 0xFF;
+  1075  007EDE  6953               	setf	83,b	;volatile
+  1076  007EE0                     
+  1077                           ; BSR set to: 58
+  1078                           ;mcc_generated_files/pin_manager.c: 106:     SLRCONC = 0xFF;
+  1079  007EE0  6963               	setf	99,b	;volatile
+  1080  007EE2                     
+  1081                           ; BSR set to: 58
+  1082                           ;mcc_generated_files/pin_manager.c: 111:     INLVLA = 0xFF;
+  1083  007EE2  6944               	setf	68,b	;volatile
+  1084  007EE4                     
+  1085                           ; BSR set to: 58
+  1086                           ;mcc_generated_files/pin_manager.c: 112:     INLVLB = 0xFF;
+  1087  007EE4  6954               	setf	84,b	;volatile
+  1088  007EE6                     
+  1089                           ; BSR set to: 58
+  1090                           ;mcc_generated_files/pin_manager.c: 113:     INLVLC = 0xFF;
+  1091  007EE6  6964               	setf	100,b	;volatile
+  1092                           
+  1093                           ;mcc_generated_files/pin_manager.c: 114:     INLVLE = 0x08;
+  1094  007EE8  0E08               	movlw	8
+  1095  007EEA  6F84               	movwf	132,b	;volatile
+  1096                           
+  1097                           ;mcc_generated_files/pin_manager.c: 123:     SMT1WINPPS = 0x10;
+  1098  007EEC  0E10               	movlw	16
+  1099  007EEE  6FD1               	movwf	209,b	;volatile
+  1100                           
+  1101                           ;mcc_generated_files/pin_manager.c: 124:     SMT1SIGPPS = 0x11;
+  1102  007EF0  0E11               	movlw	17
+  1103  007EF2  6FD2               	movwf	210,b	;volatile
+  1104  007EF4                     
+  1105                           ; BSR set to: 58
+  1106  007EF4  0012               	return		;funcret
+  1107  007EF6                     __end_of_PIN_MANAGER_Initialize:
+  1108                           	opt callstack 0
+  1109                           
+  1110 ;; *************** function _OSCILLATOR_Initialize *****************
+  1111 ;; Defined at:
+  1112 ;;		line 57 in file "mcc_generated_files/mcc.c"
+  1113 ;; Parameters:    Size  Location     Type
+  1114 ;;		None
+  1115 ;; Auto vars:     Size  Location     Type
+  1116 ;;		None
+  1117 ;; Return value:  Size  Location     Type
+  1118 ;;                  1    wreg      void 
+  1119 ;; Registers used:
+  1120 ;;		wreg, status,2
+  1121 ;; Tracked objects:
+  1122 ;;		On entry : 0/0
+  1123 ;;		On exit  : 0/0
+  1124 ;;		Unchanged: 0/0
+  1125 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+  1126 ;;      Params:         0       0       0       0       0       0       0       0       0
+  1127 ;;      Locals:         0       0       0       0       0       0       0       0       0
+  1128 ;;      Temps:          0       0       0       0       0       0       0       0       0
+  1129 ;;      Totals:         0       0       0       0       0       0       0       0       0
+  1130 ;;Total ram usage:        0 bytes
+  1131 ;; Hardware stack levels used:    1
+  1132 ;; This function calls:
+  1133 ;;		Nothing
+  1134 ;; This function is called by:
+  1135 ;;		_SYSTEM_Initialize
+  1136 ;; This function uses a non-reentrant model
+  1137 ;;
+  1138                           
+  1139                           	psect	text10
+  1140  007D2C                     __ptext10:
+  1141                           	opt callstack 0
+  1142  007D2C                     _OSCILLATOR_Initialize:
+  1143                           	opt callstack 29
+  1144  007D2C                     
+  1145                           ;mcc_generated_files/mcc.c: 60:     OSCCON1 = 0x62;
+  1146  007D2C  0E62               	movlw	98
+  1147  007D2E  0139               	movlb	57	; () banked
+  1148  007D30  6FD9               	movwf	217,b	;volatile
+  1149                           
+  1150                           ;mcc_generated_files/mcc.c: 62:     OSCCON3 = 0x00;
+  1151  007D32  0E00               	movlw	0
+  1152  007D34  6FDB               	movwf	219,b	;volatile
+  1153                           
+  1154                           ;mcc_generated_files/mcc.c: 64:     OSCEN = 0x00;
+  1155  007D36  0E00               	movlw	0
+  1156  007D38  6FDD               	movwf	221,b	;volatile
+  1157                           
+  1158                           ;mcc_generated_files/mcc.c: 66:     OSCFRQ = 0x05;
+  1159  007D3A  0E05               	movlw	5
+  1160  007D3C  6FDF               	movwf	223,b	;volatile
+  1161                           
+  1162                           ;mcc_generated_files/mcc.c: 68:     OSCTUNE = 0x00;
+  1163  007D3E  0E00               	movlw	0
+  1164  007D40  6FDE               	movwf	222,b	;volatile
+  1165  007D42                     
+  1166                           ; BSR set to: 57
+  1167  007D42  0012               	return		;funcret
+  1168  007D44                     __end_of_OSCILLATOR_Initialize:
+  1169                           	opt callstack 0
+  1170  0000                     
+  1171                           	psect	rparam
+  1172  0000                     tosu	equ	0x3FFF
+  1173                           tosh	equ	0x3FFE
+  1174                           tosl	equ	0x3FFD
+  1175                           stkptr	equ	0x3FFC
+  1176                           pclatu	equ	0x3FFB
+  1177                           pclath	equ	0x3FFA
+  1178                           pcl	equ	0x3FF9
+  1179                           tblptru	equ	0x3FF8
+  1180                           tblptrh	equ	0x3FF7
+  1181                           tblptrl	equ	0x3FF6
+  1182                           tablat	equ	0x3FF5
+  1183                           prodh	equ	0x3FF4
+  1184                           prodl	equ	0x3FF3
+  1185                           indf0	equ	0x3FEF
+  1186                           postinc0	equ	0x3FEE
+  1187                           postdec0	equ	0x3FED
+  1188                           preinc0	equ	0x3FEC
+  1189                           plusw0	equ	0x3FEB
+  1190                           fsr0h	equ	0x3FEA
+  1191                           fsr0l	equ	0x3FE9
+  1192                           wreg	equ	0x3FE8
+  1193                           indf1	equ	0x3FE7
+  1194                           postinc1	equ	0x3FE6
+  1195                           postdec1	equ	0x3FE5
+  1196                           preinc1	equ	0x3FE4
+  1197                           plusw1	equ	0x3FE3
+  1198                           fsr1h	equ	0x3FE2
+  1199                           fsr1l	equ	0x3FE1
+  1200                           bsr	equ	0x3FE0
+  1201                           indf2	equ	0x3FDF
+  1202                           postinc2	equ	0x3FDE
+  1203                           postdec2	equ	0x3FDD
+  1204                           preinc2	equ	0x3FDC
+  1205                           plusw2	equ	0x3FDB
+  1206                           fsr2h	equ	0x3FDA
+  1207                           fsr2l	equ	0x3FD9
+  1208                           status	equ	0x3FD8
 
 
 Data Sizes:
@@ -883,8 +1253,12 @@ Pointer List with Targets:
 
 Critical Paths under _main in COMRAM
 
-    _main->_vHILPWM_SetDutyCycle
-    _vHILPWM5_Init->_vHILPWM_SetDutyCycle
+    _main->_vHILPWM5_SetDutyCycle
+    _main->_vHILPWM6_SetDutyCycle
+    _main->_vHILPWM7_SetDutyCycle
+    _vHILPWM7_Init->_vHILPWM7_SetDutyCycle
+    _vHILPWM6_Init->_vHILPWM6_SetDutyCycle
+    _vHILPWM5_Init->_vHILPWM5_SetDutyCycle
 
 Critical Paths under _main in BANK0
 
@@ -923,16 +1297,32 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 8     8      0     726
+ (0) _main                                                 8     8      0    1902
                                               4 COMRAM     8     8      0
                   _SYSTEM_Initialize
                       _vHILPWM5_Init
-               _vHILPWM_SetDutyCycle
+              _vHILPWM5_SetDutyCycle
+                      _vHILPWM6_Init
+              _vHILPWM6_SetDutyCycle
+                      _vHILPWM7_Init
+              _vHILPWM7_SetDutyCycle
+ ---------------------------------------------------------------------------------
+ (1) _vHILPWM7_Init                                        0     0      0     272
+              _vHILPWM7_SetDutyCycle
+ ---------------------------------------------------------------------------------
+ (1) _vHILPWM7_SetDutyCycle                                4     2      2     272
+                                              0 COMRAM     4     2      2
+ ---------------------------------------------------------------------------------
+ (1) _vHILPWM6_Init                                        0     0      0     272
+              _vHILPWM6_SetDutyCycle
+ ---------------------------------------------------------------------------------
+ (1) _vHILPWM6_SetDutyCycle                                4     2      2     272
+                                              0 COMRAM     4     2      2
  ---------------------------------------------------------------------------------
  (1) _vHILPWM5_Init                                        0     0      0     272
-               _vHILPWM_SetDutyCycle
+              _vHILPWM5_SetDutyCycle
  ---------------------------------------------------------------------------------
- (1) _vHILPWM_SetDutyCycle                                 4     2      2     272
+ (1) _vHILPWM5_SetDutyCycle                                4     2      2     272
                                               0 COMRAM     4     2      2
  ---------------------------------------------------------------------------------
  (1) _SYSTEM_Initialize                                    0     0      0       0
@@ -957,8 +1347,14 @@ Call Graph Tables:
      _PIN_MANAGER_Initialize
      _PMD_Initialize
    _vHILPWM5_Init
-     _vHILPWM_SetDutyCycle
-   _vHILPWM_SetDutyCycle
+     _vHILPWM5_SetDutyCycle
+   _vHILPWM5_SetDutyCycle
+   _vHILPWM6_Init
+     _vHILPWM6_SetDutyCycle
+   _vHILPWM6_SetDutyCycle
+   _vHILPWM7_Init
+     _vHILPWM7_SetDutyCycle
+   _vHILPWM7_SetDutyCycle
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
@@ -1008,107 +1404,145 @@ SFR                  0      0       0     200        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Fri Apr 03 16:39:36 2020
+Symbol Table                                                                                   Sat Apr 04 20:01:24 2020
 
-                        __CFG_CP$OFF 000000                                   l41 7E76  
-                                 l35 7E3A                                   l38 7E52  
-                                 u40 7ED2                                   u41 7ECE  
-                                 u50 7FA6                                   u51 7FA2  
-                                 u60 7FF4                                   u61 7FF0  
-                                 u77 7F70                                   u87 7FC8  
-              ?_vHILPWM_SetDutyCycle 0001                          __CFG_LVP$ON 000000  
-                                l102 7F3C                                  l171 7E9C  
-                                l165 7EC4                                  l168 7EDA  
-                                l851 7EE8                                  l931 7E78  
-                                l861 7F24                                  l853 7EEA  
-                                l941 7EBA                                  l933 7E9E  
-                                l871 7F2E                                  l863 7F26  
-                                l855 7EEC                                  l847 7E54  
-                                l943 7EBE                                  l935 7EA6  
-                                l951 7F3E                                  l873 7E3C  
-                                l865 7F28                                  l857 7EF4  
-                                l849 7EDC                                  l945 7EC0  
-                                l937 7EB2                                  l961 7F5A  
-                                l953 7F42                                  l867 7F2A  
-                                l859 7EF6                                  l947 7ED2  
-                                l939 7EB6                                  l971 7FB2  
-                                l963 7F6A                                  l955 7F46  
-                                l869 7F2C                                  l877 7E2E  
-                                l949 7ED4                                  l973 7FC2  
-                                l965 7F78                                  l957 7F4A  
-                                l975 7FD0                                  l967 7F80  
-                                l959 7F4E                                  l977 7FD8  
-                                l969 7FA6              __size_of_PMD_Initialize 0024  
-                                wreg 003FE8                        __CFG_BBEN$OFF 000000  
-                       __CFG_ZCD$OFF 000000                      ??_vHILPWM5_Init 0005  
-                               _LATA 003FBA                                 _LATB 003FBB  
-                               _LATC 003FBC                                 _T2PR 003FAB  
-                               _PMD0 0039C0                                 _PMD1 0039C1  
-                               _PMD2 0039C2                                 _PMD3 0039C3  
-                               _PMD4 0039C4                                 _PMD5 0039C5  
-                               _PMD6 0039C6                                 _PMD7 0039C7  
-                               _PIR4 0039A4                                 _WPUA 003A41  
-                               _WPUB 003A51                                 _WPUC 003A61  
-                               _WPUE 003A81                        __CFG_FCMEN$ON 000000  
-                               _main 7F3E                                 start 7FFC  
-                      __CFG_CSWEN$ON 000000                         ___param_bank 000000  
-     __size_of_OSCILLATOR_Initialize 0018        __end_of_OSCILLATOR_Initialize 7E54  
-                              ?_main 0001                        __CFG_WDTE$OFF 000000  
-                              _T2CLK 003FAE                                _T2CON 003FAC  
-                     __CFG_DEBUG$OFF 000000                                _OSCEN 0039DD  
-                              _PORTA 003FCA                                _TRISA 003FC2  
-                              _TRISB 003FC3                                _TRISC 003FC4  
-                      __CFG_WRTB$OFF 000000                        __CFG_WRTC$OFF 000000  
-                      __CFG_WRTD$OFF 000000                   __CFG_MCLRE$EXTMCLR 000000  
-                              status 003FD8                      __initialization 7E28  
-                       __end_of_main 7FFC                       __CFG_SAFEN$OFF 000000  
-             ??_vHILPWM_SetDutyCycle 0003                               ??_main 0005  
-                     __CFG_PR1WAY$ON 000000                        __activetblptr 000000  
-                             _ANSELA 003A40                               _ANSELB 003A50  
-                             _ANSELC 003A60                               _RB1I2C 003A5A  
-                             _RB2I2C 003A5B                               _RC3I2C 003A6A  
-                             _RC4I2C 003A6B                               _RA0PPS 003A00  
-                             _ODCONA 003A42                               _ODCONB 003A52  
-                             _ODCONC 003A62                       __CFG_WDTCCS$SC 000000  
-                             _INLVLA 003A44                               _INLVLB 003A54  
-                             _INLVLC 003A64                               _INLVLE 003A84  
-                             _OSCFRQ 0039DF                               _TMR2IF 01CD22  
-                     __CFG_XINST$OFF 000000            __CFG_RSTOSC$HFINTOSC_1MHZ 000000  
-                     __CFG_STVREN$ON 000000                       _PMD_Initialize 7E54  
-                  _SYSTEM_Initialize 7E2E                           __accesstop 0060  
-            __end_of__initialization 7E28                   ?_SYSTEM_Initialize 0001  
-                      ___rparam_used 000001                    main@__u16_Counter 0007  
-                     __pcstackCOMRAM 0001                  ??_SYSTEM_Initialize 0001  
-             __end_of_PMD_Initialize 7E78            __end_of_SYSTEM_Initialize 7E3C  
-                    __CFG_IVT1WAY$ON 000000                      __CFG_MVECEN$OFF 000000  
-                    __CFG_PPS1WAY$ON 000000                      ?_PMD_Initialize 0001  
-                __CFG_PWRTS$PWRT_OFF 000000                              _OSCCON1 0039D9  
-                            _OSCCON3 0039DB                              _OSCTUNE 0039DE  
-                            _PWM5DCH 003F6D                              _PWM5DCL 003F6C  
-                            _PWM5CON 003F6E                              _SLRCONA 003A43  
-                            _SLRCONB 003A53                              _SLRCONC 003A63  
-              __end_of_vHILPWM5_Init 7EDC                              __Hparam 0000  
-                            __Lparam 0000                              __pcinit 7E28  
-                            __ramtop 0800                              __ptext0 7F3E  
-                            __ptext1 7E9E                              __ptext2 7E78  
-                            __ptext3 7E2E                              __ptext4 7E54  
-                            __ptext5 7EDC                              __ptext6 7E3C  
-                    __CFG_WRTAPP$OFF 000000                _OSCILLATOR_Initialize 7E3C  
-           ??_PIN_MANAGER_Initialize 0001                      __CFG_WRTSAF$OFF 000000  
-         __size_of_SYSTEM_Initialize 000E                 end_of_initialization 7E28  
-              __CFG_WDTCPS$WDTCPS_31 000000        __size_of_vHILPWM_SetDutyCycle 0026  
-                   __CFG_FEXTOSC$OFF 000000                   main@__u16_Counter2 0009  
-             ?_OSCILLATOR_Initialize 0001                  start_initialization 7E28  
-    __size_of_PIN_MANAGER_Initialize 0062                     __CFG_LPBOREN$OFF 000000  
-                   ??_PMD_Initialize 0001               _PIN_MANAGER_Initialize 7EDC  
-             __CFG_BBSIZE$BBSIZE_512 000000                  __CFG_BORV$VBOR_2P45 000000  
-             __size_of_vHILPWM5_Init 003E         __end_of_vHILPWM_SetDutyCycle 7E9E  
-                           __Hrparam 0000                             __Lrparam 0000  
-                 __CFG_BOREN$SBORDIS 000000              ??_OSCILLATOR_Initialize 0001  
-                      _vHILPWM5_Init 7E9E                        __size_of_main 00BE  
-               __CFG_WDTCWS$WDTCWS_7 000000                       ?_vHILPWM5_Init 0001  
-            ?_PIN_MANAGER_Initialize 0001                    __CFG_CLKOUTEN$OFF 000000  
-                         _SMT1SIGPPS 003AD2                           _SMT1WINPPS 003AD1  
-vHILPWM_SetDutyCycle@__u16_DutyCycle 0001                 _vHILPWM_SetDutyCycle 7E78  
-            main@_u8_VitesseDescente 000C       __end_of_PIN_MANAGER_Initialize 7F3E  
-              main@_u8_VitesseMontee 000B  
+                         __CFG_CP$OFF 000000                                    l41 7D66  
+                                  l35 7D2A                                    l38 7D42  
+                                  u60 7E0E                                    u61 7E0A  
+                                  u70 7E4C                                    u71 7E48  
+                                  u80 7E8A                                    u81 7E86  
+                                  u90 7F86                                    u91 7F82  
+                         __CFG_LVP$ON 000000                                   l102 7EF4  
+                                 l213 7E00                                   l222 7E54  
+                                 l231 7D8C                                   l216 7E16  
+                                 l225 7E7C                                   l234 7DB2  
+                                 l219 7E3E                                   l228 7E92  
+                                 l237 7DD8                                   l921 7EA4  
+                                 l913 7D44                                   l931 7EE0  
+                                 l923 7EAC                                   l915 7E94  
+                                 l933 7EE2                                   l925 7EAE  
+                                 l917 7EA0                                   l935 7EE4  
+                                 l927 7EDC                                   l919 7EA2  
+                                 l937 7EE6                                   l929 7EDE  
+                                 l939 7D2C                                   l947 7D1E  
+                                 u100 7FF4                                   u101 7FF0  
+                                 u117 7F50                                   u127 7FC8  
+             __size_of_PMD_Initialize 0024                                   wreg 003FE8  
+                       __CFG_BBEN$OFF 000000               ??_vHILPWM7_SetDutyCycle 0003  
+                        __CFG_ZCD$OFF 000000                       ??_vHILPWM5_Init 0005  
+                     ??_vHILPWM6_Init 0005        __size_of_vHILPWM5_SetDutyCycle 0026  
+                                l1101 7EF6                                  l1111 7F0A  
+                                l1103 7EFA                                  l1041 7D68  
+                                l1121 7F60                                  l1113 7F0E  
+                                l1105 7EFE                                  l1051 7DEE  
+                                l1043 7D8E                                  l1131 7FD8  
+                                l1123 7F86                                  l1115 7F1A  
+                                l1107 7F02                                  l1061 7E0E  
+                                l1053 7DF2                                  l1045 7DB4  
+                                l1125 7F92                                  l1117 7F4A  
+                                l1109 7F06                                  l1063 7E10  
+                                l1055 7DF6                                  l1047 7DDA  
+                                l1071 7E30                                  l1127 7FC2  
+                                l1119 7F58                                  l1057 7DFA  
+                                l1049 7DE2                                  l1081 7E4E  
+                                l1073 7E34                                  l1065 7E18  
+                                l1129 7FD0                                  l1059 7DFC  
+                                l1075 7E38                                  l1067 7E20  
+                                l1091 7E72                                  l1083 7E56  
+                                l1077 7E3A                                  l1069 7E2C  
+                                l1093 7E76                                  l1085 7E5E  
+                     ??_vHILPWM7_Init 0005                                  l1079 7E4C  
+                                l1095 7E78                                  l1087 7E6A  
+                                l1097 7E8A                                  l1089 7E6E  
+                                l1099 7E8C         __end_of_vHILPWM5_SetDutyCycle 7D8E  
+                                _LATA 003FBA                                  _LATB 003FBB  
+                                _LATC 003FBC                                  _T2PR 003FAB  
+                                _T4PR 003F9F                                  _T6PR 003F93  
+                                _PMD0 0039C0                                  _PMD1 0039C1  
+                                _PMD2 0039C2                                  _PMD3 0039C3  
+                                _PMD4 0039C4                                  _PMD5 0039C5  
+                                _PMD6 0039C6                                  _PMD7 0039C7  
+                                _PIR4 0039A4                                  _PIR7 0039A7  
+                                _PIR9 0039A9                                  _WPUA 003A41  
+                                _WPUB 003A51                                  _WPUC 003A61  
+                                _WPUE 003A81                         __CFG_FCMEN$ON 000000  
+                                _main 7EF6                                  start 7FFC  
+                       __CFG_CSWEN$ON 000000                          ___param_bank 000000  
+      __size_of_OSCILLATOR_Initialize 0018         __end_of_OSCILLATOR_Initialize 7D44  
+                               ?_main 0001                         __CFG_WDTE$OFF 000000  
+                               _T2CLK 003FAE                                 _T2CON 003FAC  
+                               _T4CLK 003FA2                                 _T4CON 003FA0  
+                               _T6CLK 003F96                                 _T6CON 003F94  
+                      __CFG_DEBUG$OFF 000000                                 _OSCEN 0039DD  
+                               _PORTA 003FCA                                 _TRISA 003FC2  
+                               _TRISB 003FC3                                 _TRISC 003FC4  
+                       __CFG_WRTB$OFF 000000                         __CFG_WRTC$OFF 000000  
+                       __CFG_WRTD$OFF 000000                    __CFG_MCLRE$EXTMCLR 000000  
+                               status 003FD8                       __initialization 7D18  
+                        __end_of_main 7FFC                        __CFG_SAFEN$OFF 000000  
+                              ??_main 0005                        __CFG_PR1WAY$ON 000000  
+                       __activetblptr 000000                                _ANSELA 003A40  
+                              _ANSELB 003A50                                _ANSELC 003A60  
+                              _RB1I2C 003A5A                                _RB2I2C 003A5B  
+      __size_of_vHILPWM6_SetDutyCycle 0026                                _RC3I2C 003A6A  
+                              _RC4I2C 003A6B                                _RA0PPS 003A00  
+                              _RA1PPS 003A01                                _RA2PPS 003A02  
+       __end_of_vHILPWM6_SetDutyCycle 7DB4                                _ODCONA 003A42  
+                              _ODCONB 003A52                                _ODCONC 003A62  
+                      __CFG_WDTCCS$SC 000000                                _INLVLA 003A44  
+                              _INLVLB 003A54                                _INLVLC 003A64  
+                              _INLVLE 003A84                                _OSCFRQ 0039DF  
+                              _TMR2IF 01CD22                                _TMR4IF 01CD38  
+                              _TMR6IF 01CD48                        __CFG_XINST$OFF 000000  
+           __CFG_RSTOSC$HFINTOSC_1MHZ 000000                        __CFG_STVREN$ON 000000  
+                      _PMD_Initialize 7D44                     _SYSTEM_Initialize 7D1E  
+                          __accesstop 0060               __end_of__initialization 7D18  
+                  ?_SYSTEM_Initialize 0001                         ___rparam_used 000001  
+                   main@__u16_Counter 0009                        __pcstackCOMRAM 0001  
+                 ??_SYSTEM_Initialize 0001                __end_of_PMD_Initialize 7D68  
+           __end_of_SYSTEM_Initialize 7D2C                       __CFG_IVT1WAY$ON 000000  
+      __size_of_vHILPWM7_SetDutyCycle 0026         __end_of_vHILPWM7_SetDutyCycle 7DDA  
+                     __CFG_MVECEN$OFF 000000                       __CFG_PPS1WAY$ON 000000  
+                     ?_PMD_Initialize 0001                   __CFG_PWRTS$PWRT_OFF 000000  
+                             _OSCCON1 0039D9                               _OSCCON3 0039DB  
+                             _OSCTUNE 0039DE                               _PWM5DCH 003F6D  
+                             _PWM5DCL 003F6C                               _PWM6DCH 003F69  
+                             _PWM6DCL 003F68                               _PWM7DCH 003F65  
+                             _PWM7DCL 003F64                               _PWM5CON 003F6E  
+                             _PWM6CON 003F6A                               _PWM7CON 003F66  
+                             _SLRCONA 003A43                               _SLRCONB 003A53  
+                             _SLRCONC 003A63                 __end_of_vHILPWM5_Init 7E18  
+               __end_of_vHILPWM6_Init 7E56                 __end_of_vHILPWM7_Init 7E94  
+               _vHILPWM5_SetDutyCycle 7D68                               __Hparam 0000  
+                             __Lparam 0000                               __pcinit 7D18  
+                             __ramtop 0800                               __ptext0 7EF6  
+                             __ptext1 7E56                               __ptext2 7DB4  
+                             __ptext3 7E18                               __ptext4 7D8E  
+                             __ptext5 7DDA                               __ptext6 7D68  
+                             __ptext7 7D1E                               __ptext8 7D44  
+                             __ptext9 7E94                       __CFG_WRTAPP$OFF 000000  
+               _OSCILLATOR_Initialize 7D2C              ??_PIN_MANAGER_Initialize 0001  
+                     __CFG_WRTSAF$OFF 000000            __size_of_SYSTEM_Initialize 000E  
+                end_of_initialization 7D18                 __CFG_WDTCPS$WDTCPS_31 000000  
+                    __CFG_FEXTOSC$OFF 000000                ?_vHILPWM5_SetDutyCycle 0001  
+                  main@__u16_Counter2 000B                 _vHILPWM6_SetDutyCycle 7D8E  
+              ?_OSCILLATOR_Initialize 0001                   start_initialization 7D18  
+     __size_of_PIN_MANAGER_Initialize 0062                      __CFG_LPBOREN$OFF 000000  
+                    ??_PMD_Initialize 0001                ?_vHILPWM6_SetDutyCycle 0001  
+               _vHILPWM7_SetDutyCycle 7DB4                _PIN_MANAGER_Initialize 7E94  
+              __CFG_BBSIZE$BBSIZE_512 000000                   __CFG_BORV$VBOR_2P45 000000  
+              __size_of_vHILPWM5_Init 003E                __size_of_vHILPWM6_Init 003E  
+              __size_of_vHILPWM7_Init 003E               ??_vHILPWM5_SetDutyCycle 0003  
+              ?_vHILPWM7_SetDutyCycle 0001                              __Hrparam 0000  
+                            __Lrparam 0000                    __CFG_BOREN$SBORDIS 000000  
+vHILPWM7_SetDutyCycle@__u16_DutyCycle 0001               ??_OSCILLATOR_Initialize 0001  
+                            __ptext10 7D2C                         _vHILPWM5_Init 7DDA  
+                       _vHILPWM6_Init 7E18                         __size_of_main 0106  
+                       _vHILPWM7_Init 7E56                  __CFG_WDTCWS$WDTCWS_7 000000  
+vHILPWM6_SetDutyCycle@__u16_DutyCycle 0001               ??_vHILPWM6_SetDutyCycle 0003  
+                      ?_vHILPWM5_Init 0001                        ?_vHILPWM6_Init 0001  
+                      ?_vHILPWM7_Init 0001               ?_PIN_MANAGER_Initialize 0001  
+                   __CFG_CLKOUTEN$OFF 000000                            _SMT1SIGPPS 003AD2  
+                          _SMT1WINPPS 003AD1  vHILPWM5_SetDutyCycle@__u16_DutyCycle 0001  
+             main@_u8_VitesseDescente 0008        __end_of_PIN_MANAGER_Initialize 7EF6  
+               main@_u8_VitesseMontee 0007  

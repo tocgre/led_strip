@@ -7,8 +7,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./inc/HIL/hil_pwm.h: 22: extern void vHILPWM5_Init (void);
 [v _vHILPWM5_Init `(v ~T0 @X0 0 ef ]
 "23
-[; ;./inc/HIL/hil_pwm.h: 23: extern void vHILPWM_SetDutyCycle (uint16_t __u16_DutyCycle);
-[v _vHILPWM_SetDutyCycle `(v ~T0 @X0 0 ef1`us ]
+[; ;./inc/HIL/hil_pwm.h: 23: extern void vHILPWM6_Init (void);
+[v _vHILPWM6_Init `(v ~T0 @X0 0 ef ]
+"24
+[; ;./inc/HIL/hil_pwm.h: 24: extern void vHILPWM7_Init (void);
+[v _vHILPWM7_Init `(v ~T0 @X0 0 ef ]
+"25
+[; ;./inc/HIL/hil_pwm.h: 25: extern void vHILPWM5_SetDutyCycle (uint16_t __u16_DutyCycle);
+[v _vHILPWM5_SetDutyCycle `(v ~T0 @X0 0 ef1`us ]
+"26
+[; ;./inc/HIL/hil_pwm.h: 26: extern void vHILPWM6_SetDutyCycle (uint16_t __u16_DutyCycle);
+[v _vHILPWM6_SetDutyCycle `(v ~T0 @X0 0 ef1`us ]
+"27
+[; ;./inc/HIL/hil_pwm.h: 27: extern void vHILPWM7_SetDutyCycle (uint16_t __u16_DutyCycle);
+[v _vHILPWM7_SetDutyCycle `(v ~T0 @X0 0 ef1`us ]
 [v F15351 `(v ~T0 @X0 1 tf1`ul ]
 "187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
 [v __delay `JF15351 ~T0 @X0 0 e ]
@@ -2167,75 +2179,93 @@ Version 4.0 HI-TECH Software Intermediate Code
 "15
 [; ;main.c: 15:     vHILPWM5_Init();
 [e ( _vHILPWM5_Init ..  ]
-"29
-[; ;main.c: 29:     uint8_t _u8_VitesseMontee = 30U;
+"16
+[; ;main.c: 16:     vHILPWM6_Init();
+[e ( _vHILPWM6_Init ..  ]
+"17
+[; ;main.c: 17:     vHILPWM7_Init();
+[e ( _vHILPWM7_Init ..  ]
+"31
+[; ;main.c: 31:     uint8_t _u8_VitesseMontee = 2U;
 [v __u8_VitesseMontee `uc ~T0 @X0 1 a ]
-[e = __u8_VitesseMontee -> -> 30 `ui `uc ]
-"30
-[; ;main.c: 30:     uint8_t _u8_VitesseDescente = 30U;
+[e = __u8_VitesseMontee -> -> 2 `ui `uc ]
+"32
+[; ;main.c: 32:     uint8_t _u8_VitesseDescente = 2U;
 [v __u8_VitesseDescente `uc ~T0 @X0 1 a ]
-[e = __u8_VitesseDescente -> -> 30 `ui `uc ]
-"33
-[; ;main.c: 33:     while (1U)
-[e :U 2150 ]
-"34
-[; ;main.c: 34:     {
-{
+[e = __u8_VitesseDescente -> -> 2 `ui `uc ]
 "35
-[; ;main.c: 35:         for(uint16_t __u16_Counter = 0U; __u16_Counter < ((204U) - _u8_VitesseMontee); __u16_Counter += _u8_VitesseMontee)
+[; ;main.c: 35:     while (1U)
+[e :U 2150 ]
+"36
+[; ;main.c: 36:     {
+{
+"37
+[; ;main.c: 37:         for(uint16_t __u16_Counter = 0U; __u16_Counter < ((204U) - _u8_VitesseMontee); __u16_Counter += _u8_VitesseMontee)
 {
 [v ___u16_Counter `us ~T0 @X0 1 a ]
 [e = ___u16_Counter -> -> 0 `ui `us ]
 [e $U 2155  ]
 [e :U 2152 ]
-"36
-[; ;main.c: 36:         {
-{
-"37
-[; ;main.c: 37:             vHILPWM_SetDutyCycle(__u16_Counter);
-[e ( _vHILPWM_SetDutyCycle (1 ___u16_Counter ]
 "38
-[; ;main.c: 38:             _delay((unsigned long)((100U)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `ui `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 38:         {
+{
 "39
-[; ;main.c: 39:         }
+[; ;main.c: 39:             vHILPWM5_SetDutyCycle(__u16_Counter);
+[e ( _vHILPWM5_SetDutyCycle (1 ___u16_Counter ]
+"40
+[; ;main.c: 40:             vHILPWM6_SetDutyCycle(__u16_Counter);
+[e ( _vHILPWM6_SetDutyCycle (1 ___u16_Counter ]
+"41
+[; ;main.c: 41:             vHILPWM7_SetDutyCycle(__u16_Counter);
+[e ( _vHILPWM7_SetDutyCycle (1 ___u16_Counter ]
+"42
+[; ;main.c: 42:             _delay((unsigned long)((10U)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `ui `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"43
+[; ;main.c: 43:         }
 }
 [e =+ ___u16_Counter -> __u8_VitesseMontee `us ]
 [e :U 2155 ]
 [e $ < -> ___u16_Counter `ui - -> 204 `ui -> __u8_VitesseMontee `ui 2152  ]
 [e :U 2153 ]
 }
-"40
-[; ;main.c: 40:         for(uint16_t __u16_Counter2 = (204U); __u16_Counter2 > (0U + _u8_VitesseDescente); __u16_Counter2 -= _u8_VitesseDescente)
+"44
+[; ;main.c: 44:         for(uint16_t __u16_Counter2 = (204U); __u16_Counter2 > (0U + _u8_VitesseDescente); __u16_Counter2 -= _u8_VitesseDescente)
 {
 [v ___u16_Counter2 `us ~T0 @X0 1 a ]
 [e = ___u16_Counter2 -> -> 204 `ui `us ]
 [e $U 2159  ]
 [e :U 2156 ]
-"41
-[; ;main.c: 41:         {
+"45
+[; ;main.c: 45:         {
 {
-"42
-[; ;main.c: 42:             vHILPWM_SetDutyCycle(__u16_Counter2);
-[e ( _vHILPWM_SetDutyCycle (1 ___u16_Counter2 ]
-"43
-[; ;main.c: 43:             _delay((unsigned long)((100U)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `ui `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"44
-[; ;main.c: 44:         }
+"46
+[; ;main.c: 46:             vHILPWM5_SetDutyCycle(__u16_Counter2);
+[e ( _vHILPWM5_SetDutyCycle (1 ___u16_Counter2 ]
+"47
+[; ;main.c: 47:             vHILPWM6_SetDutyCycle(__u16_Counter2);
+[e ( _vHILPWM6_SetDutyCycle (1 ___u16_Counter2 ]
+"48
+[; ;main.c: 48:             vHILPWM7_SetDutyCycle(__u16_Counter2);
+[e ( _vHILPWM7_SetDutyCycle (1 ___u16_Counter2 ]
+"49
+[; ;main.c: 49:             _delay((unsigned long)((10U)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `ui `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"50
+[; ;main.c: 50:         }
 }
 [e =- ___u16_Counter2 -> __u8_VitesseDescente `us ]
 [e :U 2159 ]
 [e $ > -> ___u16_Counter2 `ui + -> 0 `ui -> __u8_VitesseDescente `ui 2156  ]
 [e :U 2157 ]
 }
-"45
-[; ;main.c: 45:     }
+"51
+[; ;main.c: 51:     }
 }
 [e :U 2149 ]
 [e $U 2150  ]
 [e :U 2151 ]
-"46
-[; ;main.c: 46: }
+"52
+[; ;main.c: 52: }
 [e :UE 2148 ]
 }
