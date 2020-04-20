@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/pin_manager.c"
+# 1 "mcc_generated_files/interrupt_manager.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,15 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/pin_manager.c" 2
-# 49 "mcc_generated_files/pin_manager.c"
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 54 "mcc_generated_files/pin_manager.h"
+# 1 "mcc_generated_files/interrupt_manager.c" 2
+# 49 "mcc_generated_files/interrupt_manager.c"
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 109 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 49 "mcc_generated_files/interrupt_manager.c" 2
+
+# 1 "mcc_generated_files/mcc.h" 1
+# 49 "mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -25813,85 +25818,161 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/pin_manager.h" 2
+# 49 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/device_config.h" 1
+# 50 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/pin_manager.h" 1
 # 78 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 49 "mcc_generated_files/pin_manager.c" 2
+# 51 "mcc_generated_files/mcc.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 173 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
 
 
 
 
 
+typedef long long int64_t;
+# 188 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
 
-void PIN_MANAGER_Initialize(void)
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+# 52 "mcc_generated_files/mcc.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 53 "mcc_generated_files/mcc.h" 2
+
+
+# 1 "mcc_generated_files/tmr1.h" 1
+# 100 "mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 129 "mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 161 "mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 196 "mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 235 "mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 271 "mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 310 "mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 349 "mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 368 "mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 386 "mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 404 "mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 55 "mcc_generated_files/mcc.h" 2
+# 70 "mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 83 "mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 96 "mcc_generated_files/mcc.h"
+void PMD_Initialize(void);
+# 50 "mcc_generated_files/interrupt_manager.c" 2
+
+
+void INTERRUPT_Initialize (void)
 {
+    INTCON0bits.IPEN = 1;
 
+    _Bool state = (unsigned char)GIE;
+    GIE = 0;
+    IVTLOCK = 0x55;
+    IVTLOCK = 0xAA;
+    IVTLOCKbits.IVTLOCKED = 0x00;
 
+    IVTADU = 0;
+    IVTADH = 0;
+    IVTADL = 8;
 
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
+    IVTLOCK = 0x55;
+    IVTLOCK = 0xAA;
+    IVTLOCKbits.IVTLOCKED = 0x01;
 
+    GIE = state;
 
-
-
-    TRISA = 0xFF;
-    TRISB = 0xFF;
-    TRISC = 0xFF;
-
-
-
-
-    ANSELC = 0xFF;
-    ANSELB = 0xFF;
-    ANSELA = 0xFF;
-
-
-
-
-    WPUE = 0x00;
-    WPUB = 0x00;
-    WPUA = 0x00;
-    WPUC = 0x00;
-
-
-
-
-    RB1I2C = 0x00;
-    RB2I2C = 0x00;
-    RC3I2C = 0x00;
-    RC4I2C = 0x00;
-
-
-
-
-    ODCONA = 0x00;
-    ODCONB = 0x00;
-    ODCONC = 0x00;
-
-
-
-
-    SLRCONA = 0xFF;
-    SLRCONB = 0xFF;
-    SLRCONC = 0xFF;
-
-
-
-
-    INLVLA = 0xFF;
-    INLVLB = 0xFF;
-    INLVLC = 0xFF;
-    INLVLE = 0x08;
-
-
-
-
-
-
-
+    IPR4bits.TMR1IP = 1;
 }
 
-void PIN_MANAGER_IOC(void)
+void __attribute__((picinterrupt(("irq(default),base(8)")))) Default_ISR()
 {
 }

@@ -27,16 +27,30 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"9 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+"25 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
 [v _main main `(v  1 e 1 0 ]
+"52 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"75
+[v _Default_ISR Default_ISR `IIH(v  1 e 1 0 ]
 "50 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"57
+"59
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"71
+"73
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 "55 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"65 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"128
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"165
+[v _TMR1_ISR TMR1_ISR `IIH(v  1 e 1 0 ]
+"179
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"183
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
 "12 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
 [v _vHILPWM5_Init vHILPWM5_Init `(v  1 e 1 0 ]
 "48
@@ -49,8 +63,52 @@
 [v _vHILPWM6_SetDutyCycle vHILPWM6_SetDutyCycle `(v  1 e 1 0 ]
 "140
 [v _vHILPWM7_SetDutyCycle vHILPWM7_SetDutyCycle `(v  1 e 1 0 ]
-"4369 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
+"728 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
+[v _IVTADL IVTADL `VEuc  1 e 1 @14493 ]
+"748
+[v _IVTADH IVTADH `VEuc  1 e 1 @14494 ]
+"768
+[v _IVTADU IVTADU `VEuc  1 e 1 @14495 ]
+[s S453 . 1 `uc 1 TMR1IP 1 0 :1:0 
+`uc 1 TMR1GIP 1 0 :1:1 
+`uc 1 TMR2IP 1 0 :1:2 
+`uc 1 CCP1IP 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 NCO1IP 1 0 :1:5 
+`uc 1 CWG1IP 1 0 :1:6 
+`uc 1 CLC1IP 1 0 :1:7 
+]
+"3080
+[s S462 . 1 `uc 1 CCIP3IP 1 0 :1:0 
+]
+[u S464 . 1 `S453 1 . 1 0 `S462 1 . 1 0 ]
+[v _IPR4bits IPR4bits `VES464  1 e 1 @14724 ]
+[s S233 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR1GIE 1 0 :1:1 
+`uc 1 TMR2IE 1 0 :1:2 
+`uc 1 CCP1IE 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 NCO1IE 1 0 :1:5 
+`uc 1 CWG1IE 1 0 :1:6 
+`uc 1 CLC1IE 1 0 :1:7 
+]
+"3765
+[u S242 . 1 `S233 1 . 1 0 ]
+[v _PIE4bits PIE4bits `VES242  1 e 1 @14740 ]
+"4369
 [v _PIR4 PIR4 `VEuc  1 e 1 @14756 ]
+[s S212 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR1GIF 1 0 :1:1 
+`uc 1 TMR2IF 1 0 :1:2 
+`uc 1 CCP1IF 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 NCO1IF 1 0 :1:5 
+`uc 1 CWG1IF 1 0 :1:6 
+`uc 1 CLC1IF 1 0 :1:7 
+]
+"4386
+[u S221 . 1 `S212 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES221  1 e 1 @14756 ]
 "4550
 [v _PIR7 PIR7 `VEuc  1 e 1 @14759 ]
 "4622
@@ -129,10 +187,6 @@
 [v _WPUE WPUE `VEuc  1 e 1 @14977 ]
 "9973
 [v _INLVLE INLVLE `VEuc  1 e 1 @14980 ]
-"10473
-[v _SMT1WINPPS SMT1WINPPS `VEuc  1 e 1 @15057 ]
-"10493
-[v _SMT1SIGPPS SMT1SIGPPS `VEuc  1 e 1 @15058 ]
 "37358
 [v _PWM7DCL PWM7DCL `VEuc  1 e 1 @16228 ]
 "37424
@@ -169,6 +223,76 @@
 [v _T2CON T2CON `VEuc  1 e 1 @16300 ]
 "42523
 [v _T2CLK T2CLK `VEuc  1 e 1 @16302 ]
+"42768
+[v _TMR1L TMR1L `VEuc  1 e 1 @16304 ]
+"42838
+[v _TMR1H TMR1H `VEuc  1 e 1 @16305 ]
+"42908
+[v _T1CON T1CON `VEuc  1 e 1 @16306 ]
+[s S265 . 1 `uc 1 ON 1 0 :1:0 
+`uc 1 RD16 1 0 :1:1 
+`uc 1 NOT_SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CKPS 1 0 :2:4 
+]
+"42944
+[s S271 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 T1RD16 1 0 :1:1 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+"42944
+[s S278 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+]
+"42944
+[s S282 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RD161 1 0 :1:1 
+]
+"42944
+[u S285 . 1 `S265 1 . 1 0 `S271 1 . 1 0 `S278 1 . 1 0 `S282 1 . 1 0 ]
+"42944
+"42944
+[v _T1CONbits T1CONbits `VES285  1 e 1 @16306 ]
+"43098
+[v _T1GCON T1GCON `VEuc  1 e 1 @16307 ]
+[s S311 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GVAL 1 0 :1:2 
+`uc 1 GGO 1 0 :1:3 
+`uc 1 GSPM 1 0 :1:4 
+`uc 1 GTM 1 0 :1:5 
+`uc 1 GPOL 1 0 :1:6 
+`uc 1 GE 1 0 :1:7 
+]
+"43136
+[s S319 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 T1GE 1 0 :1:7 
+]
+"43136
+[s S327 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_DONE 1 0 :1:3 
+]
+"43136
+[s S330 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_T1DONE 1 0 :1:3 
+]
+"43136
+[u S333 . 1 `S311 1 . 1 0 `S319 1 . 1 0 `S327 1 . 1 0 `S330 1 . 1 0 ]
+"43136
+"43136
+[v _T1GCONbits T1GCONbits `VES333  1 e 1 @16307 ]
+"43312
+[v _T1GATE T1GATE `VEuc  1 e 1 @16308 ]
+"43478
+[v _T1CLK T1CLK `VEuc  1 e 1 @16309 ]
 "44276
 [v _LATA LATA `VEuc  1 e 1 @16314 ]
 "44388
@@ -183,24 +307,56 @@
 [v _TRISC TRISC `VEuc  1 e 1 @16324 ]
 "44798
 [v _PORTA PORTA `VEuc  1 e 1 @16330 ]
+[s S102 . 1 `uc 1 INT0EDG 1 0 :1:0 
+`uc 1 INT1EDG 1 0 :1:1 
+`uc 1 INT2EDG 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 IPEN 1 0 :1:5 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"45098
+[s S110 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 GIEH 1 0 :1:7 
+]
+"45098
+[u S113 . 1 `S102 1 . 1 0 `S110 1 . 1 0 ]
+"45098
+"45098
+[v _INTCON0bits INTCON0bits `VES113  1 e 1 @16338 ]
+"45174
+[v _IVTLOCK IVTLOCK `VEuc  1 e 1 @16340 ]
+[s S443 . 1 `uc 1 IVTLOCKED 1 0 :1:0 
+]
+"45184
+[u S445 . 1 `S443 1 . 1 0 ]
+"45184
+"45184
+[v _IVTLOCKbits IVTLOCKbits `VES445  1 e 1 @16340 ]
+"50441
+[v _GIE GIE `VEb  1 e 0 @130711 ]
 "55733
 [v _TMR2IF TMR2IF `VEb  1 e 0 @118050 ]
 "55823
 [v _TMR4IF TMR4IF `VEb  1 e 0 @118072 ]
 "55913
 [v _TMR6IF TMR6IF `VEb  1 e 0 @118088 ]
-"9 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+"58 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"59
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
+"25 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"44
-[v main@__u16_Counter2 __u16_Counter2 `us  1 a 2 10 ]
-"37
-[v main@__u16_Counter __u16_Counter `us  1 a 2 8 ]
-"32
-[v main@_u8_VitesseDescente _u8_VitesseDescente `uc  1 a 1 7 ]
-"31
-[v main@_u8_VitesseMontee _u8_VitesseMontee `uc  1 a 1 6 ]
+"64
+[v main@__u16_Counter2 __u16_Counter2 `us  1 a 2 12 ]
+"57
+[v main@__u16_Counter __u16_Counter `us  1 a 2 10 ]
 "52
+[v main@_u8_VitesseDescente _u8_VitesseDescente `uc  1 a 1 9 ]
+"51
+[v main@_u8_VitesseMontee _u8_VitesseMontee `uc  1 a 1 8 ]
+"72
 } 0
 "84 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
 [v _vHILPWM7_Init vHILPWM7_Init `(v  1 e 1 0 ]
@@ -210,7 +366,7 @@
 "140
 [v _vHILPWM7_SetDutyCycle vHILPWM7_SetDutyCycle `(v  1 e 1 0 ]
 {
-[v vHILPWM7_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 0 ]
+[v vHILPWM7_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 2 ]
 "146
 } 0
 "48
@@ -221,7 +377,7 @@
 "130
 [v _vHILPWM6_SetDutyCycle vHILPWM6_SetDutyCycle `(v  1 e 1 0 ]
 {
-[v vHILPWM6_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 0 ]
+[v vHILPWM6_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 2 ]
 "136
 } 0
 "12
@@ -232,26 +388,65 @@
 "120
 [v _vHILPWM5_SetDutyCycle vHILPWM5_SetDutyCycle `(v  1 e 1 0 ]
 {
-[v vHILPWM5_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 0 ]
+[v vHILPWM5_SetDutyCycle@__u16_DutyCycle __u16_DutyCycle `us  1 p 2 2 ]
 "126
 } 0
 "50 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"55
+"57
 } 0
-"71
+"65 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"98
+} 0
+"179
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
+"181
+} 0
+"73 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 {
-"89
+"91
 } 0
 "55 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"125
+"122
 } 0
-"57 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+"59 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"69
+"71
+} 0
+"52 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+[v INTERRUPT_Initialize@state state `a  1 a 1 2 ]
+"73
+} 0
+"165 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `IIH(v  1 e 1 0 ]
+{
+"176
+} 0
+"128
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+"148
+} 0
+"183
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"186
+} 0
+"75 C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+[v _Default_ISR Default_ISR `IIH(v  1 e 1 0 ]
+{
+"77
 } 0

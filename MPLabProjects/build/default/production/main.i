@@ -25820,10 +25820,8 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 50 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 102 "./mcc_generated_files/pin_manager.h"
+# 78 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 114 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
 # 51 "./mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
@@ -25913,11 +25911,41 @@ typedef uint32_t uint_fast32_t;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
 # 53 "./mcc_generated_files/mcc.h" 2
-# 68 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/interrupt_manager.h" 1
+# 109 "./mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 54 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr1.h" 1
+# 100 "./mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 129 "./mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 161 "./mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 196 "./mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 235 "./mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 271 "./mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 310 "./mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 349 "./mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 368 "./mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 386 "./mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 404 "./mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+# 70 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 81 "./mcc_generated_files/mcc.h"
+# 83 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 94 "./mcc_generated_files/mcc.h"
+# 96 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 15 "./system_def.h" 2
 # 1 "main.c" 2
@@ -25938,12 +25966,7 @@ extern void vHILPWM5_SetDutyCycle (uint16_t __u16_DutyCycle);
 extern void vHILPWM6_SetDutyCycle (uint16_t __u16_DutyCycle);
 extern void vHILPWM7_SetDutyCycle (uint16_t __u16_DutyCycle);
 # 3 "main.c" 2
-
-
-
-
-
-
+# 25 "main.c"
 void main(void)
 {
 
@@ -25953,7 +25976,14 @@ void main(void)
     vHILPWM5_Init();
     vHILPWM6_Init();
     vHILPWM7_Init();
-# 31 "main.c"
+
+
+
+
+
+
+    (INTCON0bits.GIEH = 1);
+# 51 "main.c"
     uint8_t _u8_VitesseMontee = 2U;
     uint8_t _u8_VitesseDescente = 2U;
 

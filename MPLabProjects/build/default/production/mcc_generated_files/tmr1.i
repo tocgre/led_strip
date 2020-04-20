@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/pin_manager.c"
+# 1 "mcc_generated_files/tmr1.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/pin_manager.c" 2
-# 49 "mcc_generated_files/pin_manager.c"
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 54 "mcc_generated_files/pin_manager.h"
+# 1 "mcc_generated_files/tmr1.c" 2
+# 51 "mcc_generated_files/tmr1.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -25813,85 +25811,256 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/pin_manager.h" 2
-# 78 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 49 "mcc_generated_files/pin_manager.c" 2
+# 51 "mcc_generated_files/tmr1.c" 2
+
+# 1 "mcc_generated_files/tmr1.h" 1
+# 54 "mcc_generated_files/tmr1.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdbool.h" 1 3
+# 54 "mcc_generated_files/tmr1.h" 2
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 173 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int32_t;
 
 
 
 
 
+typedef long long int64_t;
+# 188 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
 
-void PIN_MANAGER_Initialize(void)
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 209 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int32_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint32_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 139 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdint.h" 2 3
+# 55 "mcc_generated_files/tmr1.h" 2
+# 100 "mcc_generated_files/tmr1.h"
+void TMR1_Initialize(void);
+# 129 "mcc_generated_files/tmr1.h"
+void TMR1_StartTimer(void);
+# 161 "mcc_generated_files/tmr1.h"
+void TMR1_StopTimer(void);
+# 196 "mcc_generated_files/tmr1.h"
+uint16_t TMR1_ReadTimer(void);
+# 235 "mcc_generated_files/tmr1.h"
+void TMR1_WriteTimer(uint16_t timerVal);
+# 271 "mcc_generated_files/tmr1.h"
+void TMR1_Reload(void);
+# 310 "mcc_generated_files/tmr1.h"
+void TMR1_StartSinglePulseAcquisition(void);
+# 349 "mcc_generated_files/tmr1.h"
+uint8_t TMR1_CheckGateValueStatus(void);
+# 368 "mcc_generated_files/tmr1.h"
+ void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 386 "mcc_generated_files/tmr1.h"
+extern void (*TMR1_InterruptHandler)(void);
+# 404 "mcc_generated_files/tmr1.h"
+void TMR1_DefaultInterruptHandler(void);
+# 52 "mcc_generated_files/tmr1.c" 2
+
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 109 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
+# 53 "mcc_generated_files/tmr1.c" 2
+
+
+
+
+
+volatile uint16_t timer1ReloadVal;
+void (*TMR1_InterruptHandler)(void);
+
+
+
+
+
+void TMR1_Initialize(void)
 {
 
 
 
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x00;
+    T1GCON = 0x00;
 
 
+    T1GATE = 0x00;
 
 
-    TRISA = 0xFF;
-    TRISB = 0xFF;
-    TRISC = 0xFF;
+    T1CLK = 0x04;
 
 
+    TMR1H = 0xE1;
 
 
-    ANSELC = 0xFF;
-    ANSELB = 0xFF;
-    ANSELA = 0xFF;
+    TMR1L = 0xBA;
 
 
+    timer1ReloadVal=(uint16_t)((TMR1H << 8) | TMR1L);
 
 
-    WPUE = 0x00;
-    WPUB = 0x00;
-    WPUA = 0x00;
-    WPUC = 0x00;
+    PIR4bits.TMR1IF = 0;
 
 
+    PIE4bits.TMR1IE = 1;
 
 
-    RB1I2C = 0x00;
-    RB2I2C = 0x00;
-    RC3I2C = 0x00;
-    RC4I2C = 0x00;
+    TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
 
 
-
-
-    ODCONA = 0x00;
-    ODCONB = 0x00;
-    ODCONC = 0x00;
-
-
-
-
-    SLRCONA = 0xFF;
-    SLRCONB = 0xFF;
-    SLRCONC = 0xFF;
-
-
-
-
-    INLVLA = 0xFF;
-    INLVLB = 0xFF;
-    INLVLC = 0xFF;
-    INLVLE = 0x08;
-
-
-
-
-
-
-
+    T1CON = 0x31;
 }
 
-void PIN_MANAGER_IOC(void)
+void TMR1_StartTimer(void)
 {
+
+    T1CONbits.TMR1ON = 1;
+}
+
+void TMR1_StopTimer(void)
+{
+
+    T1CONbits.TMR1ON = 0;
+}
+
+uint16_t TMR1_ReadTimer(void)
+{
+    uint16_t readVal;
+    uint8_t readValHigh;
+    uint8_t readValLow;
+
+    T1CONbits.T1RD16 = 1;
+
+    readValLow = TMR1L;
+    readValHigh = TMR1H;
+
+    readVal = ((uint16_t)readValHigh << 8) | readValLow;
+
+    return readVal;
+}
+
+void TMR1_WriteTimer(uint16_t timerVal)
+{
+    if (T1CONbits.NOT_SYNC == 1)
+    {
+
+        T1CONbits.TMR1ON = 0;
+
+
+        TMR1H = (timerVal >> 8);
+        TMR1L = timerVal;
+
+
+        T1CONbits.TMR1ON =1;
+    }
+    else
+    {
+
+        TMR1H = (timerVal >> 8);
+        TMR1L = timerVal;
+    }
+}
+
+void TMR1_Reload(void)
+{
+    TMR1_WriteTimer(timer1ReloadVal);
+}
+
+void TMR1_StartSinglePulseAcquisition(void)
+{
+    T1GCONbits.T1GGO = 1;
+}
+
+uint8_t TMR1_CheckGateValueStatus(void)
+{
+    return (T1GCONbits.T1GVAL);
+}
+
+void __attribute__((picinterrupt(("irq(TMR1),base(8)")))) TMR1_ISR()
+{
+
+
+    PIR4bits.TMR1IF = 0;
+    TMR1_WriteTimer(timer1ReloadVal);
+
+    if(TMR1_InterruptHandler)
+    {
+        TMR1_InterruptHandler();
+    }
+}
+
+
+void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
+    TMR1_InterruptHandler = InterruptHandler;
+}
+
+void TMR1_DefaultInterruptHandler(void){
+
+
 }

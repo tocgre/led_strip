@@ -2,14 +2,30 @@
 #include "inc/HIL/hil_led.h"
 #include "inc/HIL/hil_pwm.h"
 
-
 /*
-                         Main application
- */
+  Company:
+    Microchip Technology Inc.
+
+  File Name:
+    main.c
+
+  Summary:
+    This is the main file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+
+  Description:
+    This header file provides implementations for driver APIs for all modules selected in the GUI.
+    Generation Information :
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
+        Device            :  PIC18F25K42
+        Driver Version    :  2.00
+*/
+
+#include "mcc_generated_files/mcc.h"
+
 void main(void)
 {
     // Initialize the device
-    /*Fosc = 16 MHz*/
+    /* Fosc = 16 MHz /4 */
     SYSTEM_Initialize();
 //    vHILLED_Init();
     vHILPWM5_Init();
@@ -20,13 +36,17 @@ void main(void)
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
     // Use the following macros to:
 
-    // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    // Enable high priority global interrupts
+    INTERRUPT_GlobalInterruptHighEnable();
 
-    // Disable the Global Interrupts 
-    //INTERRUPT_GlobalInterruptDisable();
+    // Enable low priority global interrupts.
+    //INTERRUPT_GlobalInterruptLowEnable();
     
+    // Disable high priority global interrupts
+    //INTERRUPT_GlobalInterruptHighDisable();
     
+    // Disable low priority global interrupts.
+    //INTERRUPT_GlobalInterruptLowDisable();
     
     uint8_t _u8_VitesseMontee = 2U;
     uint8_t _u8_VitesseDescente = 2U;

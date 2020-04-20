@@ -11,25 +11,34 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\tocgr\AppData\Local\Temp\s8gs.o
+$C:\Users\tocgr\AppData\Local\Temp\sg78.o
 idloc IDLOC 0 200000 200000 10 1
-init CODE 0 7FFC 7FFC 4 1
+init CODE 0 AE AE 4 1
 reset_vec CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 A 1
 $dist/default/production\MPLabProjects.production.o
-cinit CODE 0 7D18 7D18 6 1
-text0 CODE 0 7EF6 7EF6 106 1
-text1 CODE 0 7E56 7E56 3E 1
-text2 CODE 0 7DB4 7DB4 26 1
-text3 CODE 0 7E18 7E18 3E 1
-text4 CODE 0 7D8E 7D8E 26 1
-text5 CODE 0 7DDA 7DDA 3E 1
-text6 CODE 0 7D68 7D68 26 1
-text7 CODE 0 7D1E 7D1E E 1
-text8 CODE 0 7D44 7D44 24 1
-text9 CODE 0 7E94 7E94 62 1
-text10 CODE 0 7D2C 7D2C 18 1
-cstackCOMRAM COMRAM 1 1 1 C 1
+ivt0x8 CODE 0 8 8 A6 1
+cinit CODE 0 46C 46C 16 1
+text0 CODE 0 B2 B2 108 1
+text1 CODE 0 29A 29A 3E 1
+text2 CODE 0 3BE 3BE 26 1
+text3 CODE 0 2D8 2D8 3E 1
+text4 CODE 0 3E4 3E4 26 1
+text5 CODE 0 316 316 3E 1
+text6 CODE 0 40A 40A 26 1
+text7 CODE 0 482 482 16 1
+text8 CODE 0 212 212 46 1
+text9 CODE 0 498 498 E 1
+nvCOMRAM COMRAM 1 F F 4 1
+text10 CODE 0 430 430 24 1
+text11 CODE 0 1BA 1BA 58 1
+text12 CODE 0 454 454 18 1
+text13 CODE 0 354 354 3E 1
+text14 CODE 0 258 258 42 1
+text15 CODE 0 392 392 2C 1
+text16 CODE 0 4A6 4A6 2 1
+text17 CODE 0 4A8 4A8 2 1
+cstackCOMRAM COMRAM 1 1 1 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -46,14 +55,16 @@ BANK4 400-4FF 1
 BANK5 500-5FF 1
 BANK6 600-6FF 1
 BANK7 700-7FF 1
-CONST 4-7D17 1
+CONST 4-7 1
+CONST 4AA-7FFF 1
 STACK 60-7FF 1
-SMALLCONST 800-7D17 1
-CODE 4-7D17 1
-BIGRAM D-7FF 1
-COMRAM D-5F 1
+SMALLCONST 800-7FFF 1
+CODE 4-7 1
+CODE 4AA-7FFF 1
+BIGRAM 13-7FF 1
+COMRAM 13-5F 1
 EEDATA 310000-3100FF 1
-MEDIUMCONST 800-7D17 1
+MEDIUMCONST 800-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -68,135 +79,197 @@ MEDIUMCONST 800-7D17 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MPLabProjects.production.o
-7D2C text10 CODE >57:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D2C text10 CODE >60:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D32 text10 CODE >62:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D36 text10 CODE >64:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D3A text10 CODE >66:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D3E text10 CODE >68:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D42 text10 CODE >69:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7E94 text9 CODE >55:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7E94 text9 CODE >60:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7E98 text9 CODE >61:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7E9C text9 CODE >62:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EA0 text9 CODE >67:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EA2 text9 CODE >68:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EA4 text9 CODE >69:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EA6 text9 CODE >74:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EAC text9 CODE >75:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EAE text9 CODE >76:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EB0 text9 CODE >81:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EB4 text9 CODE >82:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EB8 text9 CODE >83:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EBC text9 CODE >84:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EC0 text9 CODE >89:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EC4 text9 CODE >90:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EC8 text9 CODE >91:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7ECC text9 CODE >92:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7ED0 text9 CODE >97:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7ED4 text9 CODE >98:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7ED8 text9 CODE >99:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EDC text9 CODE >104:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EDE text9 CODE >105:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EE0 text9 CODE >106:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EE2 text9 CODE >111:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EE4 text9 CODE >112:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EE6 text9 CODE >113:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EE8 text9 CODE >114:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EEC text9 CODE >123:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EF0 text9 CODE >124:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7EF4 text9 CODE >125:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
-7D44 text8 CODE >71:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D44 text8 CODE >74:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D4A text8 CODE >76:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D4E text8 CODE >78:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D52 text8 CODE >80:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D56 text8 CODE >82:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D5A text8 CODE >84:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D5E text8 CODE >86:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D62 text8 CODE >88:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D66 text8 CODE >89:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D1E text7 CODE >50:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D1E text7 CODE >52:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D22 text7 CODE >53:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D26 text7 CODE >54:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D2A text7 CODE >55:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
-7D68 text6 CODE >120:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7D68 text6 CODE >123:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7D70 text6 CODE >125:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7D8C text6 CODE >126:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DDA text5 CODE >12:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DDA text5 CODE >15:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DDE text5 CODE >18:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DE2 text5 CODE >21:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DEE text5 CODE >24:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DF2 text5 CODE >27:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DF6 text5 CODE >30:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DFA text5 CODE >33:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DFC text5 CODE >36:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E00 text5 CODE >38:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E0E text5 CODE >41:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E10 text5 CODE >43:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E16 text5 CODE >44:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7D8E text4 CODE >130:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7D8E text4 CODE >133:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7D96 text4 CODE >135:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DB2 text4 CODE >136:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E18 text3 CODE >48:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E18 text3 CODE >51:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E1C text3 CODE >54:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E20 text3 CODE >57:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E2C text3 CODE >60:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E30 text3 CODE >63:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E34 text3 CODE >66:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E38 text3 CODE >69:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E3A text3 CODE >72:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E3E text3 CODE >74:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E4C text3 CODE >77:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E4E text3 CODE >79:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E54 text3 CODE >80:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DB4 text2 CODE >140:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DB4 text2 CODE >143:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DBC text2 CODE >145:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7DD8 text2 CODE >146:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E56 text1 CODE >84:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E56 text1 CODE >87:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E5A text1 CODE >90:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E5E text1 CODE >93:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E6A text1 CODE >96:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E6E text1 CODE >99:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E72 text1 CODE >102:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E76 text1 CODE >105:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E78 text1 CODE >108:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E7C text1 CODE >110:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E8A text1 CODE >113:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E8C text1 CODE >115:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7E92 text1 CODE >116:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
-7EF6 text0 CODE >9:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7EF6 text0 CODE >13:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7EFA text0 CODE >15:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7EFE text0 CODE >16:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F02 text0 CODE >17:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F06 text0 CODE >31:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F0A text0 CODE >32:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F0E text0 CODE >37:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F1A text0 CODE >39:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F2A text0 CODE >40:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F3A text0 CODE >41:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F4A text0 CODE >42:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F58 text0 CODE >43:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F86 text0 CODE >44:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7F92 text0 CODE >46:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7FA2 text0 CODE >47:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7FB2 text0 CODE >48:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7FC2 text0 CODE >49:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7FD0 text0 CODE >50:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
-7D18 cinit CODE >7461:C:\Users\tocgr\AppData\Local\Temp\s8gs.s
-7D18 cinit CODE >7463:C:\Users\tocgr\AppData\Local\Temp\s8gs.s
-7D18 cinit CODE >7466:C:\Users\tocgr\AppData\Local\Temp\s8gs.s
-7D18 cinit CODE >7472:C:\Users\tocgr\AppData\Local\Temp\s8gs.s
-7D18 cinit CODE >7474:C:\Users\tocgr\AppData\Local\Temp\s8gs.s
-7D1A cinit CODE >7475:C:\Users\tocgr\AppData\Local\Temp\s8gs.s
+4A8 text17 CODE >75:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+4A8 text17 CODE >77:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+4A8 text17 CODE >186:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+4A6 text16 CODE >183:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+4A6 text16 CODE >186:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+392 text15 CODE >128:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+392 text15 CODE >130:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+3A0 text15 CODE >133:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+3A2 text15 CODE >136:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+3A6 text15 CODE >137:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+3AC text15 CODE >140:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+3AE text15 CODE >141:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+3B2 text15 CODE >145:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+3B6 text15 CODE >146:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+3BC text15 CODE >148:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+258 text14 CODE >73:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+258 text14 CODE >165:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+258 text14 CODE >169:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+25C text14 CODE >170:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+26C text14 CODE >172:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+27E text14 CODE >174:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+298 text14 CODE >176:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+354 text13 CODE >52:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+354 text13 CODE >54:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+356 text13 CODE >56:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+35E text13 CODE >57:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+360 text13 CODE >58:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+364 text13 CODE >59:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+368 text13 CODE >60:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+36A text13 CODE >62:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+370 text13 CODE >63:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+374 text13 CODE >64:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+378 text13 CODE >66:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+37C text13 CODE >67:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+380 text13 CODE >68:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+382 text13 CODE >70:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+38C text13 CODE >72:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+390 text13 CODE >73:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/interrupt_manager.c
+454 text12 CODE >59:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+454 text12 CODE >62:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+45A text12 CODE >64:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+45E text12 CODE >66:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+462 text12 CODE >68:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+466 text12 CODE >70:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+46A text12 CODE >71:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+1BA text11 CODE >55:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1BA text11 CODE >60:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1BE text11 CODE >61:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1C2 text11 CODE >62:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1C6 text11 CODE >67:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1C8 text11 CODE >68:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1CA text11 CODE >69:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1CC text11 CODE >74:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1D0 text11 CODE >75:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1D2 text11 CODE >76:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1D4 text11 CODE >81:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1D8 text11 CODE >82:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1DC text11 CODE >83:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1E0 text11 CODE >84:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1E4 text11 CODE >89:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1E8 text11 CODE >90:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1EC text11 CODE >91:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1F0 text11 CODE >92:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1F4 text11 CODE >97:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1F8 text11 CODE >98:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+1FC text11 CODE >99:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+200 text11 CODE >104:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+202 text11 CODE >105:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+204 text11 CODE >106:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+206 text11 CODE >111:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+208 text11 CODE >112:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+20A text11 CODE >113:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+20C text11 CODE >114:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+210 text11 CODE >122:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/pin_manager.c
+430 text10 CODE >73:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+430 text10 CODE >76:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+436 text10 CODE >78:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+43A text10 CODE >80:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+43E text10 CODE >82:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+442 text10 CODE >84:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+446 text10 CODE >86:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+44A text10 CODE >88:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+44E text10 CODE >90:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+452 text10 CODE >91:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+498 text9 CODE >179:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+498 text9 CODE >180:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+4A4 text9 CODE >181:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+212 text8 CODE >65:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+212 text8 CODE >70:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+216 text8 CODE >73:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+21A text8 CODE >76:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+21E text8 CODE >79:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+222 text8 CODE >82:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+226 text8 CODE >85:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+240 text8 CODE >88:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+244 text8 CODE >91:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+246 text8 CODE >94:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+252 text8 CODE >97:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+256 text8 CODE >98:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/tmr1.c
+482 text7 CODE >50:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+482 text7 CODE >52:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+486 text7 CODE >53:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+48A text7 CODE >54:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+48E text7 CODE >55:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+492 text7 CODE >56:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+496 text7 CODE >57:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\mcc_generated_files/mcc.c
+40A text6 CODE >120:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+40A text6 CODE >123:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+412 text6 CODE >125:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+42E text6 CODE >126:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+316 text5 CODE >12:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+316 text5 CODE >15:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+31A text5 CODE >18:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+31E text5 CODE >21:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+32A text5 CODE >24:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+32E text5 CODE >27:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+332 text5 CODE >30:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+336 text5 CODE >33:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+338 text5 CODE >36:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+33C text5 CODE >38:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+34A text5 CODE >41:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+34C text5 CODE >43:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+352 text5 CODE >44:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+3E4 text4 CODE >130:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+3E4 text4 CODE >133:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+3EC text4 CODE >135:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+408 text4 CODE >136:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2D8 text3 CODE >48:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2D8 text3 CODE >51:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2DC text3 CODE >54:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2E0 text3 CODE >57:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2EC text3 CODE >60:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2F0 text3 CODE >63:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2F4 text3 CODE >66:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2F8 text3 CODE >69:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2FA text3 CODE >72:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2FE text3 CODE >74:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+30C text3 CODE >77:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+30E text3 CODE >79:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+314 text3 CODE >80:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+3BE text2 CODE >140:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+3BE text2 CODE >143:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+3C6 text2 CODE >145:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+3E2 text2 CODE >146:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+29A text1 CODE >84:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+29A text1 CODE >87:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+29E text1 CODE >90:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2A2 text1 CODE >93:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2AE text1 CODE >96:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2B2 text1 CODE >99:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2B6 text1 CODE >102:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2BA text1 CODE >105:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2BC text1 CODE >108:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2C0 text1 CODE >110:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2CE text1 CODE >113:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2D0 text1 CODE >115:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+2D6 text1 CODE >116:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\src/HIL/hil_pwm.c
+B2 text0 CODE >25:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+B2 text0 CODE >29:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+B6 text0 CODE >31:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+BA text0 CODE >32:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+BE text0 CODE >33:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+C2 text0 CODE >40:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+C4 text0 CODE >51:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+C8 text0 CODE >52:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+CC text0 CODE >57:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+D8 text0 CODE >59:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+E8 text0 CODE >60:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+F8 text0 CODE >61:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+108 text0 CODE >62:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+116 text0 CODE >63:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+144 text0 CODE >64:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+150 text0 CODE >66:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+160 text0 CODE >67:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+170 text0 CODE >68:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+180 text0 CODE >69:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+18E text0 CODE >70:C:\Users\tocgr\Documents\Electronique\Projets GitHub\led_strip\MPLabProjects\main.c
+46C cinit CODE >10365:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+46C cinit CODE >10367:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+46C cinit CODE >10370:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+46C cinit CODE >10378:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+46E cinit CODE >10379:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+470 cinit CODE >10380:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+472 cinit CODE >10381:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+474 cinit CODE >10382:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+476 cinit CODE >10383:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+478 cinit CODE >10389:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+478 cinit CODE >10392:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+47A cinit CODE >10393:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+47C cinit CODE >10394:C:\Users\tocgr\AppData\Local\Temp\sg78.s
+47E cinit CODE >10395:C:\Users\tocgr\AppData\Local\Temp\sg78.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -211,7 +284,7 @@ $dist/default/production\MPLabProjects.production.o
 %SYMTAB
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\MPLabProjects.production.o
 __Hspace_0 30000A 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__Hspace_1 D 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__Hspace_1 13 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _PWM5CON 3F6E 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _PWM5DCH 3F6D 0 ABS 0 - dist/default/production\MPLabProjects.production.o
@@ -223,10 +296,12 @@ _PWM7CON 3F66 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _PWM7DCH 3F65 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _PWM7DCL 3F64 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\MPLabProjects.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\tocgr\AppData\Local\Temp\s8gs.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\tocgr\AppData\Local\Temp\sg78.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\MPLabProjects.production.o
-__end_of_vHILPWM6_SetDutyCycle 7DB4 0 CODE 0 text4 dist/default/production\MPLabProjects.production.o
-_PMD_Initialize 7D44 0 CODE 0 text8 dist/default/production\MPLabProjects.production.o
+__end_of_INTERRUPT_Initialize 392 0 CODE 0 text13 dist/default/production\MPLabProjects.production.o
+_T1CONbits 3FB2 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__end_of_vHILPWM6_SetDutyCycle 40A 0 CODE 0 text4 dist/default/production\MPLabProjects.production.o
+_PMD_Initialize 430 0 CODE 0 text10 dist/default/production\MPLabProjects.production.o
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\MPLabProjects.production.o
 _LATA 3FBA 0 ABS 0 - dist/default/production\MPLabProjects.production.o
@@ -250,56 +325,70 @@ _WPUA 3A41 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _WPUB 3A51 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _WPUC 3A61 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _WPUE 3A81 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-___sp 0 0 STACK 2 stack C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-_main 7EF6 0 CODE 0 text0 dist/default/production\MPLabProjects.production.o
-start 7FFC 0 CODE 0 init C:\Users\tocgr\AppData\Local\Temp\s8gs.o
+___sp 0 0 STACK 2 stack C:\Users\tocgr\AppData\Local\Temp\sg78.o
+_main B2 0 CODE 0 text0 dist/default/production\MPLabProjects.production.o
+__end_of_Default_ISR 4AA 0 CODE 0 text17 dist/default/production\MPLabProjects.production.o
+start AE 0 CODE 0 init C:\Users\tocgr\AppData\Local\Temp\sg78.o
 __size_of_main 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-_vHILPWM6_SetDutyCycle 7D8E 0 CODE 0 text4 dist/default/production\MPLabProjects.production.o
+_vHILPWM6_SetDutyCycle 3E4 0 CODE 0 text4 dist/default/production\MPLabProjects.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\MPLabProjects.production.o
+__size_of_TMR1_Initialize 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__size_of_TMR1_WriteTimer 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\MPLabProjects.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__accesstop 60 0 ABS 0 - C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-intlevel0 0 0 CODE 0 text C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-intlevel1 0 0 CODE 0 text C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-intlevel2 0 0 CODE 0 text C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-intlevel3 0 0 CODE 0 text C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-main@__u16_Counter 9 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+__accesstop 60 0 ABS 0 - C:\Users\tocgr\AppData\Local\Temp\sg78.o
+intlevel0 0 0 CODE 0 text C:\Users\tocgr\AppData\Local\Temp\sg78.o
+intlevel1 0 0 CODE 0 text C:\Users\tocgr\AppData\Local\Temp\sg78.o
+intlevel2 0 0 CODE 0 text C:\Users\tocgr\AppData\Local\Temp\sg78.o
+intlevel3 0 0 CODE 0 text C:\Users\tocgr\AppData\Local\Temp\sg78.o
+main@__u16_Counter B 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\MPLabProjects.production.o
-vHILPWM5_SetDutyCycle@__u16_DutyCycle 1 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+vHILPWM5_SetDutyCycle@__u16_DutyCycle 3 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\MPLabProjects.production.o
-__end_of_PMD_Initialize 7D68 0 CODE 0 text8 dist/default/production\MPLabProjects.production.o
+__end_of_PMD_Initialize 454 0 CODE 0 text10 dist/default/production\MPLabProjects.production.o
+__size_of_TMR1_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\MPLabProjects.production.o
 __size_of_vHILPWM5_Init 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __size_of_vHILPWM6_Init 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+ivt0x8_base 8 0 CODE 0 ivt0x8 dist/default/production\MPLabProjects.production.o
+__end_of_TMR1_DefaultInterruptHandler 4A8 0 CODE 0 text16 dist/default/production\MPLabProjects.production.o
 __size_of_vHILPWM7_Init 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _ANSELA 3A40 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _ANSELB 3A50 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _ANSELC 3A60 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-main@_u8_VitesseMontee 7 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\tocgr\AppData\Local\Temp\s8gs.o
+main@_u8_VitesseMontee 9 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\tocgr\AppData\Local\Temp\sg78.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\tocgr\AppData\Local\Temp\sg78.o
+__size_of_TMR1_SetInterruptHandler 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\MPLabProjects.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\MPLabProjects.production.o
-__end_of_vHILPWM5_Init 7E18 0 CODE 0 text5 dist/default/production\MPLabProjects.production.o
+__end_of_vHILPWM5_Init 354 0 CODE 0 text5 dist/default/production\MPLabProjects.production.o
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__end_of_vHILPWM6_Init 7E56 0 CODE 0 text3 dist/default/production\MPLabProjects.production.o
-__end_of_vHILPWM7_Init 7E94 0 CODE 0 text1 dist/default/production\MPLabProjects.production.o
+__end_of_vHILPWM6_Init 316 0 CODE 0 text3 dist/default/production\MPLabProjects.production.o
+__end_of_vHILPWM7_Init 2D8 0 CODE 0 text1 dist/default/production\MPLabProjects.production.o
 _INLVLA 3A44 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _INLVLB 3A54 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _INLVLC 3A64 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _INLVLE 3A84 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__end_of_vHILPWM7_SetDutyCycle 7DDA 0 CODE 0 text2 dist/default/production\MPLabProjects.production.o
+_IVTADH 389E 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_IVTADL 389D 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_IVTADU 389F 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__end_of_vHILPWM7_SetDutyCycle 3E4 0 CODE 0 text2 dist/default/production\MPLabProjects.production.o
 __CFG_SAFEN$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __size_of_vHILPWM5_SetDutyCycle 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-_PIN_MANAGER_Initialize 7E94 0 CODE 0 text9 dist/default/production\MPLabProjects.production.o
-start_initialization 7D18 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
+__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\MPLabProjects.production.o
+_INTCON0bits 3FD2 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_PIN_MANAGER_Initialize 1BA 0 CODE 0 text11 dist/default/production\MPLabProjects.production.o
+start_initialization 46C 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
 _ODCONA 3A42 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _ODCONB 3A52 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _ODCONC 3A62 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _OSCFRQ 39DF 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\MPLabProjects.production.o
-_vHILPWM7_SetDutyCycle 7DB4 0 CODE 0 text2 dist/default/production\MPLabProjects.production.o
+_vHILPWM7_SetDutyCycle 3BE 0 CODE 0 text2 dist/default/production\MPLabProjects.production.o
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__size_of_Default_ISR 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_RSTOSC$HFINTOSC_1MHZ 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _RA0PPS 3A00 0 ABS 0 - dist/default/production\MPLabProjects.production.o
@@ -309,11 +398,15 @@ _RB1I2C 3A5A 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _RB2I2C 3A5B 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _RC3I2C 3A6A 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _RC4I2C 3A6B 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__end_of_SYSTEM_Initialize 7D2C 0 CODE 0 text7 dist/default/production\MPLabProjects.production.o
-vHILPWM7_SetDutyCycle@__u16_DutyCycle 1 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+__end_of_SYSTEM_Initialize 498 0 CODE 0 text7 dist/default/production\MPLabProjects.production.o
+vHILPWM7_SetDutyCycle@__u16_DutyCycle 3 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+_T1GATE 3FB4 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_T1GCON 3FB3 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_IPR4bits 3984 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _TMR2IF 1CD22 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _TMR4IF 1CD38 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _TMR6IF 1CD48 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__end_of_TMR1_SetInterruptHandler 4A6 0 CODE 0 text9 dist/default/production\MPLabProjects.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\MPLabProjects.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\MPLabProjects.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\MPLabProjects.production.o
@@ -343,7 +436,7 @@ __Htext8 0 0 ABS 0 text8 dist/default/production\MPLabProjects.production.o
 __Htext9 0 0 ABS 0 text9 dist/default/production\MPLabProjects.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\MPLabProjects.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\MPLabProjects.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\tocgr\AppData\Local\Temp\s8gs.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\tocgr\AppData\Local\Temp\sg78.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\MPLabProjects.production.o
 __Hconfig 30000A 0 CONFIG 0 config dist/default/production\MPLabProjects.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\MPLabProjects.production.o
@@ -356,6 +449,7 @@ __Lbank6 0 0 ABS 0 bank6 dist/default/production\MPLabProjects.production.o
 __Lbank7 0 0 ABS 0 bank7 dist/default/production\MPLabProjects.production.o
 __Lcinit 0 0 ABS 0 cinit dist/default/production\MPLabProjects.production.o
 __Lconst 0 0 CONST 0 const dist/default/production\MPLabProjects.production.o
+_T1GCONbits 3FB3 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lidata 0 0 CODE 0 idata dist/default/production\MPLabProjects.production.o
 __Lidloc 200000 0 IDLOC 0 idloc dist/default/production\MPLabProjects.production.o
 __CFG_PR1WAY$ON 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
@@ -374,16 +468,17 @@ __Ltext7 0 0 ABS 0 text7 dist/default/production\MPLabProjects.production.o
 __Ltext8 0 0 ABS 0 text8 dist/default/production\MPLabProjects.production.o
 __Ltext9 0 0 ABS 0 text9 dist/default/production\MPLabProjects.production.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\MPLabProjects.production.o
+_INTERRUPT_Initialize 354 0 CODE 0 text13 dist/default/production\MPLabProjects.production.o
 __Habs1 0 0 ABS 0 abs1 dist/default/production\MPLabProjects.production.o
 __Hdata 0 0 ABS 0 data dist/default/production\MPLabProjects.production.o
-__Hinit 8000 0 CODE 0 init dist/default/production\MPLabProjects.production.o
+__Hinit B2 0 CODE 0 init dist/default/production\MPLabProjects.production.o
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\MPLabProjects.production.o
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\MPLabProjects.production.o
 __Htemp 0 0 COMRAM 1 temp dist/default/production\MPLabProjects.production.o
 __Htext 0 0 ABS 0 text dist/default/production\MPLabProjects.production.o
 __Labs1 0 0 ABS 0 abs1 dist/default/production\MPLabProjects.production.o
 __Ldata 0 0 ABS 0 data dist/default/production\MPLabProjects.production.o
-__Linit 7FFC 0 CODE 0 init dist/default/production\MPLabProjects.production.o
+__Linit AE 0 CODE 0 init dist/default/production\MPLabProjects.production.o
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\MPLabProjects.production.o
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\MPLabProjects.production.o
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\MPLabProjects.production.o
@@ -392,105 +487,155 @@ __CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production\MPLabProjects.production.o
+_GIE 1FE97 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __S0 30000A 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__S1 D 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__S1 13 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __S2 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__Hivt0x8 AE 0 CODE 0 ivt0x8 dist/default/production\MPLabProjects.production.o
+__size_of_TMR1_ISR 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_IVT1WAY$ON 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+IVTBASEH 3FD6 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+IVTBASEL 3FD5 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+IVTBASEU 3FD7 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__pnvCOMRAM F 0 COMRAM 1 nvCOMRAM dist/default/production\MPLabProjects.production.o
 __size_of_vHILPWM6_SetDutyCycle 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__pivt0x8 8 0 CODE 0 ivt0x8 dist/default/production\MPLabProjects.production.o
 __CFG_BBEN$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\MPLabProjects.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\MPLabProjects.production.o
-_SYSTEM_Initialize 7D1E 0 CODE 0 text7 dist/default/production\MPLabProjects.production.o
+_SYSTEM_Initialize 482 0 CODE 0 text7 dist/default/production\MPLabProjects.production.o
 __Hramtop 800 0 RAM 0 ramtop dist/default/production\MPLabProjects.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\MPLabProjects.production.o
-__activetblptr 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__activetblptr 2 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\MPLabProjects.production.o
 __Htext10 0 0 ABS 0 text10 dist/default/production\MPLabProjects.production.o
+__Htext11 0 0 ABS 0 text11 dist/default/production\MPLabProjects.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production\MPLabProjects.production.o
+__Htext13 0 0 ABS 0 text13 dist/default/production\MPLabProjects.production.o
+__Htext14 0 0 ABS 0 text14 dist/default/production\MPLabProjects.production.o
+__Htext15 0 0 ABS 0 text15 dist/default/production\MPLabProjects.production.o
+__Htext16 0 0 ABS 0 text16 dist/default/production\MPLabProjects.production.o
+__Htext17 0 0 ABS 0 text17 dist/default/production\MPLabProjects.production.o
+__Htext18 0 0 ABS 0 text18 dist/default/production\MPLabProjects.production.o
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __size_of_PMD_Initialize 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__ptext10 7D2C 0 CODE 0 text10 dist/default/production\MPLabProjects.production.o
-__end_of_PIN_MANAGER_Initialize 7EF6 0 CODE 0 text9 dist/default/production\MPLabProjects.production.o
+_PIE4bits 3994 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__CFG_MVECEN$ON 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_TMR1_ISR 258 0 CODE 0 text14 dist/default/production\MPLabProjects.production.o
+__ptext10 430 0 CODE 0 text10 dist/default/production\MPLabProjects.production.o
+__ptext11 1BA 0 CODE 0 text11 dist/default/production\MPLabProjects.production.o
+__ptext12 454 0 CODE 0 text12 dist/default/production\MPLabProjects.production.o
+__ptext13 354 0 CODE 0 text13 dist/default/production\MPLabProjects.production.o
+__ptext14 258 0 CODE 0 text14 dist/default/production\MPLabProjects.production.o
+__ptext15 392 0 CODE 0 text15 dist/default/production\MPLabProjects.production.o
+__ptext16 4A6 0 CODE 0 text16 dist/default/production\MPLabProjects.production.o
+__ptext17 4A8 0 CODE 0 text17 dist/default/production\MPLabProjects.production.o
+__ptext18 0 0 CODE 0 text18 dist/default/production\MPLabProjects.production.o
+__end_of_PIN_MANAGER_Initialize 212 0 CODE 0 text11 dist/default/production\MPLabProjects.production.o
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\MPLabProjects.production.o
 __Lbigram 0 0 ABS 0 bigram dist/default/production\MPLabProjects.production.o
-main@_u8_VitesseDescente 8 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+main@_u8_VitesseDescente A 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production\MPLabProjects.production.o
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\MPLabProjects.production.o
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_BBSIZE$BBSIZE_512 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__end_of_TMR1_ISR 29A 0 CODE 0 text14 dist/default/production\MPLabProjects.production.o
+ivt0x8_undefint AC 0 CODE 0 ivt0x8 dist/default/production\MPLabProjects.production.o
 __CFG_WRTAPP$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_IVTLOCKbits 3FD4 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\MPLabProjects.production.o
+_Default_ISR 4A8 0 CODE 0 text17 dist/default/production\MPLabProjects.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\MPLabProjects.production.o
-stackhi 7FF 0 ABS 0 - C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-stacklo 60 0 ABS 0 - C:\Users\tocgr\AppData\Local\Temp\s8gs.o
+stackhi 7FF 0 ABS 0 - C:\Users\tocgr\AppData\Local\Temp\sg78.o
+stacklo 60 0 ABS 0 - C:\Users\tocgr\AppData\Local\Temp\sg78.o
 _OSCCON1 39D9 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _OSCCON3 39DB 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _OSCTUNE 39DE 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\MPLabProjects.production.o
+__Livt0x8 8 0 CODE 0 ivt0x8 dist/default/production\MPLabProjects.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lspace_2 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_LPBOREN$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_PIR4bits 39A4 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_CSWEN$ON 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-end_of_initialization 7D18 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
+end_of_initialization 478 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\MPLabProjects.production.o
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-main@__u16_Counter2 B 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+main@__u16_Counter2 D 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __size_of_vHILPWM7_SetDutyCycle 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\MPLabProjects.production.o
-vHILPWM6_SetDutyCycle@__u16_DutyCycle 1 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+TMR1_SetInterruptHandler@InterruptHandler 3 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+vHILPWM6_SetDutyCycle@__u16_DutyCycle 3 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __Lramtop 800 0 RAM 0 ramtop dist/default/production\MPLabProjects.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\MPLabProjects.production.o
-__pcinit 7D18 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
-__ptext0 7EF6 0 CODE 0 text0 dist/default/production\MPLabProjects.production.o
-__ptext1 7E56 0 CODE 0 text1 dist/default/production\MPLabProjects.production.o
-__ptext2 7DB4 0 CODE 0 text2 dist/default/production\MPLabProjects.production.o
-__ptext3 7E18 0 CODE 0 text3 dist/default/production\MPLabProjects.production.o
-__ptext4 7D8E 0 CODE 0 text4 dist/default/production\MPLabProjects.production.o
-__ptext5 7DDA 0 CODE 0 text5 dist/default/production\MPLabProjects.production.o
-__ptext6 7D68 0 CODE 0 text6 dist/default/production\MPLabProjects.production.o
-__ptext7 7D1E 0 CODE 0 text7 dist/default/production\MPLabProjects.production.o
-__ptext8 7D44 0 CODE 0 text8 dist/default/production\MPLabProjects.production.o
-__ptext9 7E94 0 CODE 0 text9 dist/default/production\MPLabProjects.production.o
+__pcinit 46C 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
+__ptext0 B2 0 CODE 0 text0 dist/default/production\MPLabProjects.production.o
+__ptext1 29A 0 CODE 0 text1 dist/default/production\MPLabProjects.production.o
+__ptext2 3BE 0 CODE 0 text2 dist/default/production\MPLabProjects.production.o
+__ptext3 2D8 0 CODE 0 text3 dist/default/production\MPLabProjects.production.o
+__ptext4 3E4 0 CODE 0 text4 dist/default/production\MPLabProjects.production.o
+__ptext5 316 0 CODE 0 text5 dist/default/production\MPLabProjects.production.o
+__ptext6 40A 0 CODE 0 text6 dist/default/production\MPLabProjects.production.o
+__ptext7 482 0 CODE 0 text7 dist/default/production\MPLabProjects.production.o
+__ptext8 212 0 CODE 0 text8 dist/default/production\MPLabProjects.production.o
+__ptext9 498 0 CODE 0 text9 dist/default/production\MPLabProjects.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\MPLabProjects.production.o
 __Ltext10 0 0 ABS 0 text10 dist/default/production\MPLabProjects.production.o
-__ramtop 800 0 RAM 0 ramtop C:\Users\tocgr\AppData\Local\Temp\s8gs.o
-_SMT1SIGPPS 3AD2 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__Ltext11 0 0 ABS 0 text11 dist/default/production\MPLabProjects.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production\MPLabProjects.production.o
+__Ltext13 0 0 ABS 0 text13 dist/default/production\MPLabProjects.production.o
+__Ltext14 0 0 ABS 0 text14 dist/default/production\MPLabProjects.production.o
+__Ltext15 0 0 ABS 0 text15 dist/default/production\MPLabProjects.production.o
+__Ltext16 0 0 ABS 0 text16 dist/default/production\MPLabProjects.production.o
+__Ltext17 0 0 ABS 0 text17 dist/default/production\MPLabProjects.production.o
+__Ltext18 0 0 ABS 0 text18 dist/default/production\MPLabProjects.production.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\tocgr\AppData\Local\Temp\sg78.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\MPLabProjects.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\MPLabProjects.production.o
-__end_of_vHILPWM5_SetDutyCycle 7D8E 0 CODE 0 text6 dist/default/production\MPLabProjects.production.o
+TMR1_WriteTimer@timerVal 1 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
+__end_of_TMR1_Initialize 258 0 CODE 0 text8 dist/default/production\MPLabProjects.production.o
+__end_of_TMR1_WriteTimer 3BE 0 CODE 0 text15 dist/default/production\MPLabProjects.production.o
+__end_of_vHILPWM5_SetDutyCycle 430 0 CODE 0 text6 dist/default/production\MPLabProjects.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\MPLabProjects.production.o
-_SMT1WINPPS 3AD1 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _SLRCONA 3A43 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _SLRCONB 3A53 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _SLRCONC 3A63 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 ___param_bank 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\MPLabProjects.production.o
-__end_of__initialization 7D18 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
+__end_of__initialization 478 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\MPLabProjects.production.o
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\MPLabProjects.production.o
 __CFG_PWRTS$PWRT_OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-_vHILPWM5_SetDutyCycle 7D68 0 CODE 0 text6 dist/default/production\MPLabProjects.production.o
+_vHILPWM5_SetDutyCycle 40A 0 CODE 0 text6 dist/default/production\MPLabProjects.production.o
+_timer1ReloadVal 11 0 COMRAM 1 nvCOMRAM dist/default/production\MPLabProjects.production.o
 __CFG_BORV$VBOR_2P45 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_TMR1_DefaultInterruptHandler 4A6 0 CODE 0 text16 dist/default/production\MPLabProjects.production.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__end_of_main 7FFC 0 CODE 0 text0 dist/default/production\MPLabProjects.production.o
+__end_of_main 1BA 0 CODE 0 text0 dist/default/production\MPLabProjects.production.o
+_IVTLOCK 3FD4 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __CFG_WRTSAF$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _OSCEN 39DD 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _PORTA 3FCA 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_T1CLK 3FB5 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_T1CON 3FB2 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _T2CLK 3FAE 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _T2CON 3FAC 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _T4CLK 3FA2 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _T4CON 3FA0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _T6CLK 3F96 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _T6CON 3F94 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_TMR1H 3FB1 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_TMR1L 3FB0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _TRISA 3FC2 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _TRISB 3FC3 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 _TRISC 3FC4 0 ABS 0 - dist/default/production\MPLabProjects.production.o
@@ -502,20 +647,25 @@ __LRAM 1 0 ABS 0 - dist/default/production\MPLabProjects.production.o
 __Lbss 0 0 RAM 1 bss dist/default/production\MPLabProjects.production.o
 __Lram 0 0 ABS 0 ram dist/default/production\MPLabProjects.production.o
 __Lsfr 0 0 ABS 0 sfr dist/default/production\MPLabProjects.production.o
+_TMR1_Initialize 212 0 CODE 0 text8 dist/default/production\MPLabProjects.production.o
+_TMR1_WriteTimer 392 0 CODE 0 text15 dist/default/production\MPLabProjects.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__end_of_OSCILLATOR_Initialize 7D44 0 CODE 0 text10 dist/default/production\MPLabProjects.production.o
+__end_of_OSCILLATOR_Initialize 46C 0 CODE 0 text12 dist/default/production\MPLabProjects.production.o
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-__initialization 7D18 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
-__CFG_MVECEN$OFF 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+__initialization 46C 0 CODE 0 cinit dist/default/production\MPLabProjects.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\MPLabProjects.production.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\MPLabProjects.production.o
-_vHILPWM5_Init 7DDA 0 CODE 0 text5 dist/default/production\MPLabProjects.production.o
+_vHILPWM5_Init 316 0 CODE 0 text5 dist/default/production\MPLabProjects.production.o
+_TMR1_SetInterruptHandler 498 0 CODE 0 text9 dist/default/production\MPLabProjects.production.o
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\MPLabProjects.production.o
-_vHILPWM6_Init 7E18 0 CODE 0 text3 dist/default/production\MPLabProjects.production.o
+_vHILPWM6_Init 2D8 0 CODE 0 text3 dist/default/production\MPLabProjects.production.o
+INTERRUPT_Initialize@state 3 0 COMRAM 1 cstackCOMRAM dist/default/production\MPLabProjects.production.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\MPLabProjects.production.o
-_vHILPWM7_Init 7E56 0 CODE 0 text1 dist/default/production\MPLabProjects.production.o
+_vHILPWM7_Init 29A 0 CODE 0 text1 dist/default/production\MPLabProjects.production.o
 __CFG_MCLRE$EXTMCLR 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
-_OSCILLATOR_Initialize 7D2C 0 CODE 0 text10 dist/default/production\MPLabProjects.production.o
+__size_of_INTERRUPT_Initialize 0 0 ABS 0 - dist/default/production\MPLabProjects.production.o
+_TMR1_InterruptHandler F 0 COMRAM 1 nvCOMRAM dist/default/production\MPLabProjects.production.o
+_OSCILLATOR_Initialize 454 0 CODE 0 text12 dist/default/production\MPLabProjects.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -540,21 +690,9 @@ _OSCILLATOR_Initialize 7D2C 0 CODE 0 text10 dist/default/production\MPLabProject
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7D18 7D18 6 1
+ivt0x8 0 8 8 4A2 1
 idloc 0 200000 200000 10 1
-text0 0 7EF6 7EF6 106 1
-text1 0 7E56 7E56 3E 1
-text2 0 7DB4 7DB4 26 1
-text3 0 7E18 7E18 3E 1
-text4 0 7D8E 7D8E 26 1
-text5 0 7DDA 7DDA 3E 1
-text6 0 7D68 7D68 26 1
-text7 0 7D1E 7D1E E 1
-text8 0 7D44 7D44 24 1
-text9 0 7E94 7E94 62 1
-text10 0 7D2C 7D2C 18 1
-cstackCOMRAM 1 1 1 C 1
-init 0 7FFC 7FFC 4 1
+cstackCOMRAM 1 1 1 12 1
 reset_vec 0 0 0 4 1
 config 0 300000 300000 A 1
 # OTES Section

@@ -5,7 +5,10 @@
         <group>
             <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/src/HIL/hil_led.c</file>
             <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/main.c</file>
+            <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/mcc_generated_files/interrupt_manager.c</file>
+            <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/mcc_generated_files/tmr1.c</file>
             <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/inc/HIL/hil_pwm.h</file>
+            <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/mcc_generated_files/mcc.c</file>
             <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/mcc_generated_files/device_config.c</file>
             <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/system_def.h</file>
             <file>file:/C:/Users/tocgr/Documents/Electronique/Projets%20GitHub/led_strip/MPLabProjects/src/HIL/hil_pwm.c</file>

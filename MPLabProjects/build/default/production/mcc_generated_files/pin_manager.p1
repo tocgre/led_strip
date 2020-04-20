@@ -80,12 +80,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "9973
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 9973: extern volatile unsigned char INLVLE __attribute__((address(0x3A84)));
 [v _INLVLE `Vuc ~T0 @X0 0 e@14980 ]
-"10473
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 10473: extern volatile unsigned char SMT1WINPPS __attribute__((address(0x3AD1)));
-[v _SMT1WINPPS `Vuc ~T0 @X0 0 e@15057 ]
-"10493
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 10493: extern volatile unsigned char SMT1SIGPPS __attribute__((address(0x3AD2)));
-[v _SMT1SIGPPS `Vuc ~T0 @X0 0 e@15058 ]
 "250 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f25k42.h: 250: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2252,8 +2246,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 69:     TRISC = 0xFF;
 [e = _TRISC -> -> 255 `i `uc ]
 "74
-[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xFC;
-[e = _ANSELC -> -> 252 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 74:     ANSELC = 0xFF;
+[e = _ANSELC -> -> 255 `i `uc ]
 "75
 [; ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0xFF;
 [e = _ANSELB -> -> 255 `i `uc ]
@@ -2314,25 +2308,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "114
 [; ;mcc_generated_files/pin_manager.c: 114:     INLVLE = 0x08;
 [e = _INLVLE -> -> 8 `i `uc ]
-"123
-[; ;mcc_generated_files/pin_manager.c: 123:     SMT1WINPPS = 0x10;
-[e = _SMT1WINPPS -> -> 16 `i `uc ]
-"124
-[; ;mcc_generated_files/pin_manager.c: 124:     SMT1SIGPPS = 0x11;
-[e = _SMT1SIGPPS -> -> 17 `i `uc ]
-"125
-[; ;mcc_generated_files/pin_manager.c: 125: }
+"122
+[; ;mcc_generated_files/pin_manager.c: 122: }
 [e :UE 2148 ]
 }
-"127
-[; ;mcc_generated_files/pin_manager.c: 127: void PIN_MANAGER_IOC(void)
+"124
+[; ;mcc_generated_files/pin_manager.c: 124: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"128
-[; ;mcc_generated_files/pin_manager.c: 128: {
+"125
+[; ;mcc_generated_files/pin_manager.c: 125: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"129
-[; ;mcc_generated_files/pin_manager.c: 129: }
+"126
+[; ;mcc_generated_files/pin_manager.c: 126: }
 [e :UE 2149 ]
 }

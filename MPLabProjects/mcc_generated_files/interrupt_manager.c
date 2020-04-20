@@ -1,24 +1,26 @@
 /**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
+  Generated Interrupt Manager Header File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.h
+    interrupt_manager.h
 
   @Summary:
-    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the Interrupt Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+    This header file provides implementations for global interrupt handling.
+    For individual peripheral handlers please see the peripheral driver for
+    all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
         Device            :  PIC18F25K42
-        Driver Version    :  2.00
+        Driver Version    :  2.12
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.05 and above or later
-        MPLAB             :  MPLAB X 5.20
+        MPLAB 	          :  MPLAB X 5.20
 */
 
 /*
@@ -44,59 +46,36 @@
     SOFTWARE.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "device_config.h"
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
 #include "interrupt_manager.h"
-#include "tmr1.h"
+#include "mcc.h"
 
+void  INTERRUPT_Initialize (void)
+{
+    INTCON0bits.IPEN = 1;
 
+    bool state = (unsigned char)GIE;
+    GIE = 0;
+    IVTLOCK = 0x55;
+    IVTLOCK = 0xAA;
+    IVTLOCKbits.IVTLOCKED = 0x00; // unlock IVT
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
+    IVTADU = 0;
+    IVTADH = 0;
+    IVTADL = 8;
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
+    IVTLOCK = 0x55;
+    IVTLOCK = 0xAA;
+    IVTLOCKbits.IVTLOCKED = 0x01; // lock IVT
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the PMD module to the default states configured in the
- *                  MCC GUI
- * @Example
-    PMD_Initialize(void);
- */
-void PMD_Initialize(void);
+    GIE = state;
+    // Assign peripheral interrupt priority vectors
+    IPR4bits.TMR1IP = 1;
+}
 
+void __interrupt(irq(default),base(8)) Default_ISR()
+{
+}
 
-#endif	/* MCC_H */
 /**
  End of File
 */
